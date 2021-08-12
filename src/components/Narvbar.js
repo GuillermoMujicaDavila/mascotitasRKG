@@ -1,7 +1,6 @@
 import React from 'react'
 import { Navbar, Container, Nav,NavDropdown,DropdownButton,ButtonGroup,Dropdown,Button,ButtonToolbar } from "react-bootstrap";
 import { useState,useEffect } from 'react';
-import imgLogin from "../assets/login_2.jpg"
 import { FiShoppingCart }  from "react-icons/fi";
 import { BiUserCircle } from "react-icons/bi";
 import Logo from "../assets/Logo.jpeg";

@@ -1,5 +1,5 @@
 import React from 'react'
-import PaginaPrincipalView from './PaginaPrincipalView'
+import PortadaView from './PortadaView'
 import { Button,Form, FormGroup, Label, Input } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
