@@ -5,13 +5,14 @@ import PortadaViewArticulos from './views/PortadaViewArticulos'
 import PortadaView from './views/PortadaView'
 import IniciarSecionView from "./views/IniciarSecionView";
 import RegistroView  from "./views/RegistroView";
-
+import CheckoutView from './views/CheckoutView'
 
 
 export default function Routes ()
 {return(
     <div>
        <Route path="/" exact component={PortadaView} />
+       <Route path="/checkout" exact component={CheckoutView} />
        <Route path="/Adoptar" exact component={PortadaViewAdopciones} />
        <Route path="/Tienda" exact component={PortadaViewArticulos} />
        <Route path="/IniciarSecion" exact component = {IniciarSecionView}/>
