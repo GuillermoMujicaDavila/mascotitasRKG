@@ -41,6 +41,19 @@ const Cart = () => {
                 opts
               )}
             </div>
+            <button type="submit" className="btn btn-dark" style={{
+                            backgroundColor:'rgb(17, 95, 139)',
+                            border:'none',
+                            display:'flex',
+                            justifyContent:'center',
+                            margin:'0 auto',
+                            width:'10vw',
+                            marginTop:'25px',
+
+                            
+                        }}>
+							Ir a carrito
+						</button>
           </div>
         </div>
       )}
