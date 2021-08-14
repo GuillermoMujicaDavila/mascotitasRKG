@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react"
-
+import {useContext} from 'react';
+import Rating from "./Rating"
+import CartContext from "../context/cart/CartContext"
 export default function GroupArticulos({articulos}) {
     console.log(articulos)
+    const{addToCart}= useContext (CartContext)
     return (
-
        <div> 
            <h1 className="text-center text-success my-4 fw-bold">Artículos a la venta</h1>
 
@@ -26,9 +28,16 @@ export default function GroupArticulos({articulos}) {
                                         <p className="card-text text-secondary">
                                             {arti.arti_precio}
                                         </p>
-                                        <a href="#" className="btn btn btn-outline-success">
+                                        <section>
+                                            <Rating value={arti.arti_precio} 
+                                            
+                                            // text={`${arti.arti_reviews} reviews`}
+                                             ></Rating>
+                                        </section>
+                                        {/* <a href="#" className="btn btn btn-outline-success">
                                         Comprar
-                                        </a>
+                                        </a> */}
+                                        <button className="btn btn btn-outline-success" onClick={()=> addToCart()}>COMPRAR</button>
                                     </div>
                             </div> 
                         </div>    

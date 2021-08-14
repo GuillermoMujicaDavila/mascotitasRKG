@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { obtenerArticulos } from "../services/articulosService";
 import GroupArticulos from "../components/GroupArticulos";
+import Narvbar from "../components/Narvbar"
 
 export default function PortadaViewArticulos() {
     const [articulos, setArticulos] = useState([])
@@ -20,6 +21,7 @@ export default function PortadaViewArticulos() {
 
     return (
         <div>
+            <Narvbar/>
             <GroupArticulos articulos={articulos} />
         </div>
     )

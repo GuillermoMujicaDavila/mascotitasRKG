@@ -7,6 +7,7 @@ import IniciarSecionView from "./views/IniciarSecionView";
 import RegistroView  from "./views/RegistroView";
 
 
+
 export default function Routes ()
 {return(
     <div>
