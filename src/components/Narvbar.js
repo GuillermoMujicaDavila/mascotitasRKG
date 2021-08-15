@@ -17,8 +17,8 @@ export default function Narvbar() {
                 className="justify-content-between"
                 aria-label="Toolbar with Button groups"
             >
-                <ButtonGroup>
-                    <Button variant="link">
+                 <ButtonGroup  style={{position:'container'}}>
+                    <Button href='/' variant="link">
                         <Image src={Logo} fluid />
                     </Button>
                 </ButtonGroup>

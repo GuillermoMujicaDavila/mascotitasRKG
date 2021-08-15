@@ -4,11 +4,15 @@ import Caracts from '../components/Caracts'
 import Cards from '../components/Cards'
 import Narvbar from '../components/Narvbar';
 import Footer from '../components/Footer';
+import VideoBackground from '../components/VideoBackground';
+
 
 const PortadaView = _=>
     {
       
-      return (<div>
+      return (
+        <div>
+        <VideoBackground />    
           <Narvbar/>
           <Caracts/>
           <Cards/>
