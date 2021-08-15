@@ -17,7 +17,7 @@ export default function Card({title, imageSource, descripcion}) {
                         ¿Quieres adoptar?
                     </a>
                     
-
+    <h1>hola</h1>
                 </div>           
             </div>
 
