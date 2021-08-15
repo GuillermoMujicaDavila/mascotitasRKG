@@ -1,14 +1,25 @@
 import React from 'react'
-import { Button,Form, FormGroup, Label, Input } from 'react-bootstrap'
+import { Button,Form, FormGroup, Label, Input,ButtonGroup,Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import imgLogin from "../assets/login_2.jpg"
 import Logo from "../assets/Logo.jpeg"
+import VideoBackground from '../components/VideoBackground';
+
+
 
 export default function RegistroView() {
     return (
         <div>
+            <VideoBackground/>
             <div >
-                
+            <ButtonGroup
+                style={{display:'flex', 
+                justifyContent:'center'}}
+                >
+                    <Button href='/' variant="link">
+                        <Image src={Logo} fluid />
+                    </Button>
+                </ButtonGroup>           
 
             </div>
 
@@ -56,5 +67,6 @@ export default function RegistroView() {
            </Form>
         </div>
         </div>
+
     )
 }
