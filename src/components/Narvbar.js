@@ -37,7 +37,7 @@ export default function Narvbar() {
                     <Dropdown.Item eventKey="1"  href="/IniciarSecion">Iniciar Secion</Dropdown.Item>
                     <Dropdown.Item eventKey="2" href="/Registro">Registrarse</Dropdown.Item>
                     </DropdownButton>  
-                
+               
                     <Button  variant="outline-dark">
                         < FiShoppingCart />
                     </Button>
@@ -46,7 +46,7 @@ export default function Narvbar() {
             </ButtonToolbar>
             </div>
             
-
+                      
 
             <div className="" style={{display:'flex', 
                 justifyContent:'center'}}  >
