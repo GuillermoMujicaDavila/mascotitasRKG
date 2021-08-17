@@ -15,6 +15,7 @@ import Caracts from './components/Caracts'
 
 
 export default function App() {
+	
 	return (
 		<Router>
 			<CarritoContextProvider>

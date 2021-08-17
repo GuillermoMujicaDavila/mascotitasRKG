@@ -13,7 +13,7 @@ export default function Routes ()
 {return(
     <div>
        <Route path="/" exact component={PortadaView} />
-       <Route path="/Planes" exact component={PlanesKev} />
+       <Route path="/Donar" exact component={PlanesKev} />
        <Route path="/Adoptar" exact component={PortadaViewAdopciones} />
        <Route path="/Tienda" exact component={PortadaViewArticulos} />
        <Route path="/IniciarSecion" exact component = {IniciarSecionView}/>

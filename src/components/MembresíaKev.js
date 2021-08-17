@@ -5,14 +5,21 @@ import perrito2 from "../assets/img/perrito2.png"
 import perrito3 from "../assets/img/perrito3.png"
 import perrito4 from "../assets/img/perrito4.png"
 import MembresíaKevcss from "./MembresíaKev.css"
+import gato4 from "../assets/img/gato4.png"
+import gatolisto from "../assets/img/gatitolisto.png"
+import Modalkev from "../components/Modalkev"
 function MembresíaKev  ()  {
     return (
       
       
       <div className="perritoskev3" style={{
-
+          marginTop:'40px'
       }}>
-        <section style={{display:'block'}}>
+        
+        
+        
+        <section className="cartasjeje" style={{display:'block',
+          marginRight: '-32px'}}>
         <section className="perrito1">
             <img src={perrito1} style={{
               display: 'block',
@@ -22,13 +29,21 @@ function MembresíaKev  ()  {
               objectPosition: 'top',
               position: 'relative',
               transition: '0.3s',
-              border:'none'
+              border:'none',
+              position
+              :'relative',
+              bottom:'-16px',
+              zIndex:'-2'
             }}></img>
             </section>
            
-        <Card style={{ width: '18rem'  }}>
+        <Card style={{ width: '18rem',
+      border:'none',
+      padding:'0'  }}>
         
-            <Card.Body>
+            <Card.Body style={{
+              padding:'0'
+            }}> 
               
         <section className="content" style ={{
           background: '#1f386d',
@@ -37,8 +52,10 @@ function MembresíaKev  ()  {
           height: '350px',
           position: 'relative',
           transition: '0.3s',
-          boxShadow: '0px 4px 8px rgb(0 0 0 / 29%)',
+          border:'none',
+          // boxShadow: '0px 4px 8px rgb(0 0 0 / 29%)',
           padding:' 0px',
+          zIndex: '5',
       
         }}>
             <section className="name" style={{
@@ -56,28 +73,133 @@ function MembresíaKev  ()  {
             1.5KG DE COMIDA MENSUALES O LO EQUIVALENTE EN AYUDA Y ADOPCIÓN.
             </section>
             <section className="value">
-            S/ 8.50
+            S/ 9.50
             </section>
             <section className="period" >
             MENSUALES
 
             </section >
             <section className="decorative">
-            <li className="link" 
+            <ul className="link" 
             > 
-              <button to="/checkout"  >
-                 <Link  to="/checkout">UNIRME A ESTE PLAN</Link>
+              <button to="/checkout" style={{
+                backgroundColor: 'skyblue',
+                color: 'white',
+                textDecoration: 'none',
+                border: 'none',
+                borderRadius: '80px',
+                width: '256px',
+                height: '152px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                position: 'relative',
+                right: '15px',
+                textDecoration: 'none',
+                bottom: '10px',
+              }}  >
+                <Modalkev></Modalkev>
+                 
               </button>
-            </li>
+            </ul>
             </section>
             
         </section>
         </Card.Body>
        </Card>
        </section>
-       
+      
+       <section className="cartasjeje" style={{display:'block',
+          marginRight: '-32px'}}>
+        <section className="perrito1">
+            <img src={gatolisto} style={{
+              display: 'block',
+              width: '100%',
+              height:' 215px',
+              objectFit: 'cover',
+              objectPosition: 'top',
+              position: 'relative',
+              transition: '0.3s',
+              border:'none',
+              position
+              :'relative',
+              bottom:'-16px',
+              zIndex:'2'
+            }}></img>
+            </section>
+           
+        <Card style={{ width: '18rem',
+      border:'none',
+      padding:'0'  }}>
+        
+            <Card.Body style={{
+              padding:'0'
+            }}> 
+              
+        <section className="content" style ={{
+          background: '#1f386d',
+          borderRadius: '20px',
+          overflow: 'hidden',
+          height: '350px',
+          position: 'relative',
+          transition: '0.3s',
+          border:'none',
+          // boxShadow: '0px 4px 8px rgb(0 0 0 / 29%)',
+          padding:' 0px',
+          zIndex: '5',
+      
+        }}>
+            <section className="name" style={{
+              fontFamily: 'Budidaya',
+              fontSize: '40px',
+              padding: '20px',
+              marginBottom: '0px',
+              fontWeight: '900',
+              lineHeight: '1.15',
+              color: '#fff',
+            }}>
+            Plan <br/> Mishifu
+            </section>
+            <section className="description"> 
+            5KG DE COMIDA MENSUALES O LO EQUIVALENTE EN AYUDA Y ADOPCIÓN.
+            </section>
+            <section className="value">
+            S/ 23.50
+            </section>
+            <section className="period" >
+            MENSUALES
 
-       <section style={{display:'block'}}>
+            </section >
+            <section className="decorative">
+            <ul className="link" 
+            > 
+              <button to="/checkout" style={{
+                backgroundColor: 'skyblue',
+                color: 'white',
+                textDecoration: 'none',
+                border: 'none',
+                borderRadius: '80px',
+                width: '256px',
+                height: '152px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                position: 'relative',
+                right: '15px',
+                textDecoration: 'none',
+                bottom: '10px',
+              }}  >
+                 <Modalkev></Modalkev>
+              </button>
+            </ul>
+            </section>
+            
+        </section>
+        </Card.Body>
+       </Card>
+       </section>
+
+       <section className="cartasjeje" style={{display:'block'}}>
         <section className="perrito1">
             <img src={perrito2} style={{
               display: 'block',
@@ -87,36 +209,78 @@ function MembresíaKev  ()  {
               objectPosition: 'top',
               position: 'relative',
               transition: '0.3s',
-              border:'none'
+              border:'none',
+              position
+              :'relative',
+              bottom:'-16px',
+              zIndex:'-7'
             }}></img>
             </section>
            
-        <Card style={{ width: '18rem'  }}>
+        <Card style={{ width: '18rem',
+      border:'none',
+      padding:'0'  }}>
         
-            <Card.Body>
+            <Card.Body style={{
+              padding:'0'
+            }}> 
               
-        <section className="content">
-            <section className="name">
-            Plan chihuahua
+        <section className="content" style ={{
+          background: '#1f386d',
+          borderRadius: '20px',
+          overflow: 'hidden',
+          height: '350px',
+          position: 'relative',
+          transition: '0.3s',
+          border:'none',
+          // boxShadow: '0px 4px 8px rgb(0 0 0 / 29%)',
+          padding:' 0px',
+          zIndex: '5',
+      
+        }}>
+            <section className="name" style={{
+              fontFamily: 'Budidaya',
+              fontSize: '40px',
+              padding: '20px',
+              marginBottom: '0px',
+              fontWeight: '900',
+              lineHeight: '1.15',
+              color: '#fff',
+            }}>
+            Plan <br/> Cheems
             </section>
-            <section className="description">
-            1.5KG DE COMIDA MENSUALES O LO EQUIVALENTE EN AYUDA Y ADOPCIÓN.
+            <section className="description"> 
+            12KG DE COMIDA MENSUALES O LO EQUIVALENTE EN AYUDA Y ADOPCIÓN.
             </section>
             <section className="value">
-            S/ 8.50
+            S/ 38.50
             </section>
             <section className="period" >
             MENSUALES
 
             </section >
             <section className="decorative">
-            <li className="link"> 
-              <button to="/checkout"  
-            
-              >
-                 <Link  to="/checkout">UNIRME A ESTE PLAN</Link>
+            <ul className="link" 
+            > 
+              <button to="/checkout" style={{
+                backgroundColor: 'skyblue',
+                color: 'white',
+                textDecoration: 'none',
+                border: 'none',
+                borderRadius: '80px',
+                width: '256px',
+                height: '152px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                position: 'relative',
+                right: '15px',
+                textDecoration: 'none',
+                bottom: '10px',
+              }}  >
+                <Modalkev></Modalkev>
               </button>
-            </li>
+            </ul>
             </section>
             
         </section>
@@ -124,10 +288,9 @@ function MembresíaKev  ()  {
        </Card>
        </section>
 
-
-       <section style={{display:'block'}}>
+       <section className="cartasjeje" style={{display:'block'}}>
         <section className="perrito1">
-            <img src={perrito3} style={{
+            <img src={gato4} style={{
               display: 'block',
               width: '100%',
               height:' 215px',
@@ -135,84 +298,80 @@ function MembresíaKev  ()  {
               objectPosition: 'top',
               position: 'relative',
               transition: '0.3s',
-              border:'none'
+              border:'none',
+              position
+              :'relative',
+              bottom:'-16px',
+              zIndex:'5'
             }}></img>
             </section>
            
-        <Card style={{ width: '18rem'  }}>
+        <Card style={{ width: '18rem',
+      border:'none',
+      padding:'0'  }}>
         
-            <Card.Body>
+            <Card.Body style={{
+              padding:'0'
+            }}> 
               
-        <section className="content">
-            <section className="name">
-            Plan chihuahua
+        <section className="content" style ={{
+          background: '#1f386d',
+          borderRadius: '20px',
+          overflow: 'hidden',
+          height: '350px',
+          position: 'relative',
+          transition: '0.3s',
+          border:'none',
+          // boxShadow: '0px 4px 8px rgb(0 0 0 / 29%)',
+          padding:' 0px',
+          zIndex: '5',
+      
+        }}>
+            <section className="name" style={{
+              fontFamily: 'Budidaya',
+              fontSize: '40px',
+              padding: '20px',
+              marginBottom: '0px',
+              fontWeight: '900',
+              lineHeight: '1.15',
+              color: '#fff',
+            }}>
+            Plan <br/>Libre
             </section>
-            <section className="description">
-            1.5KG DE COMIDA MENSUALES O LO EQUIVALENTE EN AYUDA Y ADOPCIÓN.
-            </section>
-            <section className="value">
-            S/ 8.50
-            </section>
-            <section className="period" >
-            MENSUALES
-
-            </section >
-            <section className="decorative">
-            <li className="link"> 
-              <button to="/checkout"  
-            
-              >
-                 <Link  to="/checkout">UNIRME A ESTE PLAN</Link>
-              </button>
-            </li>
-            </section>
-            
-        </section>
-        </Card.Body>
-       </Card>
-       </section>
-
-
-       <section style={{display:'block'}}>
-        <section className="perrito1">
-            <img src={perrito4} style={{
-              display: 'block',
-              width: '100%',
-              height:' 215px',
-              objectFit: 'cover',
-              objectPosition: 'top',
-              position: 'relative',
-              transition: '0.3s',
-              border:'none'
-            }}></img>
-            </section>
+            <section className="description"> 
+             Es una donación única, lo que dones se traducirá en comida o ayuda para los albergues de mascotas.             
+                          </section>
+                          <section className="period" >
            
-        <Card style={{ width: '18rem'  }}>
-        
-            <Card.Body>
-              
-        <section className="content">
-            <section className="name">
-            Plan chihuahua
-            </section>
-            <section className="description">
-            1.5KG DE COMIDA MENSUALES O LO EQUIVALENTE EN AYUDA Y ADOPCIÓN.
-            </section>
-            <section className="value">
-            S/ 8.50
-            </section>
-            <section className="period" >
-            MENSUALES
 
             </section >
+            <section className="period" >
+            MENSUALIDAD 
+            <br></br>libre
+            </section >
+           
             <section className="decorative">
-            <li className="link"> 
-              <button to="/checkout"  
-            
-              >
-                 <Link  to="/checkout">UNIRME A ESTE PLAN</Link>
+            <ul className="link" 
+            > 
+              <button to="/checkout" style={{
+                backgroundColor: 'skyblue',
+                color: 'white',
+                textDecoration: 'none',
+                border: 'none',
+                borderRadius: '80px',
+                width: '256px',
+                height: '152px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                position: 'relative',
+                right: '15px',
+                textDecoration: 'none',
+                bottom: '10px',
+              }}  >
+                <Modalkev></Modalkev>
               </button>
-            </li>
+            </ul>
             </section>
             
         </section>
