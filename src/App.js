@@ -12,16 +12,19 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Routes from "./Routes";
 import CarritoContextProvider from "./context/carritoContext";
 import Caracts from './components/Caracts'
+import { AuthContextProvider } from './context/authContext'
 
 
 export default function App() {
 	return (
 		<Router>
-			<CarritoContextProvider>
-				<Switch>
-					<Routes />
-				</Switch>
-			</CarritoContextProvider>
+			<AuthContextProvider>
+				<CarritoContextProvider>
+					<Switch>
+						<Routes />
+					</Switch>
+				</CarritoContextProvider>
+			</AuthContextProvider>
 		</Router>
 	);
 }

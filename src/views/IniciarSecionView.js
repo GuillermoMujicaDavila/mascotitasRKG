@@ -4,9 +4,13 @@ import { Button,Form, FormGroup, Label, Input,ButtonGroup,Image } from 'react-bo
 import { Link } from 'react-router-dom'
 import Logo from "../assets/Logo.jpeg"
 import VideoBackground from '../components/VideoBackground';
+import { useState,UseEffect,useContext } from 'react'
+import { AuthContext } from '../context/authContext'
 
 
 export default function IniciarSecionView() {
+    const { signIn } = useContext(AuthContext)
+        
     return (
         <div> 
          <VideoBackground/>
@@ -42,9 +46,25 @@ export default function IniciarSecionView() {
             </label>
             <Link></Link>
         </FormGroup >
+        <ButtonGroup
+            style={{display:'flex', 
+            justifyContent:'center'}}
+            >
+                <Button href='/' className="btn-lg btn-dark btn-block ">
+                  Log in
+                </Button>
+        </ButtonGroup>     
+    
+        <button className="btn btn-danger btn-lg" onClick={signIn}>
+               <i classname="fab fa-google me-2"/>
+                Ingresa con google
+         </button>
+
+         <FormGroup  className="text-center">
             <Button className="btn-lg btn-dark btn-block "
              style={{display:'flex', 
             justifyContent:'center'}}>Log in</Button>        
+            </FormGroup>
        </Form>
     </div>
 
