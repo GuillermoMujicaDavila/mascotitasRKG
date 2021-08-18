@@ -49,7 +49,7 @@ export default function ArticuloView() {
                                     fontSize: '20px'
                                     
                                 }}>
-                                    Precio: S/.{articulo.arti_precio}
+                                    Precio: S/ {articulo.arti_precio}
                                 </span>
                             </div>
                             <h5 className="fw-bold" style={{

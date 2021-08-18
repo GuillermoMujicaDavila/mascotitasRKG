@@ -12,12 +12,12 @@ export default function Card({title, imageSource, descripcion}) {
 
                 <div className="card-body bg-light">
                     <h4 className="card-title text-center fw-bold">{title}</h4>
-                    <p className="card-text text-secondary">{descripcion}</p>
+                    <p className=" card-text text-secondary">{descripcion}</p>
                     <a href="#" className="btn btn btn-outline-success">
                         ¿Quieres adoptar?
                     </a>
                     
-    <h1>hola</h1>
+
                 </div>           
             </div>
 

@@ -25,7 +25,7 @@ export default function GroupArticulos({articulos}) {
                                             {arti.arti_nombre}
                                         </h6>
                                         <p className="card-text text-secondary">
-                                            S/. {arti.arti_precio}
+                                            S/ {arti.arti_precio}
                                         </p>
                                         <Link href="#" className="btn btn btn-outline-success" to={`/detalle/${arti.arti_id}`}>
                                         Comprar
