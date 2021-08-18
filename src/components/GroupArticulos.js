@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import {Link} from "react-router-dom"
 
 export default function GroupArticulos({articulos}) {
     console.log(articulos)
@@ -10,7 +11,7 @@ export default function GroupArticulos({articulos}) {
             <div className="container">
                 <div className="row mt-3">
                     {articulos.map((arti, i) => (
-                        <div className="col-6 col-lg-3">
+                        <div className="col-6 col-lg-3" key={1}>
                             <div className="magic  card border border-secondary border border-3 text-center">
                                 <div className="overflow">
                                     <img 
@@ -24,11 +25,11 @@ export default function GroupArticulos({articulos}) {
                                             {arti.arti_nombre}
                                         </h6>
                                         <p className="card-text text-secondary">
-                                            {arti.arti_precio}
+                                            S/. {arti.arti_precio}
                                         </p>
-                                        <a href="#" className="btn btn btn-outline-success">
+                                        <Link href="#" className="btn btn btn-outline-success" to={`/detalle/${arti.arti_id}`}>
                                         Comprar
-                                        </a>
+                                        </Link>
                                     </div>
                             </div> 
                         </div>    

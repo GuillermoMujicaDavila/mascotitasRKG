@@ -10,7 +10,6 @@ export default function Caracts() {
             backgroundColor:'rgb(255, 231, 173)',
             padding:'40px 40px',
             
-            
         
             }}>
 

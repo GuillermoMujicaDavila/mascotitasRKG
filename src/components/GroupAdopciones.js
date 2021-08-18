@@ -1,7 +1,17 @@
 import { useState, useEffect } from "react"
+import { Modal,Button } from 'react-bootstrap'
+import imagenModal from '../assets/img/relleno.jpg'
+
+
 
 export default function GroupAdopciones({adopciones}) {
     console.log(adopciones)
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
 
        <div> 
@@ -26,16 +36,137 @@ export default function GroupAdopciones({adopciones}) {
                                         <p className="card-text text-secondary">
                                             {adop.adop_descripcion}
                                         </p>
-                                        <a href="#" className="btn btn btn-outline-success">
-                                        ¿Quieres adoptar?
-                                        </a>
+                                        <button className="btn btn btn-outline-success" onClick={handleShow}>
+                                        Adóptame
+                                        </button>
                                     </div>
                             </div> 
                         </div>    
+                        
                     ))}
                 </div>
             </div>
+            
+            <Modal
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                keyboard={false}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className="text-success fw-bold text-center">Requisitos para la adopción</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <img
+                        ClassName="d-block w-100"
+                        src ={imagenModal}
+                        alt="imagenModal" 
+                        width="462px"
+                        height="300px"
+                    />
 
+                    <p style={{
+
+                        textAlign: 'justify',
+                        textJustify: 'inter-word',
+                        
+
+                    }}>
+                        1-Ser mayor de edad: Se presentará el DNI de identificación.
+                        
+                    </p>
+
+                     <p style={{
+
+                        textAlign: 'justify',
+                        textJustify: 'inter-word',
+                        
+
+                    }}>
+                        2-Comprobante de domicilio: Documento que demuestre que la persona es propietaria del domicilio donde vivirá la mascota o, en caso de alquiler, que el arrendatario permite residir con animales.
+                    </p>
+
+                    <p style={{
+
+                        textAlign: 'justify',
+                        textJustify: 'inter-word',
+                        
+
+                    }}>
+                        3-Contrato de adopción: Debes firmar un acta que te compromete a 
+                        cuidar de tu mascota y mantenerla en unas condiciones óptimas de espacio, tiempo, alimentación, ejercicio...
+
+                    </p>
+
+                    <p style={{
+
+                        textAlign: 'justify',
+                        textJustify: 'inter-word',
+                        
+
+                    }}>
+                        4-Dotarle de los cuidados veterinarios que necesite: La mascota se entregará desparasitada y con las correspondientes vacunas, los perros y los gatos llevarán, además, microchip.
+
+                    </p>
+
+                    <p style={{
+
+                        textAlign: 'justify',
+                        textJustify: 'inter-word',
+                        
+
+                    }}>
+                        5-No destinarlo a la cría o reproducción: Los animales que tengan la edad suficientes se entregarán esterilizados, y si aún no han alcanzado la edad necesaria se firmará un compromiso de esterilización.
+
+                    </p>
+
+                    <p style={{
+
+                        textAlign: 'justify',
+                        textJustify: 'inter-word',
+                        
+
+                    }}>
+                        6-Notificar cualquier cambio a la asociación (pérdida, muerte...).
+
+                    </p>
+
+                    <p style={{
+
+                        textAlign: 'justify',
+                        textJustify: 'inter-word',
+                        
+
+                    }}>
+                        7-Compromiso de no abandonarlo. Si por algún motivo no puedes hacerte cargo de la mascota lo devolverás a la asociación.
+
+                    </p>
+
+                    <p style={{
+
+                        textAlign: 'justify',
+                        textJustify: 'inter-word',
+                        fontWeight: 'bold'
+                        
+
+                    }}>
+                        Contacto para entrevista: (+51) 983-376-510
+
+                    </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={handleClose}>
+                        Cerrar
+                    </Button>
+                    
+                </Modal.Footer>
+
+            </Modal>
+            
+
+
+         
+            
        </div>                 
 
     )
