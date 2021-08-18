@@ -1,20 +1,25 @@
 import{Route} from 'react-router-dom'
 // import PortadaView from './views.js/PortadaView'
-import PortadaViewAdopciones from './views.js/PortadaViewAdopciones'
-import PortadaViewArticulos from './views.js/PortadaViewArticulos'
-import PortadaView from './views.js/PortadaView'
-import ArticuloView from './views.js/ArticuloView'
+import PortadaViewAdopciones from './views/PortadaViewAdopciones'
+import PortadaViewArticulos from './views/PortadaViewArticulos'
+import PortadaView from './views/PortadaView'
+import ArticuloView from './views/ArticuloView'
+import IniciarSecionView from './views/IniciarSecionView'
+import RegistroView from './views/RegistroView'
 
 
 export default function Routes ()
 {return(
     <div>
        <Route path="/" exact component={PortadaView} />
-       <Route path="/" exact component={PortadaViewAdopciones} />
-       <Route path="/" exact component={PortadaViewArticulos} />
-       <Route path="/detalle/:id" exact component={ArticuloView} />
-
-
+       <Route path="/Adoptar" exact component={PortadaViewAdopciones} />
+       <Route path="/Tienda" exact component={PortadaViewArticulos} />
+       <Route path="/IniciarSecion" exact component = {IniciarSecionView}/>
+         <Route path="/Registro" exact component = {RegistroView}/>
+         <Route path="/detalle/:id" exact component = {ArticuloView}/>
     </div>
     )
+
+
+  
 }

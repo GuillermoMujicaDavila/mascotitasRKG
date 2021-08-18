@@ -3,7 +3,7 @@ import Cards from './components/Cards'
 import React from 'react'
 
 
-import NarBar from './components/NarBar' 
+
 import horitzontal from './assets/img/horitzontal.png'
 
 import cel123 from './assets/img/cel123.png'
