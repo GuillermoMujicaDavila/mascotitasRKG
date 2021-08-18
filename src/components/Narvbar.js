@@ -59,14 +59,10 @@ export default function Narvbar() {
                     <Dropdown.Item eventKey="1"  href="/IniciarSecion">Iniciar Secion</Dropdown.Item>
                     <Dropdown.Item eventKey="2" href="/Registro">Registrarse</Dropdown.Item>
                     </DropdownButton>  
-                
-                    <div className = 'nav_right'>
-                        <div className='fa fa-shopping-cart'
-                        
-                        ></div>
-                    </div>
-
-                   
+               
+                    <Button  variant="outline-dark">
+                        < FiShoppingCart />
+                    </Button>
                 </ButtonGroup>
               )}
             </ButtonToolbar>

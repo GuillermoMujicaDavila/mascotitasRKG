@@ -16,6 +16,7 @@ import { AuthContextProvider } from './context/authContext'
 
 
 export default function App() {
+	
 	return (
 		<Router>
 			<AuthContextProvider>
