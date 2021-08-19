@@ -5,12 +5,13 @@ import { FiShoppingCart }  from "react-icons/fi";
 import { BiUserCircle } from "react-icons/bi";
 import Logo from "../assets/Logo.jpeg";
 import Image from 'react-bootstrap/Image'
-import  {AuthContext, AuthContextProvider} from '../context/authContext';
-
+import  {AuthContext} from '../context/authContext';
+import { CarritoContext } from '../context/carritoContext';
 
 
 export default function Narvbar() {
-    const {userState,signOut} = useContext(AuthContext)
+    const{carrito} = useContext(CarritoContext);
+    const {userState,signOut} = useContext(AuthContext);
 
     return (
         <div>
@@ -29,6 +30,9 @@ export default function Narvbar() {
                 </ButtonGroup>
 
             {userState ? (
+                // <Nav.link>
+                //         <span onClick={signOut}>Salir</span>
+                // </Nav.link>
                 <NavDropdown
 								title={
 									<div className="d-inline">

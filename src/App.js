@@ -13,6 +13,7 @@ import Routes from "./Routes";
 import CarritoContextProvider from "./context/carritoContext";
 import Caracts from './components/Caracts'
 import { AuthContextProvider } from './context/authContext'
+import { Navbar } from 'react-bootstrap'
 
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
 		<Router>
 			<AuthContextProvider>
 				<CarritoContextProvider>
+					<Navbar/>
 					<Switch>
 						<Routes />
 					</Switch>
