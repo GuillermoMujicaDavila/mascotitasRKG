@@ -15,7 +15,27 @@ export default function GroupAdopciones({adopciones}) {
     return (
 
        <div> 
-           <h1 className="text-center text-success my-4 fw-bold">En adopción</h1>
+           
+            <h1 className="text-center text-success my-4 fw-bold">
+                
+                <i className="fas fa-cat" >
+                
+                    En adopción
+
+                </i>
+
+                <i 
+                className="fas fa-dog"
+                style={{
+
+                    transform:'rotateY(180deg)'
+                }}
+            
+                >
+                </i>
+
+            </h1>
+           
 
             <div className="container">
                 <div className="row mt-3">
@@ -54,7 +74,11 @@ export default function GroupAdopciones({adopciones}) {
                 keyboard={false}
             >
                 <Modal.Header closeButton>
-                    <Modal.Title className="text-success fw-bold text-center">Requisitos para la adopción</Modal.Title>
+                    <Modal.Title className="text-success fw-bold text-center">
+                        
+                        Requisitos para la adopción
+
+                    </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <img
@@ -63,12 +87,14 @@ export default function GroupAdopciones({adopciones}) {
                         alt="imagenModal" 
                         width="462px"
                         height="300px"
+                        
                     />
-
+                    
                     <p style={{
 
                         textAlign: 'justify',
                         textJustify: 'inter-word',
+                        marginTop: '20px'
                         
 
                     }}>
@@ -144,9 +170,11 @@ export default function GroupAdopciones({adopciones}) {
 
                     <p style={{
 
-                        textAlign: 'justify',
+                        
                         textJustify: 'inter-word',
-                        fontWeight: 'bold'
+                        fontWeight: 'bold',
+                        marginTop: '35px',
+                        textAlign: 'center',
                         
 
                     }}>

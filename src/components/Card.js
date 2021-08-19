@@ -1,4 +1,5 @@
 import './cards.css'
+import {Link} from "react-router-dom"
 
 //agregar mas adelante un Pros de URL
 export default function Card({title, imageSource, descripcion}) {
@@ -13,9 +14,9 @@ export default function Card({title, imageSource, descripcion}) {
                 <div className="card-body bg-light">
                     <h4 className="card-title text-center fw-bold">{title}</h4>
                     <p className=" card-text text-secondary">{descripcion}</p>
-                    <a href="#" className="btn btn btn-outline-success">
+                    <Link className="btn btn btn-outline-success" to="/Adoptar">
                         ¿Quieres adoptar?
-                    </a>
+                    </Link>
                     
 
                 </div>           
