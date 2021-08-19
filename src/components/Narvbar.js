@@ -10,6 +10,7 @@ import  {AuthContext, AuthContextProvider} from '../context/authContext';
 import {CarritoContext} from '../context/carritoContext'
 import Badge from '@material-ui/core/Badge';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import Narvbarcss from './Narvbar.css'
 
 
 
@@ -68,10 +69,17 @@ export default function Narvbar() {
                     <Dropdown.Item eventKey="2" href="/Registro">Registrarse</Dropdown.Item>
                     </DropdownButton>  
                
-                    <Link className="nav-link" to="/carrito">
-							Carrito
-							<Badge badgeContent={totalCarrito} color="primary">
-								<ShoppingCartIcon />
+                    <Link className="nav-link2" to="/carrito" style={{
+                        display:'flex',
+                        alignItems:'center',
+                        border: '1px solid #212529',
+                    }}>
+							
+							<Badge badgeContent={totalCarrito} color="primary" style={{
+                                display:'flex',
+                                alignItems:'center'
+                            }}>
+								<ShoppingCartIcon className='carritoshopping'/>
 							</Badge>
 						</Link>
                 </ButtonGroup>

@@ -1,0 +1,21 @@
+.nav-link2:hover
+{
+    background-color: #212529;
+    
+
+
+}
+.nav-link2
+{
+    padding-left:14px;
+    padding-right: 14px;
+    margin-left: 10px;
+}
+
+.carritoshopping
+{
+    color: rgb(62, 53, 53);
+}
+.carritoshopping:hover{
+    color: whitesmoke;
+}
