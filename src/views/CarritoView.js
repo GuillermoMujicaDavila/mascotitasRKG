@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { CarritoContext } from "../context/carritoContext"
 import Narvbar from '../components/Narvbar'
+import { ThumbDownAlt } from "@material-ui/icons"
 
 export default function CarritoView() {
 
@@ -17,18 +18,23 @@ export default function CarritoView() {
             </div>
 
             <table className="table">
-                <thead>
-                    <tr>
+                <thead>    
+                <tr>
+                        <th>Imagen referente</th>
                         <th>Nombre</th>
                         <th>Cantidad</th>
                         <th>Descuento</th>
                         <th>Precio Unitario</th>
-                        <th>Precio Total</th>
+                        <th>Precio Final</th>
                     </tr>
                 </thead>
                 <tbody>
+                   
                     {carrito.map((arti, i) => (
                         <tr key={i}>
+                             <td><img src={arti.arti_imagen} style={{
+                                 width:'50%'
+                             }}></img></td>
                             <td>{arti.arti_nombre}</td>
                             <td>{arti.arti_stock / 10}</td>
                             <td>{arti.arti_oferta ? "10%" : "Sin Oferta"}</td>
@@ -37,6 +43,7 @@ export default function CarritoView() {
                             arti.cantidad * arti.arti_precio * 0.9 : 
                             arti.cantidad * arti.arti_precio}</td>
                         </tr>
+                        // ------------------------------------------------
                     ))}
                 </tbody>
             </table>
