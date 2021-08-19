@@ -2,28 +2,68 @@ import { useContext } from "react"
 import { CarritoContext } from "../context/carritoContext"
 import Narvbar from '../components/Narvbar'
 import { ThumbDownAlt } from "@material-ui/icons"
-
+import Swal from "sweetalert2"
+import { Link } from "react-router-dom";
+import { useHistory } from 'react-router'
+import nyancat from '../assets/img/nyan-cat.gif'
 
 export default function CarritoView() {
 
     const { carrito } = useContext(CarritoContext)
-
+    const history = useHistory()
+    const anadirACarritoContext = async() => {
+        // anadirACarrito(articulo)
+        const resultado = await Swal.fire({
+            icon:'success',
+            title: 'Queda un último paso!',
+            width: 600,
+            padding: '3em',
+            showConfirmButton:true,
+            showDenyButton:true,
+            denyButtonText:'Cancelar',
+            confirmButtonText:'Sigamos!',
+            background: '#ffff',
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("https://sweetalert2.github.io/images/nyan-cat.gif")
+              left center
+              no-repeat
+            `,
+          })
+        if(resultado.isConfirmed){
+            history.push('/checkout')
+        }else if(resultado.isDenied){
+            history.push('/carrito')
+        }
+    }
     return (
         <div className="container">
             <Narvbar></Narvbar>
-            <div className="my-4 text-center">
-                <h1 className="fw-bold">
+            <div className="my-4 text-left">
+                <h1 className="fw-bold" style={{
+                   color:'rgb(54 146 74)'
+                }}>
                 <i class="fas fa-paw" style={{
-                    marginRight:'10px'
+                    marginRight:'10px',
+                    color:'rgb(54 146 74)'
                 }}></i>
                     Carrito de productos
                 </h1>
+            </div>
+            <div>
+            <button className="btn btn-dark btn-lg" onClick={anadirACarritoContext}>
+                            {/* <i className="fas fa-shopping-cart me-2"/> */}
+                     <Link  style={{
+                         textDecoration:'none',
+                         color:'white'
+                     }}>Procesar compra</Link>
+                            </button>
             </div>
 
             <table className="table">
                 <thead>    
                 <tr style={{
-                   
+                   color:'rgb(54 146 74)'
                 }}>
                         <th>Imagen referente</th>
                         <th>Nombre</th>
