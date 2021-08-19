@@ -5,12 +5,20 @@ import { FiShoppingCart }  from "react-icons/fi";
 import { BiUserCircle } from "react-icons/bi";
 import Logo from "../assets/Logo.jpeg";
 import Image from 'react-bootstrap/Image'
+import { Link } from "react-router-dom";
 import  {AuthContext, AuthContextProvider} from '../context/authContext';
+import {CarritoContext} from '../context/carritoContext'
+import Badge from '@material-ui/core/Badge';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 
 
 
 export default function Narvbar() {
+    const {carrito} = useContext(CarritoContext)
     const {userState,signOut} = useContext(AuthContext)
+    const totalCarrito = carrito.reduce((total, articulo) => {
+		return total + articulo.cantidad;
+	}, 0);
 
     return (
         <div>
@@ -56,13 +64,16 @@ export default function Narvbar() {
                     alt="imagen login"
                     variant="outline-dark"
                      >
-                    <Dropdown.Item eventKey="1"  href="/IniciarSecion">Iniciar Secion</Dropdown.Item>
+                    <Dropdown.Item eventKey="1"  href="/IniciarSecion">Iniciar Sesión</Dropdown.Item>
                     <Dropdown.Item eventKey="2" href="/Registro">Registrarse</Dropdown.Item>
                     </DropdownButton>  
                
-                    <Button  variant="outline-dark">
-                        < FiShoppingCart />
-                    </Button>
+                    <Link className="nav-link" to="/carrito">
+							Carrito
+							<Badge badgeContent={totalCarrito} color="primary">
+								<ShoppingCartIcon />
+							</Badge>
+						</Link>
                 </ButtonGroup>
               )}
             </ButtonToolbar>
@@ -87,15 +98,19 @@ export default function Narvbar() {
                      <Nav.Item as="li">    
                         <Nav.Link href="/Donar">Donar</Nav.Link>
                         </Nav.Item>
-                    <Nav.Item as="li">
+                        <Nav.Item as="li">
                      <Nav.Link  href="/Adoptar">Adoptar</Nav.Link>
                        </Nav.Item>
+                    
                     <Nav.Item as="li">
-                    <Nav.Link  href="/Eventos">Eventos</Nav.Link>
+                    <Nav.Link  href="/Eventos">Membresía</Nav.Link>
                     </Nav.Item>
                         <Nav.Item as="li">
                      <Nav.Link  href="/Tienda">Tienda</Nav.Link>
                 </Nav.Item>
+                <Nav.Item as="li">
+                     <Nav.Link  href="/Carrito">Carrito</Nav.Link>
+                       </Nav.Item>
             </Nav>
             </Container>
             </Navbar>

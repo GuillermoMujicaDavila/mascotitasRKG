@@ -1,15 +1,22 @@
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect,useContext } from 'react'
+import {CarritoContext} from '../context/carritoContext'
 import {useParams} from 'react-router-dom'
 import { obtenerArticulosPorId } from '../services/articulosService'  
 import Loading from '../components/Loading'
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2"
+import Modalarticulo from '../components/Modalarticulo'
+import { useHistory } from 'react-router'
+import Narvbar from '../components/Narvbar'
 
 export default function ArticuloView() {
     const [articulo, setArticulo] = useState({})
     const [cargando, setCargando] = useState(true)
-
+    const {anadirACarrito} = useContext(CarritoContext)
     const { id } = useParams()
 
+    const history = useHistory()
     const getArticulo = async () => {
         try {
             let articuloObtenido = await obtenerArticulosPorId(id)
@@ -20,13 +27,30 @@ export default function ArticuloView() {
         }
 
     }
+    const anadirACarritoContext = async() => {
+        anadirACarrito(articulo)
+        const resultado = await Swal.fire({
+            icon:'success',
+            title:"¡Producto añadido con éxito!",
+            showConfirmButton:true,
+            showDenyButton:true,
+            denyButtonText:'Procesar compra',
+            confirmButtonText:'Seguir comprando'})
+        if(resultado.isConfirmed){
+            history.push('/tienda')
+        }else if(resultado.isDenied){
+            history.push('/carrito')
+        }
+    }
 
     useEffect(() => {
         getArticulo()
     }, [])
 
     return (
+       
         <div>
+            <Narvbar></Narvbar>
             {cargando ? 
             (<Loading />) : 
             (<div>
@@ -63,6 +87,14 @@ export default function ArticuloView() {
                                 
 
                             }}>{articulo.arti_descripcion}</p>
+                            <button className="btn btn-dark btn-lg" onClick={anadirACarritoContext}>
+                            <i className="fas fa-shopping-cart me-2"/>
+                     <Link  style={{
+                         textDecoration:'none',
+                         color:'white'
+                     }}>Añadir a carrito</Link>
+                            </button>
+                           
                         </div>
                     </div>
                 </div>
