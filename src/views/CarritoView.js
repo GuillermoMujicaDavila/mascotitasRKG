@@ -39,9 +39,14 @@ export default function CarritoView() {
     return (
         <div className="container">
             <Narvbar></Narvbar>
+            <section style={{
+                display:'flex',
+                justifyContent:'space-between'
+            }}>
             <div className="my-4 text-left">
                 <h1 className="fw-bold" style={{
-                   color:'rgb(54 146 74)'
+                   color:'rgb(54 146 74)',
+                   marginBottom:'40px'
                 }}>
                 <i class="fas fa-paw" style={{
                     marginRight:'10px',
@@ -50,16 +55,25 @@ export default function CarritoView() {
                     Carrito de productos
                 </h1>
             </div>
-            <div>
-            <button className="btn btn-dark btn-lg" onClick={anadirACarritoContext}>
+            <div style={{
+                marginTop:'25px'
+            }}>
+            <button className="btn btn-dark btn-lg" onClick={anadirACarritoContext} style={{
+                display:'flex',
+                justifyContent:'right',
+                alignItems:'center'
+            }}>
                             {/* <i className="fas fa-shopping-cart me-2"/> */}
                      <Link  style={{
                          textDecoration:'none',
-                         color:'white'
-                     }}>Procesar compra</Link>
+                         color:'white',
+                         
+                     }}><i class="fas fa-cat" style={{
+                         paddingRight:'10px'
+                     }}></i>Procesar compra</Link>
                             </button>
             </div>
-
+            </section>
             <table className="table">
                 <thead>    
                 <tr style={{
