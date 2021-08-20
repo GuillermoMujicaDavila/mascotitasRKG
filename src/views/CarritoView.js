@@ -112,11 +112,11 @@ export default function CarritoView() {
                             }}>{arti.arti_nombre}</td>
                             <td style={{
                                     padding: '3.5rem 2.5rem',
-                            }}>{arti.arti_stock / 10}</td>
+                            }}>{arti.cantidad}</td>
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                                
-                            }}>{arti.arti_oferta ? "10%" : "Sin Oferta"}</td>
+                            }}>{arti.arti_oferta ? "20%" : "Sin Oferta"}</td>
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                                 

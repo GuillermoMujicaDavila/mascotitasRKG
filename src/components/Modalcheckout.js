@@ -11,6 +11,7 @@ import Tarjeta from './CreditCard'
 import Particles from '../components/Particles'
 import Boid from '../components/Boid'
 import serviceWorker from '../components/serviceWorker'
+import nyancat from "../assets/img/nyan-cat.gif"
 
 
 const useStyles=makeStyles((theme)=>(
@@ -25,6 +26,7 @@ const useStyles=makeStyles((theme)=>(
         top:'50%',
         left:'50%',
         transform:'translate(-50%,-50%)'
+        
     },
     textfield:
     {
@@ -39,10 +41,21 @@ function Modalcheckout(){
     const mostrarAlerta=()=>
 {
     swal({
-        title:'Gracias por mandarnos tus datos!',
-        text:'Pronto nos comunicaremos contigo',
+        title:'Gracias por tu compra!',
+        text:'Le enviaremos la factura a su correo electrónico!',
         icon:'success',
-        button:'aceptar'
+        // button:'aceptar',
+        showConfirmButton:true,
+            showDenyButton:true,
+            denyButtonText:'Cancelar',
+            confirmButtonText:'Sigamos!',
+            background: {nyancat},
+        backdrop: `
+              rgba(0,0,123,0.4)
+              url{nyancat}
+              left center
+              no-repeat
+            `,
     });
 }
 const styles = useStyles();
@@ -59,30 +72,23 @@ const body=(
         borderRadius:'30px',
         padding:'85px'
     }}>
-            <div align="center"
+    <div align="center" 
             >
                 <Tarjeta></Tarjeta>
-                {/* <h2 style={{
-                    color:'#0d6efd'
-                }}>Rellene sus datos</h2>
-                <h5 style={{
-                    color:'skyblue'
-                }}>Para coordinar la forma de pago </h5>
-                </div>
-                <TextField label="Nombre" className={styles.textfield}/>
-                <br/>
-                <TextField label="Apellido" className={styles.textfield}/>
-                <br/>
-                <TextField label="DNI" className={styles.textfield}/>
-                <br/>
-                <TextField label="Número de teléfono" className={styles.textfield}/>
-
-                <br></br>
-                <div align="right"> */}
-                <Button color="primary" onClick={()=>mostrarAlerta()}>Enviar</Button>
-                <Button  onClick={()=>abrirCerrarModal()}><Link to='/Donar' style={{
-                    textDecoration:'none'
+                <section>
+                <Button  onClick={()=>abrirCerrarModal()} style={{
+                    textDecoration:'none',
+                    postition:'relative',
+                    top:'60px',
+                }}><Link to='/Donar' style={{
+                textDecoration:'none'
                 }}>Cancelar</Link></Button>
+                <Button color="primary" onClick={()=>mostrarAlerta()} style={{
+                    textDecoration:'none',
+                    postition:'relative',
+                    top:'60px',
+                }}>Pagar</Button>
+                </section>
                 
                 </div>
     </div>

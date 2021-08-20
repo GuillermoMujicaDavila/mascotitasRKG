@@ -92,13 +92,14 @@ class CreditCard extends React.Component {
     } = this.state;
     console.log(this.state);
     return (
+      
       <div className="container" src={icon1} style={{
         display: 'flex',
     flexDirection: 'column',
     justifyContent: 'left',
     alignItems: 'center',
-    // width: '100vw',
-    // height: '100vh',
+    width: '320px',
+    height: '65vh',
     background: 'transparent',
     color: 'black',
     fontFamily: '-apple-system, BlinkMacSystemFont',
@@ -106,6 +107,7 @@ class CreditCard extends React.Component {
     fontWeight: '200',
     textTransform: 'uppercase',
       }}>
+        <section>
         <div className="credit-card" style={{
           width: '420px',
           margin: '0',
@@ -122,7 +124,8 @@ class CreditCard extends React.Component {
             transformstyle: 'preserve-3d',
               transform: 'rotateY(360deg)',
               borderRadius:'40px',
-              background: 'linear-gradient(to top right, #0099ff 0%, #ff0866 100%)',
+              background: 'linear-gradient(to right top, rgb(0 149 255) 0%, rgb(68 193 52) 100%)',
+              top: '-60px',
               
             }}>
             <div className="credit-card-front" style={{
@@ -205,12 +208,19 @@ class CreditCard extends React.Component {
             </div>
           </div>
         </div>
+                </section>
+
+                <section style={{
+                  height:'50%'
+                }}>
+
         <form className="card-form" style={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           width: '435px',
-          marginTop: '50px',
+          height:'198px',
+          marginTop: '4px',
           textAlign: 'left',
         }}>
           <label className="input-label" >Credit Card Number</label>
@@ -225,7 +235,7 @@ class CreditCard extends React.Component {
             margin: '5px',
             backgroundColor: 'transparent',
             color: 'gray',
-            borderBottom: '1px solid #ff0866',
+            borderBottom: '1px solid rgb(7 153 235)',
             fontWeight: '100',
           }}
             placeholder="Enter your credit card number"
@@ -253,7 +263,7 @@ class CreditCard extends React.Component {
     margin: '5px',
     backgroundColor: 'transparent',
     color: 'gray',
-    borderBottom: '1px solid #ff0866',
+    borderBottom: '1px solid rgb(7 153 235)',
     fontWeight: '100',
             }}
           />
@@ -300,7 +310,7 @@ class CreditCard extends React.Component {
         margin: '5px',
         backgroundColor: 'transparent',
         color: 'gray',
-        borderBottom: '1px solid #ff0866',
+        borderBottom: '1px solid rgb(7 153 235)',
         fontWeight: '100',}}
               />
             </div>
@@ -334,13 +344,14 @@ class CreditCard extends React.Component {
                   margin: '5px',
                   backgroundColor: 'transparent',
                   color: 'black',
-                  borderBottom: '1px solid #ff0866',
+                  borderBottom: '1px solid rgb(7 153 235)',
                   fontWeight: '100',
                 }}
               />
             </div>
           </div>
         </form>
+        </section>
       </div>
     );
   }

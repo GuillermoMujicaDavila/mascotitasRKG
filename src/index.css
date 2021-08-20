@@ -1,15 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Indie Flower', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Indie Flower', cursive;
+    
 }
 .hola123
 {
@@ -54,6 +53,13 @@ element.style
 {
   margin: auto;
 }
+.bg-dark {
+  background-color: #128a4d!important;
+}
+.form-label
+{
+  color:'rgb(25, 135, 84)'
+}
 .descripcionempresa
 {
   display: flex;
@@ -77,3 +83,4 @@ element.style
     border-radius: 28px;
     font-size: 27px;
 }
+

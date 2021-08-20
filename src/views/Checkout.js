@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Modalcheckout from "../components/Modalcheckout"
 import Tarjeta from "../components/CreditCard"
 import Narvbar from "../components/Narvbar"
+import estilos from "../index.css"
 // import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet"
 // import L from "leaflet"
 
@@ -28,33 +29,61 @@ export default function CheckoutView() {
     //     return null
     // }
 
-	// let total = 0;
+	let total = 0;
 
-	// total = carrito.reduce((acum, item) => {
-	// 	return acum + item.cantidad * item.prod_precio;
-	// }, 0);
+	total = carrito.reduce((acum, arti) => {
+		return acum + arti.cantidad * arti.arti_precio;
+	}, 0);
 
 	const recibirSubmit = (datos) => {
 		console.log(datos);
 	};
-
+	
 	return (
+		<section>
+		<Narvbar></Narvbar>
 		
-			<section>
-				<Narvbar></Narvbar>
+	<div style={{
+		display:'flex',
+		justifyContent:'space-around'
+	}}>
+		
+				
 				<div className="col-sm-12 col-md-6" style={{
-					margin:'50px'
+					margin:'35px',
+					textAlign:'left',
+					width:'40vw'
+					
+					
 				}}>
 					
-					<h4>Ingrese sus datos:</h4>
+				<section>
+					<h1 style={{
+					textAlign:'left',
+					color:'rgb(25, 135, 84)'
+				}}>Verificar compra</h1>
+					<h4 style={{
+						textAlign:'left',
+						color:'rgb(25, 135, 84)'
+					}}>Ingrese sus datos:</h4>
 
 					<form onSubmit={handleSubmit(recibirSubmit)}>
-						<div className="mb-2">
-							<label className="form-label">Nombres y apellidos</label>
+						<section style={{
+							display:'flex',
+							textAlign:'left',
+							justifyContent:'space-between'
+						}}>
+						<div className="mb-2" style={{
+							width:'25vw',
+							textAlign:'left',
+						}}>
+							<label className="form-label" style={{
+								
+							}}>Nombres </label>
 							<input
 								type="text"
 								className="form-control"
-								placeholder="Ej. Juan Perez"
+								placeholder="Ej. Juanito Alcachofa"
 								//{...register("nombre", {validaciones})}
 								{...register("nombreCompleto", { required: true })}
 							/>
@@ -62,9 +91,31 @@ export default function CheckoutView() {
 								<small className="text-danger">Este campo es obligatorio</small>
 							)}
 						</div>
-						<div className="mb-2">
-							<label className="form-label">Número de celular</label>
+						<div className="mb-2"  style={{
+							width:'25vw'
+						}}>
+							<label className="form-label" style={{
+								
+							}}>Apellidos</label>
 							<input
+								type="text"
+								className="form-control"
+								placeholder="Ej. Alvarado De la Torre"
+								//{...register("nombre", {validaciones})}
+								{...register("nombreCompleto", { required: true })}
+							/>
+							{errors.nombreCompleto && (
+								<small className="text-danger">Este campo es obligatorio</small>
+							)}
+						</div>
+						</section>
+						<div className="mb-2" style={{
+						textAlign:'left'
+					}}>
+							<label className="form-label" style={{
+								
+							}} >Número de celular</label>
+							<input 
 								type="text"
 								className="form-control"
 								placeholder="Ej. +51 926707653"
@@ -72,23 +123,52 @@ export default function CheckoutView() {
 									minLength: { value: 6, message: "Se requiere 6 dígitos" },
                                     maxLength: { value: 14, message: "Máximo 14 dígitos"}
 								})}
-							/>
-							{errors.telefono && (
-								<small className="text-danger">{errors.telefono.message}</small>
+							/>{errors.nombreCompleto && (
+								<small className="text-danger">Este campo es obligatorio</small>
 							)}
+							
 						</div>
-						<div className="mb-2">
-							<label className="form-label">Dirección</label>
+						
+						<div className="mb-2" style={{
+						textAlign:'left'
+					}}>
+							<label className="form-label" style={{
+								
+							}}>Ingresa tu DNI </label>
 							<input
 								type="text"
 								className="form-control"
-								placeholder="Ej. Urb. Yanahuara S/N"
-                                {...register("direccion", {pattern: /^[A-Za-z]$/})}
-							/>
-                            {errors.direccion && (
-								<small className="text-danger">El formato no es adecuado</small>
+								placeholder="Ej. 7482****"
+								{...register("telefono", {
+									
+                                    maxLength: { value: 14, message: "Máximo 8 dígitos"}
+								})}
+							/>{errors.nombreCompleto && (
+								<small className="text-danger">Este campo es obligatorio</small>
 							)}
+							
 						</div>
+						<div className="mb-2" style={{
+						textAlign:'left'
+					}}>
+							<label className="form-label" style={{
+								
+							}}>Dirección</label>
+							<input
+								type="text"
+								className="form-control"
+								placeholder="Ej. Calle Chemms 147"
+								{...register("dirección", {
+									
+                                    maxLength: { value: 14, message: "Máximo 14 dígitos"}
+								})}
+								
+							/>{errors.telefono && (
+								<small className="text-danger">{errors.telefono.message}</small>
+							)}
+							
+						</div>
+						
 
                         {/* <MapContainer   
                             center={[-12.0433, -77.0283]}
@@ -105,15 +185,15 @@ export default function CheckoutView() {
                             />
                         </MapContainer> */}
 						<section className="decorative">
-            <ul className="link" 
-            > 
-              <button to="/Checkout" style={{
-                backgroundColor: 'skyblue',
-                color: 'white',
+            		<ul className="link" 
+            	> 
+              		<	button to="/Checkout" style={{
+               	 backgroundColor: '#198754',
+                color: 'gray',
                 textDecoration: 'none',
                 border: 'none',
                 borderRadius: '80px',
-				width: '50vw',
+				width: '36vw',
 				height: '78px',
                 display: 'flex',
                 justifyContent: 'center',
@@ -126,12 +206,56 @@ export default function CheckoutView() {
               }}  >
                 <Modalcheckout></Modalcheckout>
                  
-              </button>
-            </ul>
-            </section>
+              		</button>
+            			</ul>
+            		</section>
 					</form>
+					</section>			
+	</div>
+			  	<section>
+				<h3 >Resumen de carrito</h3>
+				<p>Por favor verifique los productos e indique los datos solicitados</p>
+			<div className="row">
+				<div className="col-sm-12 col-md-6" style={{
+					width:'41vw'
+				}}>
+					<h4>Productos en CarritoView</h4>
+					<ul className="list-group">
+						{carrito.map((arti, i) => (
+							<li
+								className="list-group-item d-flex justify-content-between"
+								key={i}
+							>
+								<div>
+									<span className="fw-bold">{arti.arti_nombre}</span>
+									<br />
+									<small style={{
+										
+										}}>Cantidad: {arti.cantidad}</small>
+								</div>
+
+								<small className="badge botonescheck rounded-pill p-3" style={{
+									backgroundColor:'#128a4d',
+									color:'white'}} >
+									S/ {arti.cantidad *arti.arti_precio}
+								</small>
+							</li>
+						))}
+						{total !== 0 ? (
+							<li className="list-group-item d-flex justify-content-between">
+								<span className="fw-bold">TOTAL:</span>
+								<span>S/ {total}</span>
+							</li>
+						) : (
+							<li className="list-group-item">
+								Todavía no ha agregado ningún producto.
+							</li>
+						)}
+					</ul>
+					</div>
 				</div>
 				</section>
-		
+			</div>
+			</section>
 	);
 }
