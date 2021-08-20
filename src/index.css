@@ -4,7 +4,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+li.presentation{
+  z-index: 150;
+}
 
 code {
   font-family: 'Indie Flower', cursive;

@@ -92,7 +92,9 @@ class CreditCard extends React.Component {
     } = this.state;
     console.log(this.state);
     return (
-      
+      <section style={{
+        zIndex:'150'
+      }}>
       <div className="container" src={icon1} style={{
         display: 'flex',
     flexDirection: 'column',
@@ -100,6 +102,7 @@ class CreditCard extends React.Component {
     alignItems: 'center',
     width: '320px',
     height: '65vh',
+    zIndex:'156',
     background: 'transparent',
     color: 'black',
     fontFamily: '-apple-system, BlinkMacSystemFont',
@@ -225,7 +228,7 @@ class CreditCard extends React.Component {
         }}>
           <label className="input-label" >Credit Card Number</label>
           <Cleave style={{
-            padding: '15px',
+            padding: '5px',
             paddingleft: '0px',
             boxshadow: '0',
             border: '0',
@@ -253,7 +256,7 @@ class CreditCard extends React.Component {
             onChange={e => this.setName(e)}
             className="text-input"
             maxLength="30" style={{
-              padding: '15px',
+              padding: '0px 15px 6px 0px;',
     paddingLeft: '0px',
     boxShadow: '0',
     border: '0',
@@ -283,7 +286,7 @@ class CreditCard extends React.Component {
                 fontSize:'15px',
                 marginTop:'10px',
                 position:'relative',
-                top:'20px',
+                top:'2px',
                 left:'20px'
               }}>
                 Expiration Date
@@ -299,7 +302,7 @@ class CreditCard extends React.Component {
                 className="text-input"
                 onChange={e => this.setDate(e)}
                 style={{
-                  padding: '15px',
+                  padding: '4px 1px 6px 0px;',
                   
         paddingLeft: '0px',
         boxShadow: '0',
@@ -334,7 +337,7 @@ class CreditCard extends React.Component {
                 onBlur={this.unFlipCard} 
                 placeHolder="Enter CVC"
                 style={{
-                  padding: '15px',
+                  padding: '2px 15px 0px 0px;',
                   paddingLeft: '0px',
                   boxShadow: '0',
                   border: '0',
@@ -353,6 +356,7 @@ class CreditCard extends React.Component {
         </form>
         </section>
       </div>
+      </section>
     );
   }
 }

@@ -4,7 +4,8 @@ import { useForm } from "react-hook-form";
 import Modalcheckout from "../components/Modalcheckout"
 import Tarjeta from "../components/CreditCard"
 import Narvbar from "../components/Narvbar"
-import estilos from "../index.css"
+import checkoutcss from "./Checkout.css"
+
 // import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet"
 // import L from "leaflet"
 

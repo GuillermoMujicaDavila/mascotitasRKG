@@ -7,12 +7,13 @@ import  { useEffect, useState } from "react";
 // import Button from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import swal from 'sweetalert'
+import Swal from "sweetalert2"
 import Tarjeta from './CreditCard'
 import Particles from '../components/Particles'
 import Boid from '../components/Boid'
 import serviceWorker from '../components/serviceWorker'
 import nyancat from "../assets/img/nyan-cat.gif"
-
+import { useHistory } from 'react-router'
 
 const useStyles=makeStyles((theme)=>(
 {
@@ -38,25 +39,35 @@ const useStyles=makeStyles((theme)=>(
 }))
 
 function Modalcheckout(){
-    const mostrarAlerta=()=>
+    const history = useHistory()
+    const mostrarAlerta= async()=>
 {
-    swal({
-        title:'Gracias por tu compra!',
-        text:'Le enviaremos la factura a su correo electrónico!',
+   
+    
+    const resultado = await Swal.fire({
         icon:'success',
-        // button:'aceptar',
-        showConfirmButton:true,
+            title: 'Gracias por preferinos! :)',
+            text:'Vuelva pronto',
+            width: 600,
+            padding: '3em',
+            showConfirmButton:true,
             showDenyButton:true,
-            denyButtonText:'Cancelar',
-            confirmButtonText:'Sigamos!',
-            background: {nyancat},
-        backdrop: `
+            denyButtonText:'Home',
+            confirmButtonText:'Volver a comprar!',
+            background: '#ffff',
+            zIndex:'2000',
+            backdrop: `
               rgba(0,0,123,0.4)
-              url{nyancat}
+              url("https://sweetalert2.github.io/images/nyan-cat.gif")
               left center
               no-repeat
             `,
-    });
+          })
+        if(resultado.isConfirmed){
+            history.push('/')
+        }else if(resultado.isDenied){
+            history.push('/checkout')
+        }
 }
 const styles = useStyles();
 const [modal, setModal]=useState(false);
@@ -76,17 +87,26 @@ const body=(
             >
                 <Tarjeta></Tarjeta>
                 <section>
-                <Button  onClick={()=>abrirCerrarModal()} style={{
+                <Button  onClick={()=>mostrarAlerta()} onClick={()=>abrirCerrarModal()} style={{
                     textDecoration:'none',
                     postition:'relative',
-                    top:'60px',
-                }}><Link to='/Donar' style={{
+                    top:'70px',
+                    
+                }}><Link style={{
                 textDecoration:'none'
                 }}>Cancelar</Link></Button>
-                <Button color="primary" onClick={()=>mostrarAlerta()} style={{
+                <Button color="primary" onClick={(e)=>{
+                    mostrarAlerta();
+                    abrirCerrarModal()
+                }} style={{
                     textDecoration:'none',
                     postition:'relative',
-                    top:'60px',
+                    top:'70px',
+                    backgroundColor: '#33b665',
+    color: 'white',
+    borderRadius: '37px',
+    width: '132px',
+    height: '37px',
                 }}>Pagar</Button>
                 </section>
                 
