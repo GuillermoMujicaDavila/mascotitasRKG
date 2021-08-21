@@ -224,7 +224,9 @@ export default function CheckoutView() {
 					  marginTop:'38px',
 					  fontFamily:'cursive'
 				  }}>
-				<h3 >Resumen de carrito</h3>
+				<h3 style={{
+					color:'rgb(25, 135, 84)'
+				}}>Resumen de carrito</h3>
 				<p>Por favor verifique los productos e indique los datos solicitados</p>
 			<div className="row">
 				<div className="col-sm-12 col-md-6" style={{

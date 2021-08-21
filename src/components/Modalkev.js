@@ -60,11 +60,11 @@ const body=(
             <div align="center"
             >
                 <h2 style={{
-                    color:'#0d6efd',
+                    color:'rgb(25, 135, 84)',
                     fontFamily:'cursive'
                 }}>Rellene sus datos</h2>
                 <h5 style={{
-                    color:'skyblue',
+                    color:'black',
                     fontFamily:'cursive'
                 }}>Para coordinar la forma de pago </h5>
                 </div>

@@ -114,7 +114,10 @@ export default function Narvbar() {
                     style={{
                     maxHeight:'100%',
                     objectFit:'cover',
-                    border:'none'
+                    border:'none',
+                    position:'relative',
+                    top:'20px',
+                    left:'44px'
                      }}
                     alt="imagen login"
                     variant="outline-dark"
