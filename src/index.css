@@ -25,6 +25,15 @@ code {
   font-size: 40px;
 }
 
+@media (max-width:700px){
+  .porque{
+
+      font-size: 180%;
+      justify-content: center;
+      text-align: center;
+  }
+}
+
 section{
   text-align: center;
 }
