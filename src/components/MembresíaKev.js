@@ -46,7 +46,7 @@ function MembresíaKev  ()  {
             }}> 
               
         <section className="content" style ={{
-          background: '#1f386d',
+          background: 'linear-gradient(to top, rgb(9, 93, 174), rgb(121, 206, 102))',
           borderRadius: '20px',
           overflow: 'hidden',
           height: '350px',
@@ -83,7 +83,7 @@ function MembresíaKev  ()  {
             <ul className="link" 
             > 
               <button to="/checkout" style={{
-                backgroundColor: 'skyblue',
+                backgroundColor: 'rgb(9, 93, 174)',
                 color: 'white',
                 textDecoration: 'none',
                 border: 'none',
@@ -137,7 +137,7 @@ function MembresíaKev  ()  {
             }}> 
               
         <section className="content" style ={{
-          background: '#1f386d',
+          background: 'linear-gradient(to top, rgb(9, 93, 174), rgb(121, 206, 102))',
           borderRadius: '20px',
           overflow: 'hidden',
           height: '350px',
@@ -174,7 +174,7 @@ function MembresíaKev  ()  {
             <ul className="link" 
             > 
               <button to="/checkout" style={{
-                backgroundColor: 'skyblue',
+                backgroundColor: 'rgb(9, 93, 174)',
                 color: 'white',
                 textDecoration: 'none',
                 border: 'none',
@@ -226,7 +226,7 @@ function MembresíaKev  ()  {
             }}> 
               
         <section className="content" style ={{
-          background: '#1f386d',
+          background: 'linear-gradient(to top, rgb(9, 93, 174), rgb(121, 206, 102))',
           borderRadius: '20px',
           overflow: 'hidden',
           height: '350px',
@@ -263,7 +263,7 @@ function MembresíaKev  ()  {
             <ul className="link" 
             > 
               <button to="/checkout" style={{
-                backgroundColor: 'skyblue',
+                backgroundColor: 'rgb(9, 93, 174)',
                 color: 'white',
                 textDecoration: 'none',
                 border: 'none',
@@ -315,7 +315,7 @@ function MembresíaKev  ()  {
             }}> 
               
         <section className="content" style ={{
-          background: '#1f386d',
+          background: 'linear-gradient(to top, rgb(9, 93, 174), rgb(121, 206, 102))',
           borderRadius: '20px',
           overflow: 'hidden',
           height: '350px',
@@ -354,7 +354,7 @@ function MembresíaKev  ()  {
             <ul className="link" 
             > 
               <button to="/checkout" style={{
-                backgroundColor: 'skyblue',
+                backgroundColor: 'rgb(9, 93, 174)',
                 color: 'white',
                 textDecoration: 'none',
                 border: 'none',

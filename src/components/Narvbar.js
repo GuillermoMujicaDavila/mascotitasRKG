@@ -73,6 +73,7 @@ export default function Narvbar() {
                         display:'flex',
                         alignItems:'center',
                         border: '1px solid #212529',
+                        background:'linear-gradient(to top, rgb(54 146 74), rgb(129 218 100))',
                     }}>
 							
 							<Badge badgeContent={totalCarrito} color="primary" style={{

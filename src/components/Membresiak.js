@@ -8,7 +8,7 @@ function Membresiak() {
             <h2 style={{
                 display:'flex',
                 justifyContent:'center',
-                color:'#1f386d'
+                color:'#198754'
 
             }}>Membresías</h2>
             <h5 style={{

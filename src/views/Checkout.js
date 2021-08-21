@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import Modalcheckout from "../components/Modalcheckout"
 import Tarjeta from "../components/CreditCard"
 import Narvbar from "../components/Narvbar"
-import checkoutcss from "./Checkout.css"
+
 
 // import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet"
 // import L from "leaflet"
@@ -67,7 +67,7 @@ export default function CheckoutView() {
 						textAlign:'left',
 						color:'rgb(25, 135, 84)'
 					}}>Ingrese sus datos:</h4>
-
+							<hr></hr>
 					<form onSubmit={handleSubmit(recibirSubmit)}>
 						<section style={{
 							display:'flex',
@@ -189,7 +189,7 @@ export default function CheckoutView() {
             		<ul className="link" 
             	> 
               		<	button to="/Checkout" style={{
-               	 backgroundColor: '#198754',
+               	background:'linear-gradient(to top, rgb(54 146 74), rgb(129 218 100))',
                 color: 'gray',
                 textDecoration: 'none',
                 border: 'none',
@@ -213,14 +213,16 @@ export default function CheckoutView() {
 					</form>
 					</section>			
 	</div>
-			  	<section>
+			  	<section style={{
+					  marginTop:'38px'
+				  }}>
 				<h3 >Resumen de carrito</h3>
 				<p>Por favor verifique los productos e indique los datos solicitados</p>
 			<div className="row">
 				<div className="col-sm-12 col-md-6" style={{
 					width:'41vw'
 				}}>
-					<h4>Productos en CarritoView</h4>
+					<hr></hr>
 					<ul className="list-group">
 						{carrito.map((arti, i) => (
 							<li

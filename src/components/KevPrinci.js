@@ -6,6 +6,7 @@ import iconokev1 from '../assets/img/iconokev1.png'
 import iconokev2 from '../assets/img/iconokev2.png'
 import iconokev3 from '../assets/img/iconokev3.png'
 import { width } from 'dom-helpers'
+import {Link} from "react-router-dom";
 
 
     const App1 = _=>
@@ -84,7 +85,10 @@ import { width } from 'dom-helpers'
 
 
             <section >
-            <button className="botonkev1">DONAR</button>
+            <button className="botonkev1"><Link to='/donar' style={{
+              textDecoration:'none',
+              color:'white'
+            }}>DONAR</Link></button>
             </section>
 
 

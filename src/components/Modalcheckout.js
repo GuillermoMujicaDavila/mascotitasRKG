@@ -64,9 +64,9 @@ function Modalcheckout(){
             `,
           })
         if(resultado.isConfirmed){
-            history.push('/')
+            history.push('/tienda')
         }else if(resultado.isDenied){
-            history.push('/checkout')
+            history.push('/')
         }
 }
 const styles = useStyles();
@@ -116,12 +116,20 @@ const body=(
 {
     return(
         <div className="Modalcheckout" style={{
-            color:'skyblue'
+            color:'skyblue',
+            background:'linear-gradient(to top, rgb(54 146 74), rgb(129 218 100))',
+            width: '45vw',
+    height: '78px',
+    borderRadius: '40px',
         }}>
-            <Button className={styles.button}  onClick={()=>abrirCerrarModal()}><h5 style={{
+            <Button className={styles.button}  onClick={()=>abrirCerrarModal()} style={{
+                width: '480px',
+            }}><h5 style={{
                 color:'white',
                 position:'relative',
-                top:'20px'
+                top:'20px',
+                width: '480px',
+                
             }}>Comprar</h5></Button>
             <Modal open={modal} onClose={abrirCerrarModal}>
                 {body}

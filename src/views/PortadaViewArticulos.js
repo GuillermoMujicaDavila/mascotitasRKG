@@ -27,12 +27,7 @@ export default function PortadaViewArticulos() {
             console.log(error)            
         }
     }
-    const ejecutarBusqueda = async () => {
-        // console.log(inputBusqueda.current.value)
-        let miBusqueda = inputBusqueda.current.value
-        const productosFiltrados = await obtenerArticulos(miBusqueda)
-        setArticulos(productosFiltrados)
-    }
+    
     useEffect(() => {
         let productosFiltrados = productosOriginal.filter((arti) => {
             return arti.arti_precio >= filtroPrecio[0] && arti.arti_precio <= filtroPrecio[1]
@@ -67,20 +62,7 @@ export default function PortadaViewArticulos() {
                             />
                        </div>
 
-                       <div className="col-sm-12 col-md-6">
-                           <h5>Filtro por nombre</h5>
-                           <div className="d-flex gap-1">
-                               <input 
-                                    type="text" 
-                                    className="form-control"
-                                    placeholder="Ingrese el nombre o descripción"
-                                    ref={inputBusqueda}
-                               />
-                               <button className="btn btn-dark" onClick={ejecutarBusqueda}>
-                                    <i className="fas fa-search" />
-                               </button>
-                           </div>
-                        </div>
+                       
 
                     </div>
                 </div>

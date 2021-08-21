@@ -61,7 +61,9 @@ export default function CarritoView() {
             <button className="btn btn-dark btn-lg" onClick={anadirACarritoContext} style={{
                 display:'flex',
                 justifyContent:'right',
-                alignItems:'center'
+                alignItems:'center',
+                background: 'linear-gradient(to top, rgb(54 146 74), rgb(129 218 100))',
+                border: 'none',
             }}>
                             {/* <i className="fas fa-shopping-cart me-2"/> */}
                      <Link  style={{
@@ -69,7 +71,8 @@ export default function CarritoView() {
                          color:'white',
                          
                      }}><i class="fas fa-cat" style={{
-                         paddingRight:'10px'
+                         paddingRight:'10px',
+                    
                      }}></i>Procesar compra</Link>
                             </button>
             </div>
@@ -102,7 +105,7 @@ export default function CarritoView() {
                              <td style={{
                                  padding:'0.5rem 1.5rem'
                              }}><img src={arti.arti_imagen} style={{
-                                 width:'50%',
+                                 width:'63%',
                                  
                                  
                              }}></img></td>

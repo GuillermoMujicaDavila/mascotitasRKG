@@ -1,5 +1,6 @@
 import React from 'react'
-import ayudametro from '../assets/img/ayudometro.png'
+import ayudametro from '../assets/img/ayudometrodesktop.png'
+
 
 function Membresiapart3 () {
     return (
@@ -9,7 +10,7 @@ function Membresiapart3 () {
         <h3 style={{
             display:'flex',
             justifyContent:'center',
-            color:'#1f386d',
+            color:'#198754',
             textAlign:'center'
         }}>Cada afiliado a Mascotitas RKG llevamos más ayuda a las mascotas que más <br/>lo necesitan.</h3>
         <h5 style={{
