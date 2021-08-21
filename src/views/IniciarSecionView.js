@@ -8,26 +8,52 @@ import { useState,UseEffect,useContext } from 'react'
 import { AuthContext } from '../context/authContext'
 import Narvbar from '../components/Narvbar'
 
+
+
 export default function IniciarSecionView() {
     const { signIn } = useContext(AuthContext)
-        
+    const {userState} = useContext(AuthContext)    
+
     return (
         
         <div> 
-         <VideoBackground/>
-        <div>
-        <Narvbar/>
+              <div >
             <ButtonGroup
-            style={{display:'flex', 
-            justifyContent:'center'}}
-            >
-                <Button href='/' variant="link">
-                    <Image src={Logo} fluid />
-                </Button>
-            </ButtonGroup>           
-        </div>
+                style={{display:'flex', 
+                justifyContent:'center'}}
+                >
+                    <Button href='/' variant="link">
+                        <Image src={Logo} fluid />
+                    </Button>
+                </ButtonGroup>           
 
-        <Form className = "login-form">
+            </div>
+         
+            {userState? (
+               <div >
+               <img
+											src={userState.photoURL}
+											className="me-3"
+											style={{ borderRadius: "50%",
+                                            marginRight:'45%',
+                                            marginLeft:'45%',
+                                            width: "100px",
+                                            display:'flex', 
+                                            justifyContent:'center'
+                                         }}
+											alt="avatar"
+										/>
+
+                 <h1 style={{display:'flex', 
+               justifyContent:'center'}} >Bienvenido  </h1>
+               <h1><span style={{display:'flex', 
+               justifyContent:'center'}}> {userState.displayName}</span></h1>
+                 <h2 style={{display:'flex', 
+               justifyContent:'center'}}>Por favor hacer click en el logo para volver a la navegar</h2>
+                 </div>
+            ) : (
+                <div>
+     <Form className = "login-form">
             <h1  className="text-center">
                 <span className="font-weight-bold">Bienvenidos </span>
             </h1>
@@ -49,22 +75,21 @@ export default function IniciarSecionView() {
         </FormGroup >
         <FormGroup  className="text-center">
             <Button className="btn-lg btn-dark btn-block "
-             style={{display:'flex', 
-            justifyContent:'center'}}>Log in</Button>        
+             >Log in</Button>        
             </FormGroup>         
- 
        </Form>
-
-       <div className="col-sm-12 col-md-6 d-flex justify-content-center align-items-center">
-            <div className="text-center">
-                <button className="btn btn-danger btn-lg" onClick={signIn}>
-                    <i classname="fab fa-google me-2"/>
-                        Ingresa con google
-                 </button>
-             </div>
-         </div>
+       <div 
+       //style={{marginLeft='45%',marginRight='45%'}}
+       className="col-sm-12 col-md-6 d-flex justify-content-center align-items-center text-center" 
+       > 
+       <button className="btn btn-danger btn-lg"  onClick={signIn}>
+           <i classname="fab fa-google me-2"/>
+               Ingresa con google
+        </button>
+                </div> 
+        </div>
+         )}
+         
     </div>
-
-        
      )
 }

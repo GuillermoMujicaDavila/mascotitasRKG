@@ -23,7 +23,6 @@ export default function Routes ()
        <Route path="/Adoptar" exact component={PortadaViewAdopciones} />
        <Route path="/Tienda" exact component={PortadaViewArticulos} />
        <Route path="/IniciarSecion" exact component = {IniciarSecionView}/>
-         <Route path="/Registro" exact component = {RegistroView}/>
          <Route path="/detalle/:id" exact component = {ArticuloView}/>
     </div>
     )

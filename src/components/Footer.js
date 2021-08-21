@@ -2,7 +2,7 @@ import { color } from '@material-ui/system';
 import React from 'react'
 import { AiFillFacebook, AiFillInstagram, AiFillTwitterSquare } from "react-icons/ai";
 import {ImFacebook,ImInstagram,ImTwitter } from "react-icons/im";
-
+import icon_footer from "../assets/img/iconos/perro/undraw_good_doggy_4wfq.png";
 
 export default function Footer() {
     return (
@@ -64,6 +64,7 @@ export default function Footer() {
                 <p className="text-xs-center">
                     &copy;{new Date().getFullYear()} City Guide App- All Rights Reserved
                 </p>
+
             </div>
         
         </div>
