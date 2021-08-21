@@ -13,7 +13,7 @@ import Routes from "./Routes";
 import CarritoContextProvider from "./context/carritoContext";
 import Caracts from './components/Caracts'
 import { AuthContextProvider } from './context/authContext'
-
+// import './assets/css/fonts.css';
 
 export default function App() {
 	

@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-const URL='${process.env.REACT_APP_API}/productos'
+const URL='${process.env.REACT_APP_API}/articulos'
 
-const obtenerProductos =async()=>{
+const obtenerArticulos =async()=>{
     try{
         let {
             data
@@ -13,7 +13,7 @@ const obtenerProductos =async()=>{
     throw error;}
 }
 
-const obtenerProductosPorId = async(id)=>{
+const obtenerArticulosPorId = async(id)=>{
     try{
         let {
             data
@@ -23,8 +23,8 @@ const obtenerProductosPorId = async(id)=>{
     throw error;}
 }
 export{
-    obtenerProductosPorId,
-    obtenerProductos
+    obtenerArticulosPorId,
+    obtenerArticulos
 
 }
 

@@ -92,16 +92,59 @@ class CreditCard extends React.Component {
     } = this.state;
     console.log(this.state);
     return (
-      <div className="container" src={icon1}>
-        <div className="credit-card">
+      <section style={{
+        zIndex:'150'
+      }}>
+      <div className="container" src={icon1} style={{
+        display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'left',
+    alignItems: 'center',
+    width: '320px',
+    height: '65vh',
+    zIndex:'156',
+    background: 'transparent',
+    color: 'black',
+    fontFamily: '-apple-system, BlinkMacSystemFont',
+    fontSize: '18px',
+    fontWeight: '200',
+    textTransform: 'uppercase',
+      }}>
+        <section>
+        <div className="credit-card" style={{
+          width: '420px',
+          margin: '0',
+          marginleft: '-35px',
+          height: '250px',
+          perspective: '1000px',
+          backgroundColor: 'transparent',
+        }}>
           <div className="credit-card-inner" style={{
-              
+            position: 'relative',
+            width: '100%',
+            height: '100%',
+            transition: 'transform 0.8s',
+            transformstyle: 'preserve-3d',
+              transform: 'rotateY(360deg)',
               borderRadius:'40px',
-              background: 'linear-gradient(to top right, #0099ff 0%, #ff0866 100%)',
+              background: 'linear-gradient(to right top, rgb(0 149 255) 0%, rgb(68 193 52) 100%)',
+              top: '-60px',
               
             }}>
-            <div className="credit-card-front"  >
-              <div id="card-type" >
+            <div className="credit-card-front" style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }} >
+              <div id="card-type" style={{
+                textAlign: 'right',
+                height: '79px',
+                fontSize: '55px',
+                right: '33px',
+                position: 'relative',
+                color: 'white',
+    
+              }}>
                 {cardType === "" && <FaCreditCard />}
                 {cardType === "Discover" && <FaCcDiscover />}
                 {cardType === "AmericanExpress" && <FaCcAmex />}
@@ -111,35 +154,93 @@ class CreditCard extends React.Component {
                 {cardType === "MasterCard" && <FaCcMastercard />}
               </div>
 
-              <div id="card-number" >
+              <div id="card-number" style={{
+                textAlign: 'center',
+                height: '20px',
+                display: 'inline-block',
+                color:'white',
+                fontWeight:'200',
+                textTransform:'uppercase',
+                fontSize:'30px'
+
+              }}>
 {cardNumber}</div>
 
-              <div id="card-expiration">
-                {cardExpirationDate !== "" && <div id="validthru">Valid Thru</div>}
+              <div id="card-expiration" style={{position:'relative',
+                top:'20px',
+                left:'30px'}}>
+                {cardExpirationDate !== "" && <div id="validthru" style={{
+                  fontSize: '10px',
+                  width: '25px',
+                  display: 'inline-block',
+                  marginTop: '1px',
+                  position: 'relative',
+    top: '6px',
+    right: '10px',
+                  
+                }}>Valid Thru</div>}
                 {cardExpirationDate}
               </div>
 
-              <div id="card-holder-name">{cardHolderName}</div>
+              
             </div>
             <div className="credit-card-back">
               <div className="card-stripe" />
-              <div className="card-sig-container">
-                <div className="signature">{cardHolderName}</div>
+              <div className="card-sig-container" style={{
+                display:'flex',
+                alignItems:'center',
+                top: '74px',
+                left: '23px',
+                position:'relative'
+              }}>
+                <div className="signature" style={
+                  {
+                    display:'flex',
+                    justifyContent:'right',
+
+                    position:'relative',
+                    left:'34px',
+                    top:'-35px'
+
+
+                  }
+                }>{cardHolderName}</div>
                 CVC {cardCVC}
               </div>
              
             </div>
           </div>
         </div>
+                </section>
+
+                <section style={{
+                  height:'50%'
+                }}>
+
         <form className="card-form" style={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           width: '435px',
-          marginTop: '50px',
+          height:'198px',
+          marginTop: '4px',
+          textAlign: 'left',
         }}>
-          <label className="input-label">Credit Card Number</label>
-          <Cleave
+          <label className="input-label" >Credit Card Number</label>
+          <Cleave style={{
+            padding: '5px',
+            paddingleft: '0px',
+            boxshadow: '0',
+            border: '0',
+            fontsize: '20px',
+            marginbottom: '10px',
+            outline: 'none',
+            margin: '5px',
+            backgroundColor: 'transparent',
+            color: 'gray',
+            borderBottom: '1px solid rgb(7 153 235)',
+            fontWeight: '100',
+          }}
             placeholder="Enter your credit card number"
             options={{ creditCard: true }}
             id="number-input"
@@ -154,13 +255,40 @@ class CreditCard extends React.Component {
             value={cardHolderName}
             onChange={e => this.setName(e)}
             className="text-input"
-            maxLength="30"
+            maxLength="30" style={{
+              padding: '0px 15px 6px 0px;',
+    paddingLeft: '0px',
+    boxShadow: '0',
+    border: '0',
+    fontSize: '20px',
+    marginBottom: '10px',
+    outline: 'none',
+    margin: '5px',
+    backgroundColor: 'transparent',
+    color: 'gray',
+    borderBottom: '1px solid rgb(7 153 235)',
+    fontWeight: '100',
+            }}
           />
-          <div className="date-and-csv" style={{ display: "flex" }}>
+          <div className="date-and-csv" style={{ display: "flex",
+        color: 'white',
+        fontFamily: '-apple-system, BlinkMacSystemFont',
+        fontSize: '25px',
+        fontWeight: '200',
+        textTransform: 'uppercase',}}>
             <div
-              style={{ display: "flex", flexDirection: "column", width: "50%" }}
+              style={{ display: "flex", flexDirection: "column", width: "50%",
+              
+            }}
             >
-              <label className="input-label">
+              <label className="input-label" style={{
+                color:'black',
+                fontSize:'15px',
+                marginTop:'10px',
+                position:'relative',
+                top:'2px',
+                left:'20px'
+              }}>
                 Expiration Date
               </label>
               <Cleave
@@ -173,28 +301,62 @@ class CreditCard extends React.Component {
                 value={cardExpirationDate}
                 className="text-input"
                 onChange={e => this.setDate(e)}
+                style={{
+                  padding: '4px 1px 6px 0px;',
+                  
+        paddingLeft: '0px',
+        boxShadow: '0',
+        border: '0',
+        fontSize: '20px',
+        marginBottom: '10px',
+        outline: 'none',
+        margin: '5px',
+        backgroundColor: 'transparent',
+        color: 'gray',
+        borderBottom: '1px solid rgb(7 153 235)',
+        fontWeight: '100',}}
               />
             </div>
             <div
               style={{ display: "flex", flexDirection: "column", width: "50%" }}
             >
-              <label className="input-label">CVC Security Code</label>
+              <label className="input-label"  style={{
+               fontSize:'15px',
+               color:'black',
+               marginTop:'10px'}} >CVC Security Code</label>
               <Cleave
                 options={{
                   numeral: "true"
                 }}
-                placeholder="Enter CVC"
+                
                 maxLength="3"
                 value={cardCVC}
                 className="text-input"
                 onChange={e => this.setCVC(e)}
                 onFocus={this.flipCard}
-                onBlur={this.unFlipCard}
+                onBlur={this.unFlipCard} 
+                placeHolder="Enter CVC"
+                style={{
+                  padding: '2px 15px 0px 0px;',
+                  paddingLeft: '0px',
+                  boxShadow: '0',
+                  border: '0',
+                  fontSize: '20px',
+                  marginBottom: '10px',
+                  outline: 'none',
+                  margin: '5px',
+                  backgroundColor: 'transparent',
+                  color: 'black',
+                  borderBottom: '1px solid rgb(7 153 235)',
+                  fontWeight: '100',
+                }}
               />
             </div>
           </div>
         </form>
+        </section>
       </div>
+      </section>
     );
   }
 }

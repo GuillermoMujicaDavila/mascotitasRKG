@@ -7,11 +7,13 @@ import  { useEffect, useState } from "react";
 // import Button from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import swal from 'sweetalert'
+import Swal from "sweetalert2"
 import Tarjeta from './CreditCard'
 import Particles from '../components/Particles'
 import Boid from '../components/Boid'
 import serviceWorker from '../components/serviceWorker'
-
+import nyancat from "../assets/img/nyan-cat.gif"
+import { useHistory } from 'react-router'
 
 const useStyles=makeStyles((theme)=>(
 {
@@ -25,6 +27,7 @@ const useStyles=makeStyles((theme)=>(
         top:'50%',
         left:'50%',
         transform:'translate(-50%,-50%)'
+        
     },
     textfield:
     {
@@ -36,14 +39,35 @@ const useStyles=makeStyles((theme)=>(
 }))
 
 function Modalcheckout(){
-    const mostrarAlerta=()=>
+    const history = useHistory()
+    const mostrarAlerta= async()=>
 {
-    swal({
-        title:'Gracias por mandarnos tus datos!',
-        text:'Pronto nos comunicaremos contigo',
+   
+    
+    const resultado = await Swal.fire({
         icon:'success',
-        button:'aceptar'
-    });
+            title: 'Gracias por preferinos! :)',
+            text:'Vuelva pronto',
+            width: 600,
+            padding: '3em',
+            showConfirmButton:true,
+            showDenyButton:true,
+            denyButtonText:'Home',
+            confirmButtonText:'Volver a comprar!',
+            background: '#ffff',
+            zIndex:'2000',
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("https://sweetalert2.github.io/images/nyan-cat.gif")
+              left center
+              no-repeat
+            `,
+          })
+        if(resultado.isConfirmed){
+            history.push('/tienda')
+        }else if(resultado.isDenied){
+            history.push('/')
+        }
 }
 const styles = useStyles();
 const [modal, setModal]=useState(false);
@@ -59,30 +83,32 @@ const body=(
         borderRadius:'30px',
         padding:'85px'
     }}>
-            <div align="center"
+    <div align="center" 
             >
                 <Tarjeta></Tarjeta>
-                {/* <h2 style={{
-                    color:'#0d6efd'
-                }}>Rellene sus datos</h2>
-                <h5 style={{
-                    color:'skyblue'
-                }}>Para coordinar la forma de pago </h5>
-                </div>
-                <TextField label="Nombre" className={styles.textfield}/>
-                <br/>
-                <TextField label="Apellido" className={styles.textfield}/>
-                <br/>
-                <TextField label="DNI" className={styles.textfield}/>
-                <br/>
-                <TextField label="Número de teléfono" className={styles.textfield}/>
-
-                <br></br>
-                <div align="right"> */}
-                <Button color="primary" onClick={()=>mostrarAlerta()}>Enviar</Button>
-                <Button  onClick={()=>abrirCerrarModal()}><Link to='/Donar' style={{
-                    textDecoration:'none'
+                <section>
+                <Button  onClick={()=>mostrarAlerta()} onClick={()=>abrirCerrarModal()} style={{
+                    textDecoration:'none',
+                    postition:'relative',
+                    top:'70px',
+                    
+                }}><Link style={{
+                textDecoration:'none'
                 }}>Cancelar</Link></Button>
+                <Button color="primary" onClick={(e)=>{
+                    mostrarAlerta();
+                    abrirCerrarModal()
+                }} style={{
+                    textDecoration:'none',
+                    postition:'relative',
+                    top:'70px',
+                    backgroundColor: '#33b665',
+    color: 'white',
+    borderRadius: '37px',
+    width: '132px',
+    height: '37px',
+                }}>Pagar</Button>
+                </section>
                 
                 </div>
     </div>
@@ -90,12 +116,20 @@ const body=(
 {
     return(
         <div className="Modalcheckout" style={{
-            color:'skyblue'
+            color:'skyblue',
+            background:'linear-gradient(to top, rgb(54 146 74), rgb(129 218 100))',
+            width: '45vw',
+    height: '78px',
+    borderRadius: '40px',
         }}>
-            <Button className={styles.button}  onClick={()=>abrirCerrarModal()}><h5 style={{
+            <Button className={styles.button}  onClick={()=>abrirCerrarModal()} style={{
+                width: '480px',
+            }}><h5 style={{
                 color:'white',
                 position:'relative',
-                top:'20px'
+                top:'20px',
+                width: '480px',
+                
             }}>Comprar</h5></Button>
             <Modal open={modal} onClose={abrirCerrarModal}>
                 {body}
