@@ -42,23 +42,28 @@ export default function Narvbar() {
             >
                  <ButtonGroup  style={{position:'container',
                }}>
-                    <Button href='/' variant="link">
-                        <Image src={Logo} fluid />
+                    <Button href='/' variant="link" >
+                        <Image src={Logo} fluid style={{
+                        maxWidth:'63%',
+                        }}/>
                     </Button>
                 </ButtonGroup>
                 <div className="" style={{display:'flex', 
-                justifyContent:'center'}}  >
+                justifyContent:'center',
+                paddingTop: '80px',}}  >
                     <Navbar expand="lg"
                      variant="dark"
                      style={{
                          fontWeight:'300',
                          fontSize:'200%',
                          color:'black',
-                         height:'116px'
+                         height:' 98px',
                      }}
                      // bg="light"
                      >
-                    <Container>
+                    <Container className='barra' style={{
+                        color: 'rgb(255 255 255 / 72%)',
+                    }}>
                      <Nav defaultActiveKey="/" as="ul" bg="light">
                      <Nav.Item as="li">    
                         <Nav.Link href="/Donar">Donar</Nav.Link>
@@ -79,7 +84,11 @@ export default function Narvbar() {
             </div>
 
             {userState? (
-                 <NavDropdown
+                 <NavDropdown   style={{
+                     position:'relative',
+                    top: '26px',
+                    left: '63px',
+                 }}
 								title={
 									<div className="d-inline">
 										<img
@@ -105,7 +114,10 @@ export default function Narvbar() {
                     style={{
                     maxHeight:'100%',
                     objectFit:'cover',
-                    border:'none'
+                    border:'none',
+                    position:'relative',
+                    top:'20px',
+                    left:'44px'
                      }}
                     alt="imagen login"
                     variant="outline-dark"
@@ -118,11 +130,14 @@ export default function Narvbar() {
               )}
                 
               <Link className="nav-link2" to="/carrito" style={{
-                        display:'flex',    }}>
+                        display:'flex',  
+                         }}>
 							<Badge badgeContent={totalCarrito} color="primary" style={{
                                 display:'flex',
-                                position: 'relative', top: '37px',right: '7px', }}>
-								<ShoppingCartIcon className='carritoshopping'/>
+                                
+                                position: 'relative', top: '37px',right: '37px', }}>
+								<ShoppingCartIcon className='carritoshopping' 
+                                />
 							</Badge>
 						</Link>           
           

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from 'react-router'
 import nyancat from '../assets/img/nyan-cat.gif'
 import Navbarkev from '../components/Narbarkev'
+import Kev2 from '../components/Kevinprinci2'
 
 export default function CarritoView() {
 
@@ -38,8 +39,16 @@ export default function CarritoView() {
         }
     }
     return (
-        <div className="container">
-            <Navbarkev></Navbarkev>
+        <div className="container" style={{
+            width:'1366px',
+            
+        }}>
+            <Navbarkev style={{
+                position:'relative',
+                top: '-16px',
+                width: '100vw',
+                right: '127px',
+            }}></Navbarkev>
             <section style={{
                 display:'flex',
                 justifyContent:'space-between'

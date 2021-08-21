@@ -46,12 +46,13 @@ export default function PortadaViewArticulos() {
             (<Loading/>) :
             (<div className="py-4">
                 <div className="container text-center">
-                    <h1 className="my-4">
-                        <i className="fas fa-gifts me-3" />
-                        Nuestros Productos
-                    </h1>
-                    <div className="row my-2">
-                       <div className="col-sm-12 col-md-6">
+                    
+                    <div className="row my-2" style={{
+                           display:'flex',
+                           justifyContent:'center',
+                           textAlign:'center'
+                       }}>
+                       <div className="col-sm-12 col-md-6" >
                            <h5>Filtrar Por precio</h5>
                            <Slider
                                 value={filtroPrecio}

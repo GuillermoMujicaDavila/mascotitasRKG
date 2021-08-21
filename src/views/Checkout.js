@@ -4,31 +4,33 @@ import { useForm } from "react-hook-form";
 import Modalcheckout from "../components/Modalcheckout"
 import Tarjeta from "../components/CreditCard"
 import Narvbar from "../components/Narvbar"
+import Narbarkev from "../components/Narbarkev"
 
 
-// import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet"
-// import L from "leaflet"
+import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet"
+import L from "leaflet"
 
 export default function CheckoutView() {
     // const [marcador, setMarcador] = useState([-12.0433, -77.0283])
 	const { carrito } = useContext(CarritoContext);
+	const [marcador, setMarcador] = useState([-12.2833, -76.8667])
 
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
-
-    // const AddMarker = () => {
-    //     const map = useMapEvents({
-    //         click: (e) => {
-    //             console.log(e)
-    //             const {lat, lng} = e.latlng
-    //             setMarcador([lat, lng])
-    //         }
-    //     })
-    //     return null
-    // }
+	
+    const AddMarker = () => {
+        const map = useMapEvents({
+            click: (e) => {
+                console.log(e)
+                const {lat, lng} = e.latlng
+                setMarcador([lat, lng])
+            }
+        })
+        return null
+    }
 
 	let total = 0;
 
@@ -42,7 +44,7 @@ export default function CheckoutView() {
 	
 	return (
 		<section>
-		<Narvbar></Narvbar>
+		<Narbarkev></Narbarkev>
 		
 	<div style={{
 		display:'flex',
@@ -61,22 +63,26 @@ export default function CheckoutView() {
 				<section>
 					<h1 style={{
 					textAlign:'left',
-					color:'rgb(25, 135, 84)'
+					color:'rgb(25, 135, 84)',
+					fontFamily:'cursive'
 				}}>Verificar compra</h1>
 					<h4 style={{
 						textAlign:'left',
-						color:'rgb(25, 135, 84)'
+						color:'rgb(25, 135, 84)',
+						fontFamily:'cursive'
 					}}>Ingrese sus datos:</h4>
 							<hr></hr>
 					<form onSubmit={handleSubmit(recibirSubmit)}>
 						<section style={{
 							display:'flex',
 							textAlign:'left',
-							justifyContent:'space-between'
+							justifyContent:'space-between',
+							fontFamily:'cursive'
 						}}>
 						<div className="mb-2" style={{
 							width:'25vw',
 							textAlign:'left',
+							fontFamily:'cursive'
 						}}>
 							<label className="form-label" style={{
 								
@@ -84,12 +90,12 @@ export default function CheckoutView() {
 							<input
 								type="text"
 								className="form-control"
-								placeholder="Ej. Juanito Alcachofa"
+								placeholder="Ej. Juanito"
 								//{...register("nombre", {validaciones})}
-								{...register("nombreCompleto", { required: true })}
+								{...register("Nombre completo", { required: true })}
 							/>
-							{errors.nombreCompleto && (
-								<small className="text-danger">Este campo es obligatorio</small>
+							{errors.direccion && (
+								<small className="text-success">  Formato correcto</small>
 							)}
 						</div>
 						<div className="mb-2"  style={{
@@ -101,12 +107,13 @@ export default function CheckoutView() {
 							<input
 								type="text"
 								className="form-control"
-								placeholder="Ej. Alvarado De la Torre"
+								placeholder="Ej. Alcachofa"
 								//{...register("nombre", {validaciones})}
-								{...register("nombreCompleto", { required: true })}
+								{...register("Apellido", { required: true })}
 							/>
-							{errors.nombreCompleto && (
-								<small className="text-danger">Este campo es obligatorio</small>
+							
+							 {errors.direccion && (
+								<small className="text-success">  Formato correcto</small>
 							)}
 						</div>
 						</section>
@@ -114,15 +121,15 @@ export default function CheckoutView() {
 						textAlign:'left'
 					}}>
 							<label className="form-label" style={{
-								
+								fontFamily:'cursive'
 							}} >Número de celular</label>
 							<input 
 								type="text"
 								className="form-control"
 								placeholder="Ej. +51 926707653"
 								{...register("telefono", {
-									minLength: { value: 6, message: "Se requiere 6 dígitos" },
-                                    maxLength: { value: 14, message: "Máximo 14 dígitos"}
+									minLength: { value: 9, message: "Se requiere 6 dígitos" },
+                                    maxLength: { value: 9, message: "Máximo 14 dígitos"}
 								})}
 							/>{errors.nombreCompleto && (
 								<small className="text-danger">Este campo es obligatorio</small>
@@ -131,7 +138,8 @@ export default function CheckoutView() {
 						</div>
 						
 						<div className="mb-2" style={{
-						textAlign:'left'
+						textAlign:'left',
+						fontFamily:'cursive'
 					}}>
 							<label className="form-label" style={{
 								
@@ -139,40 +147,39 @@ export default function CheckoutView() {
 							<input
 								type="text"
 								className="form-control"
-								placeholder="Ej. 7482****"
-								{...register("telefono", {
-									
-                                    maxLength: { value: 14, message: "Máximo 8 dígitos"}
+								placeholder="74822014"
+								{...register("DNI", {
+									minLength: { value: 6, message: "Se requiere 6 dígitos" },
+                                    maxLength: { value: 14, message: "Máximo 14 dígitos"}
 								})}
-							/>{errors.nombreCompleto && (
-								<small className="text-danger">Este campo es obligatorio</small>
+							/>
+							{errors.telefono && (
+								<small className="text-danger">{errors.telefono.message}</small>
 							)}
 							
 						</div>
 						<div className="mb-2" style={{
-						textAlign:'left'
+						textAlign:'left',
+						fontFamily:'cursive'
 					}}>
 							<label className="form-label" style={{
-								
+								fontFamily:'cursive'
 							}}>Dirección</label>
 							<input
 								type="text"
 								className="form-control"
-								placeholder="Ej. Calle Chemms 147"
-								{...register("dirección", {
-									
-                                    maxLength: { value: 14, message: "Máximo 14 dígitos"}
-								})}
-								
-							/>{errors.telefono && (
-								<small className="text-danger">{errors.telefono.message}</small>
+								placeholder="Ej. Urb. Yanahuara S/N"
+                                {...register("direccion", {pattern: /^[A-Za-z]$/})}
+							/>
+                            {errors.direccion && (
+								<small className="text-success">  Formato correcto</small>
 							)}
 							
 						</div>
 						
 
-                        {/* <MapContainer   
-                            center={[-12.0433, -77.0283]}
+                        <MapContainer   
+                            center={[-12.2833	, -76.8667]}
                             zoom={17}
                             style={{height:"400px"}}
                         >
@@ -184,7 +191,7 @@ export default function CheckoutView() {
                             <Marker
                                 position={marcador}
                             />
-                        </MapContainer> */}
+                        </MapContainer>
 						<section className="decorative">
             		<ul className="link" 
             	> 
@@ -214,9 +221,12 @@ export default function CheckoutView() {
 					</section>			
 	</div>
 			  	<section style={{
-					  marginTop:'38px'
+					  marginTop:'38px',
+					  fontFamily:'cursive'
 				  }}>
-				<h3 >Resumen de carrito</h3>
+				<h3 style={{
+					color:'rgb(25, 135, 84)'
+				}}>Resumen de carrito</h3>
 				<p>Por favor verifique los productos e indique los datos solicitados</p>
 			<div className="row">
 				<div className="col-sm-12 col-md-6" style={{

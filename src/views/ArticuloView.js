@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2"
 import Modalarticulo from '../components/Modalarticulo'
 import { useHistory } from 'react-router'
-import Narvbar from '../components/Narvbar'
-
+// import Narvbar from '../components/Narvbar'
+import Narbarkev from '../components/Narbarkev'
 export default function ArticuloView() {
     const [articulo, setArticulo] = useState({})
     const [cargando, setCargando] = useState(true)
@@ -50,7 +50,7 @@ export default function ArticuloView() {
     return (
        
         <div>
-            <Narvbar></Narvbar>
+            <Narbarkev ></Narbarkev>
             {cargando ? 
             (<Loading />) : 
             (<div>
@@ -87,7 +87,10 @@ export default function ArticuloView() {
                                 
 
                             }}>{articulo.arti_descripcion}</p>
-                            <button className="btn btn-dark btn-lg" onClick={anadirACarritoContext}>
+                            <button className="btn btn-dark btn-lg" onClick={anadirACarritoContext} style={{
+                                    background: 'linear-gradient(to top, rgb(40, 113, 27), rgb(121, 206, 102))',
+                                    border:'none'
+                            }}>
                             <i className="fas fa-shopping-cart me-2"/>
                      <Link  style={{
                          textDecoration:'none',

@@ -205,7 +205,7 @@ class CreditCard extends React.Component {
 
                   }
                 }>{cardHolderName}</div>
-                CVC {cardCVC}
+                CVV {cardCVC}
               </div>
              
             </div>
@@ -226,7 +226,9 @@ class CreditCard extends React.Component {
           marginTop: '4px',
           textAlign: 'left',
         }}>
-          <label className="input-label" >Credit Card Number</label>
+          <label className="input-label" style={{
+            fontFamily:'cursive'
+          }}>Número de tarjeta de crédito</label>
           <Cleave style={{
             padding: '5px',
             paddingleft: '0px',
@@ -241,17 +243,19 @@ class CreditCard extends React.Component {
             borderBottom: '1px solid rgb(7 153 235)',
             fontWeight: '100',
           }}
-            placeholder="Enter your credit card number"
+            placeholder="Ingrese el número de su tarjeta de crédito"
             options={{ creditCard: true }}
             id="number-input"
             name="number-input"
             className="text-input"
             onChange={this.setNumber}
           />
-          <label className="input-label">Card Holder Name</label>
+          <label className="input-label" style={{
+            fontStyle:'cursive'
+          }}>Nombre propietario</label>
           <input
             type="text"
-            placeholder="Enter card holder name"
+            placeholder="Ingrese el nombre del propietario"
             value={cardHolderName}
             onChange={e => this.setName(e)}
             className="text-input"
@@ -287,9 +291,10 @@ class CreditCard extends React.Component {
                 marginTop:'10px',
                 position:'relative',
                 top:'2px',
-                left:'20px'
+                left:'20px',
+                fontFamily:'cursive'
               }}>
-                Expiration Date
+                Fecha de expiración
               </label>
               <Cleave
                 options={{
@@ -323,7 +328,8 @@ class CreditCard extends React.Component {
               <label className="input-label"  style={{
                fontSize:'15px',
                color:'black',
-               marginTop:'10px'}} >CVC Security Code</label>
+               marginTop:'10px',
+               fontFamily:'cursive'}} >Código de seguridad</label>
               <Cleave
                 options={{
                   numeral: "true"

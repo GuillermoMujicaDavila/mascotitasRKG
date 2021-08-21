@@ -9,6 +9,8 @@ export default function Caracts() {
         <div className="amarillo" style={{
             backgroundColor:'rgb(255, 231, 173)',
             padding:'40px 40px',
+            position: 'relative',
+            bottom: '169px',
             
         
             }}>
@@ -17,6 +19,7 @@ export default function Caracts() {
                 textAlign:'center',
                 marginBottom: '50px',
                 fontWeight: 'bold',
+                fontFamily:'cursive'
                 
                 
                 }}>Somos los mejores en : </h1>

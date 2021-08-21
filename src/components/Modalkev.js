@@ -20,7 +20,8 @@ const useStyles=makeStyles((theme)=>(
         padding:"16px 32px 24px",
         top:'50%',
         left:'50%',
-        transform:'translate(-50%,-50%)'
+        transform:'translate(-50%,-50%)',
+        fontFamily:'cursive'
     },
     textfield:
     {
@@ -53,15 +54,18 @@ const body=(
     <div className={styles.modal} style={{
         border:'none',
         borderRadius:'30px',
-        padding:'85px'
+        padding:'85px',
+        fontFamily:'cursive'
     }}>
             <div align="center"
             >
                 <h2 style={{
-                    color:'#0d6efd'
+                    color:'rgb(25, 135, 84)',
+                    fontFamily:'cursive'
                 }}>Rellene sus datos</h2>
                 <h5 style={{
-                    color:'skyblue'
+                    color:'black',
+                    fontFamily:'cursive'
                 }}>Para coordinar la forma de pago </h5>
                 </div>
                 <TextField label="Nombre" className={styles.textfield}/>
@@ -85,12 +89,15 @@ const body=(
 {
     return(
         <div className="Modalkev" style={{
-            color:'skyblue'
+            color:'skyblue',
+            fontFamily:'cursive'
         }}>
             <Button className={styles.button}  onClick={()=>abrirCerrarModal()}><h5 style={{
                 color:'white',
                 position:'relative',
-                top:'20px'
+                top:'20px',
+                fontFamily:'cursive',
+                fontSize:'15px'
             }}>Unirme a este plan</h5></Button>
             <Modal open={modal} onClose={abrirCerrarModal}>
                 {body}
