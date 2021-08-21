@@ -114,30 +114,17 @@ export default function Narvbar() {
                     <Dropdown.Item eventKey="1"  href="/IniciarSecion">Iniciar Sesión</Dropdown.Item>
                     <Dropdown.Item eventKey="2" href="/Registro">Registrarse</Dropdown.Item>
                     </DropdownButton>  
-                    
-               
-                    <Link className="nav-link2" to="/carrito" style={{
-                        display:'flex',
-                        
-                        
-                        
-                    }}>
-							
+                    </ButtonGroup>            
+              )}
+                
+              <Link className="nav-link2" to="/carrito" style={{
+                        display:'flex',    }}>
 							<Badge badgeContent={totalCarrito} color="primary" style={{
                                 display:'flex',
-                                position: 'relative',
-    top: '37px',
-    right: '7px',
-                                
-                            }}>
+                                position: 'relative', top: '37px',right: '7px', }}>
 								<ShoppingCartIcon className='carritoshopping'/>
 							</Badge>
-						</Link>
-                </ButtonGroup>
-              )}
-            
-
-           
+						</Link>           
           
             </ButtonToolbar>
 

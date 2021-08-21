@@ -135,27 +135,25 @@ export default function Narvbar() {
                     </DropdownButton>  
                     
                
-                    <Link className="nav-link2" to="/carrito" style={{
+                 
+                </ButtonGroup>
+              )}
+            <Link className="nav-link2" to="/carrito" style={{
                         display:'flex',
-                        
-                        
-                        
                     }}>
 							
 							<Badge badgeContent={totalCarrito} color="primary" style={{
                                 display:'flex',
-                                position: 'relative',
-    top: '37px',
-    right: '7px',
-                                
+                                position: 'relative',top: '37px',right: '7px',
                             }}>
 								<ShoppingCartIcon className='carritoshopping'/>
 							</Badge>
 						</Link>
-                </ButtonGroup>
-              )}
+
             </ButtonToolbar>
-          
+       
+
+
             </div>
 
           
