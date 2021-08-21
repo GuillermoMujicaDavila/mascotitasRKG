@@ -36,14 +36,19 @@ export default function Narvbar() {
                     {
                         position: 'relative',
                 buttom: '100px',
+                background: 'linear-gradient(to top,  rgb(255 255 255), rgb(121, 206, 102))',
+                top:'-16px  '
                 
                     }
                 }
             >
                  <ButtonGroup  style={{position:'container',
+                 height:'100px'
                }}>
                     <Button href='/' variant="link">
-                        <Image src={Logo} fluid />
+                        <Image src={Logo} fluid style={{
+                        maxWidth:'63%',
+                        }}/>
                     </Button>
                 </ButtonGroup>
                 <div className="" style={{display:'flex', 
@@ -60,7 +65,9 @@ export default function Narvbar() {
                      // bg="light"
                      >
                     <Container style={{
-                        color:'black'
+                        color:'black',
+                        fontSize:'25px',
+                        fontFamily:'cursive'
                     }}>
                      <Nav defaultActiveKey="/" as="ul" bg="light">
                      <Nav.Item as="li" style={{

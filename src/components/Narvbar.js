@@ -42,23 +42,28 @@ export default function Narvbar() {
             >
                  <ButtonGroup  style={{position:'container',
                }}>
-                    <Button href='/' variant="link">
-                        <Image src={Logo} fluid />
+                    <Button href='/' variant="link" >
+                        <Image src={Logo} fluid style={{
+                        maxWidth:'63%',
+                        }}/>
                     </Button>
                 </ButtonGroup>
                 <div className="" style={{display:'flex', 
-                justifyContent:'center'}}  >
+                justifyContent:'center',
+                paddingTop: '80px',}}  >
                     <Navbar expand="lg"
                      variant="dark"
                      style={{
                          fontWeight:'300',
                          fontSize:'200%',
                          color:'black',
-                         height:'116px'
+                         height:' 98px',
                      }}
                      // bg="light"
                      >
-                    <Container>
+                    <Container className='barra' style={{
+                        color: 'rgb(255 255 255 / 72%)',
+                    }}>
                      <Nav defaultActiveKey="/" as="ul" bg="light">
                      <Nav.Item as="li">    
                         <Nav.Link href="/Donar">Donar</Nav.Link>

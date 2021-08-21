@@ -56,16 +56,18 @@ function MembresíaKev  ()  {
           // boxShadow: '0px 4px 8px rgb(0 0 0 / 29%)',
           padding:' 0px',
           zIndex: '5',
+          fontFamily:'cursive'
       
         }}>
             <section className="name" style={{
-              fontFamily: 'Budidaya',
+              
               fontSize: '40px',
               padding: '20px',
               marginBottom: '0px',
               fontWeight: '900',
               lineHeight: '1.15',
               color: '#fff',
+              fontFamily:'cursive'
             }}>
             Plan chihuahua
             </section>
@@ -157,6 +159,7 @@ function MembresíaKev  ()  {
               fontWeight: '900',
               lineHeight: '1.15',
               color: '#fff',
+              fontFamily:'cursive'
             }}>
             Plan <br/> Mishifu
             </section>
@@ -188,6 +191,7 @@ function MembresíaKev  ()  {
                 right: '15px',
                 textDecoration: 'none',
                 bottom: '10px',
+                fontFamily:'cursive'
               }}  >
                  <Modalkev></Modalkev>
               </button>
@@ -236,6 +240,7 @@ function MembresíaKev  ()  {
           // boxShadow: '0px 4px 8px rgb(0 0 0 / 29%)',
           padding:' 0px',
           zIndex: '5',
+          fontFamily:'cursive'
       
         }}>
             <section className="name" style={{
@@ -246,6 +251,7 @@ function MembresíaKev  ()  {
               fontWeight: '900',
               lineHeight: '1.15',
               color: '#fff',
+              fontFamily:'cursive'
             }}>
             Plan <br/> Cheems
             </section>
@@ -302,7 +308,8 @@ function MembresíaKev  ()  {
               position
               :'relative',
               bottom:'-16px',
-              zIndex:'5'
+              zIndex:'5',
+              fontFamily:'cursive'
             }}></img>
             </section>
            
@@ -325,6 +332,7 @@ function MembresíaKev  ()  {
           // boxShadow: '0px 4px 8px rgb(0 0 0 / 29%)',
           padding:' 0px',
           zIndex: '5',
+          fontFamily:'cursive'
       
         }}>
             <section className="name" style={{
@@ -335,6 +343,7 @@ function MembresíaKev  ()  {
               fontWeight: '900',
               lineHeight: '1.15',
               color: '#fff',
+              fontFamily:'cursive'
             }}>
             Plan <br/>Libre
             </section>

@@ -13,8 +13,14 @@ import {Link} from "react-router-dom";
     {
       
       return (
-        <div>
-          <h1 className="porque">
+        <div style={{
+          position:'relative',
+          bottom: '143px',
+        }}>
+          <h1 className="porque" style={{
+            fontFamily:'cursive',
+
+          }}>
             ¿Quiénes somos y por qué elegirnos?
           </h1>
           
@@ -36,7 +42,8 @@ import {Link} from "react-router-dom";
                   width: '83vw',
             }}>
             <h4 style={{
-                color:'rgb(17, 95, 139)'
+                color:'rgb(25, 135, 84)',
+                fontFamily:'cursive'
             }}>
                 Somos una asociación sin fines de lucro que busca contruir un mundo mejor para mascotas necesitadas con iniciativas sostenibles.
             </h4>
@@ -78,8 +85,9 @@ import {Link} from "react-router-dom";
             <section style={{
                     
                     display:'flex',
+                    fontFamily:'cursive',
                     justifyContent:'space-around',
-                    color:'black'}}>
+                    color:'rgb(25, 135, 84)'}}>
             <h5>Adopción<br/> Responsable</h5>
             <h5>Donaciones<br/>agua y comida</h5>
             <h5>Salud y <br/>esterelización</h5>
@@ -105,15 +113,7 @@ import {Link} from "react-router-dom";
           <h1>
             
           </h1>
-      <img src={horitzontal} alt="imgh" style={{
-                    color:'slateblue',
-                    display:'flex',
-                    justifyContent:'center',
-                    margin:'auto',
-                    borderRadius:'20px',
-                    width:'100vw'}}>
-
-                    </img>
+      
       
         
         </div>

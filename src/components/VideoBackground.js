@@ -6,19 +6,25 @@ import Narvbar from './Narvbar'
 export default function VideoBackground() {
     return (
         <div className='container' style={{margin:'0',
-        
+        position: 'relative',
+    top: '-17px',
         }}>
         <video
           style={{ 
-            position:'relative',
-            maxWidth:'98vw',
-            minHeight:'500px',  
-            top:'0%',
-            left:'0%',
+                         position: 'relative',
+                        width: '100vw',
+                        /* min-height: 500px; */
+                        //top: 0%,
+                        //left: 10p,
+                        
+                        zndex: '-100000',
+                        right: '12px',
+                        filter: `blur(0px)`, WebkitFilter: `blur(0px)`,
+                           zIndex:'-10000',
+                    }
 
-            filter: `blur(0px)`, WebkitFilter: `blur(0px)`,
-            zIndex:-100000
-        }}
+            
+        }
           autoPlay="autoplay"
           loop="loop"
           muted
