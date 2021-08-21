@@ -84,6 +84,30 @@
     }
         
 }
+@media (max-width:991px){
+
+    .container-icons{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        
+        
+    }
+}  
+
+@media (max-width:500px){
+
+    .container-icons{
+        
+        font-size: 80%;
+        justify-content: center;
+        text-align: center;
+        
+    }
+        
+}
 
 
 
