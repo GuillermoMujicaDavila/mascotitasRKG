@@ -78,11 +78,12 @@ export default function IniciarSecionView() {
              >Log in</Button>        
             </FormGroup>         
        </Form>
-       <div 
-       //style={{marginLeft='45%',marginRight='45%'}}
-       className="col-sm-12 col-md-6 d-flex justify-content-center align-items-center text-center" 
+       <div className="col-xs-12 col-sm-12 col-md-8"
+       
        > 
-       <button className="btn btn-danger btn-lg"  onClick={signIn}>
+        <button className="btn btn-danger btn-lg"  onClick={signIn}  
+        style={{margin:'0 aut'}} 
+        >
            <i classname="fab fa-google me-2"/>
                Ingresa con google
         </button>

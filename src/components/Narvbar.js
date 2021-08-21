@@ -124,7 +124,7 @@ export default function Narvbar() {
                      >
                         
                     <Dropdown.Item eventKey="1"  href="/IniciarSecion">Iniciar Sesión</Dropdown.Item>
-                    <Dropdown.Item eventKey="2" href="/Registro">Registrarse</Dropdown.Item>
+                    
                     </DropdownButton>  
                     </ButtonGroup>            
               )}
