@@ -36,9 +36,9 @@ export default function Footer() {
                       </div>
                     {/* Columna 3 */}
                     <div className="col-md-3 col-sm-6">
-                    
                      </div>
-                         <div className="col-md-3 col-sm-6" >
+                         <div className="col-md-3 col-sm-6"  style={{position: 'relative',
+    top: '23px'}} >
                          <button style={{
                            
                              width:"50px",height:"50px",borderRadius:"50%"}}  >
