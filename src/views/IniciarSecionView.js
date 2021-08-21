@@ -78,8 +78,9 @@ export default function IniciarSecionView() {
              >Log in</Button>        
             </FormGroup>         
        </Form>
-       <div className="col-xs-12 col-sm-12 col-md-8"
-       
+       <div className="
+       d-flex justify-content-center
+       "
        > 
         <button className="btn btn-danger btn-lg"  onClick={signIn}  
         style={{margin:'0 aut'}} 
