@@ -84,7 +84,11 @@ export default function Narvbar() {
             </div>
 
             {userState? (
-                 <NavDropdown
+                 <NavDropdown   style={{
+                     position:'relative',
+                    top: '26px',
+                    left: '63px',
+                 }}
 								title={
 									<div className="d-inline">
 										<img
@@ -123,11 +127,14 @@ export default function Narvbar() {
               )}
                 
               <Link className="nav-link2" to="/carrito" style={{
-                        display:'flex',    }}>
+                        display:'flex',  
+                         }}>
 							<Badge badgeContent={totalCarrito} color="primary" style={{
                                 display:'flex',
-                                position: 'relative', top: '37px',right: '7px', }}>
-								<ShoppingCartIcon className='carritoshopping'/>
+                                
+                                position: 'relative', top: '37px',right: '37px', }}>
+								<ShoppingCartIcon className='carritoshopping' 
+                                />
 							</Badge>
 						</Link>           
           

@@ -87,7 +87,10 @@ export default function ArticuloView() {
                                 
 
                             }}>{articulo.arti_descripcion}</p>
-                            <button className="btn btn-dark btn-lg" onClick={anadirACarritoContext}>
+                            <button className="btn btn-dark btn-lg" onClick={anadirACarritoContext} style={{
+                                    background: 'linear-gradient(to top, rgb(40, 113, 27), rgb(121, 206, 102))',
+                                    border:'none'
+                            }}>
                             <i className="fas fa-shopping-cart me-2"/>
                      <Link  style={{
                          textDecoration:'none',

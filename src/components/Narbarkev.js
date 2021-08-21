@@ -66,8 +66,10 @@ export default function Narvbar() {
                      >
                     <Container style={{
                         color:'black',
-                        fontSize:'25px',
-                        fontFamily:'cursive'
+                        fontSize:'23px',
+                        fontFamily:'cursive',
+                        position:'relative',
+                        left:'40px'
                     }}>
                      <Nav defaultActiveKey="/" as="ul" bg="light">
                      <Nav.Item as="li" style={{
@@ -105,7 +107,11 @@ export default function Narvbar() {
             </div>
 
             {userState ? (
-                <NavDropdown
+                <NavDropdown style={{
+                    position:'relative',
+                    top:'30px',
+                    left:'35px'
+                }}
 								title={
 									<div className="d-inline">
 										<img
@@ -123,7 +129,8 @@ export default function Narvbar() {
             ) : (
                 <ButtonGroup style={{
                     height:'40px',
-                    border:'none'
+                    border:'none',
+                    
                 }}>
                     <DropdownButton as={ButtonGroup} id="bg-vertical-dropdown-2" 
                      title={
@@ -147,13 +154,17 @@ export default function Narvbar() {
               )}
             <Link className="nav-link2" to="/carrito" style={{
                         display:'flex',
+                       
                     }}>
 							
 							<Badge badgeContent={totalCarrito} color="primary" style={{
                                 display:'flex',
-                                position: 'relative',top: '37px',right: '7px',
+                                position: 'relative',top: '37px',right: '38px',
+                                
                             }}>
-								<ShoppingCartIcon className='carritoshopping'/>
+								<ShoppingCartIcon className='carritoshopping' style={{
+
+                                }}/>
 							</Badge>
 						</Link>
 
