@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2"
 import Modalarticulo from '../components/Modalarticulo'
 import { useHistory } from 'react-router'
-import Narvbar from '../components/Narvbar'
-
+// import Narvbar from '../components/Narvbar'
+import Narbarkev from '../components/Narbarkev'
 export default function ArticuloView() {
     const [articulo, setArticulo] = useState({})
     const [cargando, setCargando] = useState(true)
@@ -50,7 +50,7 @@ export default function ArticuloView() {
     return (
        
         <div>
-            <Narvbar></Narvbar>
+            <Narbarkev ></Narbarkev>
             {cargando ? 
             (<Loading />) : 
             (<div>

@@ -32,12 +32,14 @@ import {Link} from "react-router-dom";
 
 
             </section>
-            <section>
-            <h3 style={{
+            <section style={{
+                  width: '83vw',
+            }}>
+            <h4 style={{
                 color:'rgb(17, 95, 139)'
             }}>
                 Somos una asociación sin fines de lucro que busca contruir un mundo mejor para mascotas necesitadas con iniciativas sostenibles.
-            </h3>
+            </h4>
             <hr></hr>
             
 
@@ -78,9 +80,9 @@ import {Link} from "react-router-dom";
                     display:'flex',
                     justifyContent:'space-around',
                     color:'black'}}>
-            <h3>Adopción<br/> Responsable</h3>
-            <h3>Donaciones<br/>agua y comida</h3>
-            <h3>Salud y <br/>esterelización</h3>
+            <h5>Adopción<br/> Responsable</h5>
+            <h5>Donaciones<br/>agua y comida</h5>
+            <h5>Salud y <br/>esterelización</h5>
             </section>
 
 

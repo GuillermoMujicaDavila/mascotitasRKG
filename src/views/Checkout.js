@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Modalcheckout from "../components/Modalcheckout"
 import Tarjeta from "../components/CreditCard"
 import Narvbar from "../components/Narvbar"
+import Narbarkev from "../components/Narbarkev"
 
 
 // import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet"
@@ -42,7 +43,7 @@ export default function CheckoutView() {
 	
 	return (
 		<section>
-		<Narvbar></Narvbar>
+		<Narbarkev></Narbarkev>
 		
 	<div style={{
 		display:'flex',
