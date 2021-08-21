@@ -1,5 +1,6 @@
 
 import{Route} from 'react-router-dom'
+import ProtectedRoute from "./components/ProtectedRoute"
 // import PortadaView from './views.js/PortadaView'
 import PortadaViewAdopciones from './views/PortadaViewAdopciones'
 import PortadaViewArticulos from './views/PortadaViewArticulos'

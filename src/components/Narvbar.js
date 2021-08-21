@@ -78,8 +78,8 @@ export default function Narvbar() {
             </Navbar>
             </div>
 
-            {userState ? (
-                <NavDropdown
+            {userState? (
+                 <NavDropdown
 								title={
 									<div className="d-inline">
 										<img
@@ -135,8 +135,12 @@ export default function Narvbar() {
 						</Link>
                 </ButtonGroup>
               )}
-            </ButtonToolbar>
+            
+
+           
           
+            </ButtonToolbar>
+
             </div>
 
           

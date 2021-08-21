@@ -1,6 +1,8 @@
 import { color } from '@material-ui/system';
 import React from 'react'
-import { AiFillFacebook, AiFillInstagram,  } from "react-icons/ai";
+import { AiFillFacebook, AiFillInstagram, AiFillTwitterSquare } from "react-icons/ai";
+import {ImFacebook,ImInstagram,ImTwitter } from "react-icons/im";
+
 
 export default function Footer() {
     return (
@@ -29,37 +31,30 @@ export default function Footer() {
                     </div>
                     {/* Columna 2 */}
                     <div className="col-md-3 col-sm-6">
-                        {/* <h4>lorem</h4>
-                        <ul className="list-unstyled">
-                            <li>dos1</li>
-                            <li>dos2</li>
-                            <li>dos3</li>
-                            <li>dos4</li>
-                        </ul> */}
-                    </div>
+                 
+                    
+                      </div>
                     {/* Columna 3 */}
                     <div className="col-md-3 col-sm-6">
-                        {/* <h4>lorem</h4>
-                        <ul className="list-unstyled">
-                            <li>dos1</li>
-                            <li>dos2</li>
-                            <li>dos3</li>
-                            <li>dos4</li>
-                        </ul> */}
-                    </div>
-                        {/* Columna 4 */}
-                         <div className="col-md-3 col-sm-6">
-                        {/* <h4>lorem</h4>
-                        <ul className="list-unstyled">
-                            <li>dos1</li>
-                            <li>dos2</li>
-                            <li>dos3</li>
-                            <li>dos4</li>
-                        </ul> */}
-                        <button>
-                            <img></img>
+                    
+                     </div>
+                         <div className="col-md-3 col-sm-6" >
+                         <button style={{
+                           
+                             width:"50px",height:"50px",borderRadius:"50%"}}  >
+                           <a href='https://www.facebook.com/asociacionpatitas/' > <ImFacebook/></a>
+                            </button>
+                            <button  style={{
+                               
+                                width:"50px",height:"50px",borderRadius:"50%"}} >
+                               <a href='https://www.instagram.com/adoptamiu/' > <ImInstagram/> </a>
+                             </button>
+                             <button  style={{
+                               
+                                 width:"50px",height:"50px",borderRadius:"50%"}} >
+                                <a href='https://twitter.com/adopcionmascota?lang=es'  > <ImTwitter/></a>
+                         
                         </button>
-
 
                     </div>
                 </div>
