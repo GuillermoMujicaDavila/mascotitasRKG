@@ -1,4 +1,4 @@
-import React from 'react'
+
 import PortadaView from './PortadaView'
 import { Button,Form, FormGroup, Label, Input,ButtonGroup,Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
@@ -6,15 +6,17 @@ import Logo from "../assets/Logo.jpeg"
 import VideoBackground from '../components/VideoBackground';
 import { useState,UseEffect,useContext } from 'react'
 import { AuthContext } from '../context/authContext'
-
+import Narvbar from '../components/Narvbar'
 
 export default function IniciarSecionView() {
     const { signIn } = useContext(AuthContext)
         
     return (
+        
         <div> 
          <VideoBackground/>
         <div>
+        <Narvbar/>
             <ButtonGroup
             style={{display:'flex', 
             justifyContent:'center'}}
@@ -44,33 +46,23 @@ export default function IniciarSecionView() {
              <label class="form-check-label" for="flexCheckDefault">
                 Recordar Cuenta
             </label>
-            <Link></Link>
         </FormGroup >
-        <ButtonGroup
-            style={{display:'flex', 
-            justifyContent:'center'}}
-            >
-                <Button href='/' className="btn-lg btn-dark btn-block ">
-                  Log in
-                </Button>
-        </ButtonGroup>     
-    
-        <div className="col-sm-12 col-md-6 d-flex justify-content-center align-items-center">
+        <FormGroup  className="text-center">
+            <Button className="btn-lg btn-dark btn-block "
+             style={{display:'flex', 
+            justifyContent:'center'}}>Log in</Button>        
+            </FormGroup>         
+ 
+       </Form>
+
+       <div className="col-sm-12 col-md-6 d-flex justify-content-center align-items-center">
             <div className="text-center">
-                <h2>Ingresa!</h2>
                 <button className="btn btn-danger btn-lg" onClick={signIn}>
                     <i classname="fab fa-google me-2"/>
                         Ingresa con google
                  </button>
              </div>
          </div>
-
-         <FormGroup  className="text-center">
-            <Button className="btn-lg btn-dark btn-block "
-             style={{display:'flex', 
-            justifyContent:'center'}}>Log in</Button>        
-            </FormGroup>
-       </Form>
     </div>
 
         

@@ -7,11 +7,16 @@ import Logo from "../assets/Logo.jpeg";
 import Image from 'react-bootstrap/Image'
 import  {AuthContext} from '../context/authContext';
 import { CarritoContext } from '../context/carritoContext';
-
+import Badge from "@material-ui/core/Badge";
+import { Link } from 'react-router-dom';
 
 export default function Narvbar() {
     const{carrito} = useContext(CarritoContext);
     const {userState,signOut} = useContext(AuthContext);
+    
+    const totalCarrito = carrito.reduce((total, item) => {
+		return total + item.cantidad;
+	}, 0);
 
     return (
         <div>
@@ -29,11 +34,8 @@ export default function Narvbar() {
                     </Button>
                 </ButtonGroup>
 
-            {userState ? (
-                // <Nav.link>
-                //         <span onClick={signOut}>Salir</span>
-                // </Nav.link>
-                <NavDropdown
+            {userState? (
+                 <NavDropdown
 								title={
 									<div className="d-inline">
 										<img
@@ -64,13 +66,39 @@ export default function Narvbar() {
                     <Dropdown.Item eventKey="2" href="/Registro">Registrarse</Dropdown.Item>
                     </DropdownButton>  
                
-                    <Button  variant="outline-dark">
-                        < FiShoppingCart />
-                    </Button>
+                   
                 </ButtonGroup>
               )}
+            
+{/* 
+
+                    {userState ? (
+							<NavDropdown
+								title={
+									<div className="d-inline">
+										<img
+											src={userState.photoURL}
+											className="me-2"
+											style={{ borderRadius: "50%", width: "30px" }}
+											alt="avatar"
+										/>
+										<span>{userState.displayName}</span>
+									</div>
+								}
+							>
+								<NavDropdown.Item onClick={signOut}>Salir</NavDropdown.Item>
+							</NavDropdown>
+						) : (
+							<Link className="nav-link" to="/IniciarSecion">Ingresar</Link>
+						)} */}
+
+
+           
+            <Badge badgeContent={totalCarrito} color="primary">
+                     < FiShoppingCart />
+			</Badge>
             </ButtonToolbar>
-          
+
             </div>
 
           

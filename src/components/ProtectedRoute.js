@@ -14,7 +14,7 @@ export default function ProtectedRoute({component: Component, ...rest}) {
                     userState ? (
                         <Component {...rest}{...props}/>
                     ) : (
-                        <Redirect to="/login"/>
+                        <Redirect to="/IniciarSecion"/>
                     )
             }
         />    
