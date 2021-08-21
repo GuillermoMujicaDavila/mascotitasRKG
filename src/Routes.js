@@ -17,8 +17,8 @@ export default function Routes ()
 {return(
     <div>
        <Route path="/" exact component={PortadaView} />
-       <Route path="/Carrito" exact component={CarritoView} />
-       <Route path="/Checkout" exact component={Checkout} />
+       <ProtectedRoute path="/Carrito" exact component={CarritoView} />
+       <ProtectedRoute path="/Checkout" exact component={Checkout} />
        <Route path="/Donar" exact component={PlanesKev} />
        <Route path="/Adoptar" exact component={PortadaViewAdopciones} />
        <Route path="/Tienda" exact component={PortadaViewArticulos} />
