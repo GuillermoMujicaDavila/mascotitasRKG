@@ -10,14 +10,14 @@ export default function VideoBackground() {
         }}>
         <video
           style={{ 
-            position:'fixed',
-            maxWidth:'100%',
-            minHeight:'100%',  
+            position:'relative',
+            maxWidth:'98vw',
+            minHeight:'500px',  
             top:'0%',
             left:'0%',
 
             filter: `blur(0px)`, WebkitFilter: `blur(0px)`,
-            zIndex:-1  
+            zIndex:-100000
         }}
           autoPlay="autoplay"
           loop="loop"

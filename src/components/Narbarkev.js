@@ -29,14 +29,14 @@ export default function Narvbar() {
                 // className="" style={{display:'flex', 
                 // justifyContent:'left'}}
                  >
-                     <Video></Video>
+                     
             <ButtonToolbar
                 className="justify-content-between"
                 aria-label="Toolbar with Button groups" style={
                     {
                         position: 'relative',
                 buttom: '100px',
-                top: '-756px'
+                
                     }
                 }
             >
@@ -47,7 +47,8 @@ export default function Narvbar() {
                     </Button>
                 </ButtonGroup>
                 <div className="" style={{display:'flex', 
-                justifyContent:'center'}}  >
+                justifyContent:'center',
+                color:'black'}}  >
                     <Navbar expand="lg"
                      variant="dark"
                      style={{
@@ -58,20 +59,38 @@ export default function Narvbar() {
                      }}
                      // bg="light"
                      >
-                    <Container>
+                    <Container style={{
+                        color:'black'
+                    }}>
                      <Nav defaultActiveKey="/" as="ul" bg="light">
-                     <Nav.Item as="li">    
-                        <Nav.Link href="/Donar">Donar</Nav.Link>
+                     <Nav.Item as="li" style={{
+                         color:'black'
+                     }}>    
+                        <Nav.Link href="/Donar " style={{
+                         color:'black'
+                     }}>Donar</Nav.Link>
                         </Nav.Item>
-                        <Nav.Item as="li">
-                     <Nav.Link  href="/Adoptar">Adoptar</Nav.Link>
+                        <Nav.Item as="li" style={{
+                         color:'black'
+                     }}>
+                     <Nav.Link  href="/Adoptar" style={{
+                         color:'black'
+                     }}>Adoptar</Nav.Link>
                        </Nav.Item>
 
-                        <Nav.Item as="li">
-                     <Nav.Link  href="/Tienda">Tienda</Nav.Link>
+                        <Nav.Item as="li" style={{
+                         color:'black'
+                     }}>
+                     <Nav.Link  href="/Tienda" style={{
+                         color:'black'
+                     }}>Tienda</Nav.Link>
                 </Nav.Item>
-                <Nav.Item as="li">
-                     <Nav.Link  href="/Carrito">Carrito</Nav.Link>
+                <Nav.Item as="li" style={{
+                         color:'black'
+                     }}>
+                     <Nav.Link  href="/Carrito" style={{
+                         color:'black'
+                     }}>Carrito</Nav.Link>
                        </Nav.Item>
             </Nav>
             </Container>
@@ -140,40 +159,7 @@ export default function Narvbar() {
             </div>
 
           
-{/*             
-            <div className="" style={{display:'flex', 
-                justifyContent:'center'}}  >
-                    <Navbar expand="lg"
-                     variant="dark"
-                     style={{
-                         fontWeight:'bold',
-                         fontSize:'200%',
-                         color:'White'
-                     }}
-                     // bg="light"
-                     >
-                    <Container>
-                     <Nav defaultActiveKey="/" as="ul" bg="light">
-                     <Nav.Item as="li">    
-                        <Nav.Link href="/Donar">Donar</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item as="li">
-                     <Nav.Link  href="/Adoptar">Adoptar</Nav.Link>
-                       </Nav.Item>
-                    
-                    <Nav.Item as="li">
-                    <Nav.Link  href="/Eventos">Membresía</Nav.Link>
-                    </Nav.Item>
-                        <Nav.Item as="li">
-                     <Nav.Link  href="/Tienda">Tienda</Nav.Link>
-                </Nav.Item>
-                <Nav.Item as="li">
-                     <Nav.Link  href="/Carrito">Carrito</Nav.Link>
-                       </Nav.Item>
-            </Nav>
-            </Container>
-            </Navbar>
-            </div> */}
+
 
         </div>
     )

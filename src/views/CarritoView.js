@@ -6,6 +6,7 @@ import Swal from "sweetalert2"
 import { Link } from "react-router-dom";
 import { useHistory } from 'react-router'
 import nyancat from '../assets/img/nyan-cat.gif'
+import Navbarkev from '../components/Narbarkev'
 
 export default function CarritoView() {
 
@@ -38,7 +39,7 @@ export default function CarritoView() {
     }
     return (
         <div className="container">
-            <Narvbar></Narvbar>
+            <Navbarkev></Navbarkev>
             <section style={{
                 display:'flex',
                 justifyContent:'space-between'

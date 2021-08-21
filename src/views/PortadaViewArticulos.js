@@ -4,7 +4,7 @@ import GroupArticulos from "../components/GroupArticulos";
 import Narvbar from '../components/Narvbar'
 import Loading from '../components/Loading'
 import Slider from '@material-ui/core/Slider'
-
+import Narrbarkev from '../components/Narbarkev'
 
 export default function PortadaViewArticulos() {
     const [articulos, setArticulos] = useState([])
@@ -41,7 +41,7 @@ export default function PortadaViewArticulos() {
 
     return (
         <div>
-            <Narvbar/>
+            <Narrbarkev ></Narrbarkev>
             {cargando ? 
             (<Loading/>) :
             (<div className="py-4">

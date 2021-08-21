@@ -4,20 +4,23 @@ import { obtenerProductos } from '../services/productoService'
 import GroupProducts from '../components/GroupProducts'
 import Caracts from '../components/Caracts'
 import Cards from '../components/Cards'
-import VideoBackground from '../components/VideoBackground'
+
 import Narvbar from '../components/Narvbar'
 import Footer from '../components/Footer'
 import KevPrinci from '../components/KevPrinci'
+import Video from '../components/VideoBackground'
 
 const PortadaView = _=>
     {
       
       return (<div>
-          <VideoBackground/>
+          
             <Narvbar/>
-            <Cards/>
-            <Caracts/>
             <KevPrinci/>
+            <Caracts/>
+            <Cards/>
+            
+            
           <Footer/>
           
           </div>)}
