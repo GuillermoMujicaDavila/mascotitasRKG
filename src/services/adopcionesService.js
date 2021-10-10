@@ -1,6 +1,6 @@
 import  axios from "axios"
 
-const URL = `${process.env.REACT_APP_API}/adopciones`
+const URL = `${process.env.REACT_APP_API}/gestion/adopciones`
 
 const obtenerAdopciones = async() => {
     try {

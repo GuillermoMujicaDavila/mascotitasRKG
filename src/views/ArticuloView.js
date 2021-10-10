@@ -6,7 +6,7 @@ import { obtenerArticulosPorId } from '../services/articulosService'
 import Loading from '../components/Loading'
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2"
-import Modalarticulo from '../components/Modalarticulo'
+import Prueba from "../components/Prueba"
 import { useHistory } from 'react-router'
 // import Narvbar from '../components/Narvbar'
 import Narbarkev from '../components/Narbarkev'
@@ -45,7 +45,7 @@ export default function ArticuloView() {
 
     useEffect(() => {
         getArticulo()
-    }, [])
+    }, )
 
     return (
        
@@ -65,7 +65,9 @@ export default function ArticuloView() {
                         </div> 
                         <div className="col-sm-12 col-md-6">
                             <h3 className="fw-bold">{articulo.arti_nombre}</h3>
-                            
+                            AdopcionesService1
+                            <h3 className="fw-bold">{Prueba}</h3>
+
                             <div className="py-3 d-flex justify-content-between">
                                 <span className="fw-bold" style={{
 

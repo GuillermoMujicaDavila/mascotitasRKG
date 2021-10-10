@@ -44,17 +44,18 @@ export default function GroupAdopciones({adopciones}) {
                             <div className="magic  card border border-secondary border border-3 text-center">
                                 <div className="overflow">
                                     <img 
-                                        src={adop.adop_imagen}
+                                        src={adop.adopcionFoto}
                                         className="card-img-top"
                                         alt={adop.adop_nombre}
                                     />
+                                    {adop.adopcionFoto}
                                 </div>    
                                     <div className="card-body bg-light">
                                         <h6 className="card-title text-center fw-bold">
-                                            {adop.adop_nombre}
+                                            {adop.adopcionNombre}
                                         </h6>
                                         <p className="card-text text-secondary">
-                                            {adop.adop_descripcion}
+                                            {adop.adopcionDescripcion}
                                         </p>
                                         <button className="btn btn btn-outline-success" onClick={handleShow}>
                                         Adóptame
