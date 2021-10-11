@@ -10,6 +10,14 @@ const obtenerAdopciones = async() => {
         throw error
     }
 }
+const obtenerAdopcionesImagen = async(adopcionImagen) => {
+    try {
+        let { data } = await axios.get(`${URL}/${adopcionImagen}`)
+        return data // ya tengo los datos
+    } catch (error) {
+        throw error
+    }
+}
 
 const obtenerAdopcionesPorId = async(id) => {
     try {
@@ -23,6 +31,7 @@ const obtenerAdopcionesPorId = async(id) => {
 
 export{
     obtenerAdopcionesPorId,
+    obtenerAdopcionesImagen,
     obtenerAdopciones
 }
 

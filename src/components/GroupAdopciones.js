@@ -1,8 +1,24 @@
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import { Modal,Button } from 'react-bootstrap'
 import imagenModal from '../assets/img/relleno.jpg'
 
 
+// const URL_BACKEND ="http://127.0.0.1:8000/";
+
+// export class ProductoService{
+//     async getProductos(){
+//         const result=await fetch(`${URL_BACKEND}/gestion/assets/`,{
+//             method:'GET',
+//             headers:{
+//                 "Content-Type":"application/json",
+//             },
+//         });
+//         console.log(result);
+//         const data=await result.json();
+//         console.log(data);
+//         return data;
+//     }
+// }
 
 export default function GroupAdopciones({adopciones}) {
     console.log(adopciones)
@@ -11,10 +27,28 @@ export default function GroupAdopciones({adopciones}) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const URL_IMAGEN="http://127.0.0.1:8000/assets/";
+    
+    // const getImagen(){
+    //     const result=await fetch('http://127.0.0.1:8000/assets/',{
+    //         method:'GET',
+    //         headers:{
+    //             "Content-Type":"application/json",
+    //         },
+    //     });
+
+
+    
+    //     console.log(result);
+    //     const data=await result.json();
+    //     console.log(data);
+    //     return data;
+    // }
+
 
     return (
 
-       <div> 
+       <div style={{marginTop:'100px'}}> 
            
             <h1 className="text-center text-success my-4 fw-bold">
                 
@@ -48,14 +82,15 @@ export default function GroupAdopciones({adopciones}) {
                                         className="card-img-top"
                                         alt={adop.adop_nombre}
                                     />
-                                    {adop.adopcionFoto}
+                                    
                                 </div>    
                                     <div className="card-body bg-light">
                                         <h6 className="card-title text-center fw-bold">
                                             {adop.adopcionNombre}
+                                            
                                         </h6>
                                         <p className="card-text text-secondary">
-                                            {adop.adopcionDescripcion}
+                                            {adop.adopcionCaracteristicas}
                                         </p>
                                         <button className="btn btn btn-outline-success" onClick={handleShow}>
                                         Adóptame

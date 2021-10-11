@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { obtenerAdopciones } from "../services/adopcionesService";
+import { obtenerAdopciones,obtenerAdopcionesImagen } from "../services/adopcionesService";
 import GroupAdopciones from "../components/GroupAdopciones";
 import Narbarkev from "../components/Narbarkev"
 import Footer from "../components/Footer"
@@ -11,18 +11,29 @@ export default function PortadaViewAdopciones() {
         try {
             let adopcionesObtenidas = await obtenerAdopciones()
             setAdopciones(adopcionesObtenidas)
-        } catch (error) {
+        } 
+        catch (error) {
+            console.log(error)            
+        }
+    }
+    const getAdopcionesImagen = async () => {
+        try {
+            let adopcionesObtenidas = await obtenerAdopcionesImagen()
+            setAdopciones(adopcionesObtenidas)
+        } 
+        catch (error) {
             console.log(error)            
         }
     }
 
     useEffect(() => {
-        getAdopciones()
+        getAdopciones();
+        getAdopcionesImagen()
     }, [])
 
     return (
         <div>
-            <Narbarkev></Narbarkev>
+            <Narbarkev style={{marginBottom:"150px"}}></Narbarkev>
             <GroupAdopciones adopciones={adopciones} />
             <Footer></Footer>
         </div>
