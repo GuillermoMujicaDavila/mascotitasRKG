@@ -1,8 +1,9 @@
 import { color } from '@material-ui/system';
 import React from 'react'
 import { AiFillFacebook, AiFillInstagram, AiFillTwitterSquare } from "react-icons/ai";
-import {ImFacebook,ImInstagram,ImTwitter } from "react-icons/im";
-import icon_footer from "../assets/img/iconos/perro/undraw_good_doggy_4wfq.png";
+import {ImInstagram,ImTwitter,ImFacebook } from "react-icons/im";
+
+// import {ImFacebook} from "../assets/img/iconos/perro/";
 
 export default function Footer() {
     return (
@@ -18,10 +19,13 @@ export default function Footer() {
                 color:'white'  
             }}>
                 {/* Columna 1 */}
-            <div className="container">
+            <div className="container" style={{
+                position: 'relative',
+                top: '17px'
+            }}>
                 <div className="row">
                     <div className="col-md-3 col-sm-6">
-                        <h4>Personas que desarrollaron la página web</h4>
+                        <h4>Autores</h4>
                         <ul className="list-unstyled">
                             <li> <a href="https://github.com/kevinmore26" style={{color:"white",textDecoration:"none"}}>Kevin More</a></li>
                             <li><a href="https://github.com/zen-rox93" style={{color:"white",textDecoration:"none"}}>Renzo Estrada</a></li>
