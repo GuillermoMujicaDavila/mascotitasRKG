@@ -1,7 +1,7 @@
 import { useState, useEffect,useRef } from "react";
 import { obtenerArticulos } from "../services/articulosService";
 import GroupArticulos from "../components/GroupArticulos";
-import Narvbar from '../components/Narvbar'
+
 import Loading from '../components/Loading'
 import Slider from '@material-ui/core/Slider'
 import Narrbarkev from '../components/Narbarkev'
@@ -30,10 +30,10 @@ export default function PortadaViewArticulos() {
     
     useEffect(() => {
         let productosFiltrados = productosOriginal.filter((arti) => {
-            return arti.arti_precio >= filtroPrecio[0] && arti.arti_precio <= filtroPrecio[1]
+            return arti.productoPrecio >= filtroPrecio[0] && arti.productoPrecio <= filtroPrecio[1]
         })
         setArticulos(productosFiltrados)
-    }, [filtroPrecio])
+    },[filtroPrecio])
 
     useEffect(() => {
         getArticulos()

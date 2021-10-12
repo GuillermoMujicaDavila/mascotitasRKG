@@ -6,7 +6,7 @@ import { obtenerArticulosPorId } from '../services/articulosService'
 import Loading from '../components/Loading'
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2"
-import Prueba from "../components/Prueba"
+// import Prueba from "../components/Prueba"
 import { useHistory } from 'react-router'
 // import Narvbar from '../components/Narvbar'
 import Narbarkev from '../components/Narbarkev'
@@ -59,14 +59,14 @@ export default function ArticuloView() {
                         <div className="col-sm-12 col-md-6">
                            <img
                                 className="img-fluid"
-                                src={articulo.arti_imagen}
-                                alt={articulo.arti_nombre}
+                                src={articulo.productoImagen}
+                                alt={articulo.productoNombre}
                             />
                         </div> 
                         <div className="col-sm-12 col-md-6">
-                            <h3 className="fw-bold">{articulo.arti_nombre}</h3>
-                            AdopcionesService1
-                            <h3 className="fw-bold">{Prueba}</h3>
+                            <h3 className="fw-bold">{articulo.productoNombre}</h3>
+                            
+                            {/* <h3 className="fw-bold">{Prueba}</h3> */}
 
                             <div className="py-3 d-flex justify-content-between">
                                 <span className="fw-bold" style={{
@@ -75,7 +75,7 @@ export default function ArticuloView() {
                                     fontSize: '20px'
                                     
                                 }}>
-                                    Precio: S/ {articulo.arti_precio}
+                                    Precio: S/ {articulo.productoPrecio}
                                 </span>
                             </div>
                             <h5 className="fw-bold" style={{

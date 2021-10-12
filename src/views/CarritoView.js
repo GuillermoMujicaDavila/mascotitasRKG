@@ -1,7 +1,6 @@
 import { useContext } from "react"
 import { CarritoContext } from "../context/carritoContext"
-import Narvbar from '../components/Narvbar'
-import { ThumbDownAlt } from "@material-ui/icons"
+
 import Swal from "sweetalert2"
 import { Link } from "react-router-dom";
 import { useHistory } from 'react-router'
@@ -122,7 +121,7 @@ export default function CarritoView() {
                              
                             <td style={{
                                     padding: '3.5rem 2.5rem',
-                            }}>{arti.arti_nombre}</td>
+                            }}>{arti.productoNombre}</td>
                             <td style={{
                                     padding: '3.5rem 2.5rem',
                             }}>{arti.cantidad}</td>
@@ -133,17 +132,17 @@ export default function CarritoView() {
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                                 
-                            }} >  S/{arti.arti_precio}</td>
+                            }} >  S/{arti.productoPrecio}</td>
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                             }}>S/{((arti.arti_oferta ? 
-                                     arti.arti_stock * arti.arti_precio * 0.9 : 
-                                    arti.arti_stock * arti.arti_precio)*100)*0.001}</td>
+                                     arti.arti_stock * arti.productoPrecio * 0.9 : 
+                                    arti.arti_stock * arti.productoPrecio)*100)*0.001}</td>
                         </tr>
                         // ------------------------------------------------
                         // S/{((arti.arti_oferta ? 
-                        //     arti.cantidad * arti.arti_precio * 0.9 : 
-                        //     arti.cantidad * arti.arti_precio)*100)*0.01}
+                        //     arti.cantidad * arti.productoPrecio * 0.9 : 
+                        //     arti.cantidad * arti.productoPrecio)*100)*0.01}
                     ))}
                 </tbody>
             </table>

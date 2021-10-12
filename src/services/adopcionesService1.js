@@ -1,7 +1,7 @@
 const URL_BACKEND ="http://127.0.0.1:8000";
 
 export class AdopcionesService1{
-    async getProductos(){
+    async getAdopciones(){
         const result=await fetch(`${URL_BACKEND}/gestion/adopciones/`,{
             method:'GET',
             headers:{

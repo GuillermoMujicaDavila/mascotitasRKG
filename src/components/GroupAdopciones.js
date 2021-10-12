@@ -27,7 +27,7 @@ export default function GroupAdopciones({adopciones}) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const URL_IMAGEN="http://127.0.0.1:8000/assets/";
+    
     
     // const getImagen(){
     //     const result=await fetch('http://127.0.0.1:8000/assets/',{
