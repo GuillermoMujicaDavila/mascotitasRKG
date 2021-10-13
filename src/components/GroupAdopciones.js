@@ -41,7 +41,7 @@ export default function GroupAdopciones({adopciones}) {
                 <div className="row mt-3">
                     {adopciones.map((adop, i) => (
                         <div className="col-6 col-lg-3">
-                            <div className="magic  card border border-secondary border border-3 text-center">
+                            <div className="magic  card  text-center">
                                 <div className="overflow">
                                     <img 
                                         src={adop.adop_imagen}
@@ -49,14 +49,14 @@ export default function GroupAdopciones({adopciones}) {
                                         alt={adop.adop_nombre}
                                     />
                                 </div>    
-                                    <div className="card-body bg-light">
+                                    <div className="card-body bg-success">
                                         <h6 className="card-title text-center fw-bold">
                                             {adop.adop_nombre}
                                         </h6>
-                                        <p className="card-text text-secondary">
+                                        <p className="card-text text-white">
                                             {adop.adop_descripcion}
                                         </p>
-                                        <button className="btn btn btn-outline-success" onClick={handleShow}>
+                                        <button className="btn btn btn btn-warning" onClick={handleShow}>
                                         Adóptame
                                         </button>
                                     </div>

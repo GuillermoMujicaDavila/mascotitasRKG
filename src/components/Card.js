@@ -6,15 +6,15 @@ export default function Card({title, imageSource, descripcion}) {
         
     return (
          
-            <div className="magic card border border-secondary border border-3 text-center">
+            <div className="magic card text-center">
                 <div className="overflow">
                     <img src={imageSource} alt="" className="card-img-top"/>
                 </div>
 
-                <div className="card-body bg-light">
+                <div className="card-body bg-success ">
                     <h4 className="card-title text-center fw-bold">{title}</h4>
-                    <p className=" card-text text-secondary">{descripcion}</p>
-                    <Link className="btn btn btn-outline-success" to="/Adoptar">
+                    <p className=" card-text text-white">{descripcion}</p>
+                    <Link className="btn btn btn btn-warning" to="/Adoptar">
                         ¿Quieres adoptar?
                     </Link>
                     

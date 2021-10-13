@@ -19,7 +19,7 @@ export default function GroupArticulos({articulos}) {
                 <div className="row mt-3">
                     {articulos.map((arti, i) => (
                         <div className="col-6 col-lg-3" key={1}>
-                            <div className="magic  card border border-secondary border border-3 text-center">
+                            <div className="magic  card  text-center">
                                 <div className="overflow">
                                     <img 
                                         src={arti.arti_imagen}
@@ -27,14 +27,14 @@ export default function GroupArticulos({articulos}) {
                                         alt={arti.arti_nombre}
                                     />
                                 </div>    
-                                    <div className="card-body bg-light">
+                                    <div className="card-body bg-success">
                                         <h6 className="card-title text-center fw-bold">
                                             {arti.arti_nombre}
                                         </h6>
-                                        <p className="card-text text-secondary">
+                                        <p className="card-text text-white">
                                             S/ {arti.arti_precio}
                                         </p>
-                                        <Link href="#" className="btn btn btn-outline-success" to={`/detalle/${arti.arti_id}`}>
+                                        <Link href="#" className="btn btn btn btn-warning" to={`/detalle/${arti.arti_id}`}>
                                         Comprar
                                         </Link>
                                     </div>
