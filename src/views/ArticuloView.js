@@ -11,7 +11,7 @@ import { useHistory } from 'react-router'
 // import Narvbar from '../components/Narvbar'
 import Narbarkev from '../components/Narbarkev'
 export default function ArticuloView() {
-    const [articulo, setArticulo] = useState({})
+    const [arti, setArticulo] = useState({})
     const [cargando, setCargando] = useState(true)
     const {anadirACarrito} = useContext(CarritoContext)
     const { id } = useParams()
@@ -21,6 +21,7 @@ export default function ArticuloView() {
         try {
             let articuloObtenido = await obtenerArticulosPorId(id)
             setArticulo(articuloObtenido)
+            console.log(articuloObtenido)
             setCargando(false)
         } catch (error) {
             console.error(error)
@@ -28,7 +29,7 @@ export default function ArticuloView() {
 
     }
     const anadirACarritoContext = async() => {
-        anadirACarrito(articulo)
+        anadirACarrito(arti)
         const resultado = await Swal.fire({
             icon:'success',
             title:"¡Producto añadido con éxito!",
@@ -56,15 +57,18 @@ export default function ArticuloView() {
             (<div>
                 <div className="container">
                     <div className="row">
+                        {/* {carrito.map((arti, i) => (
+                            <section key={i} > */}
                         <div className="col-sm-12 col-md-6">
+                            
                            <img
                                 className="img-fluid"
-                                src={articulo.productoImagen}
-                                alt={articulo.productoNombre}
+                                src={arti.content.productoFoto}
+                                alt={arti.productoNombre}
                             />
                         </div> 
                         <div className="col-sm-12 col-md-6">
-                            <h3 className="fw-bold">{articulo.productoNombre}</h3>
+                            <h3 className="fw-bold">{arti.content.productoNombre}</h3>
                             
                             {/* <h3 className="fw-bold">{Prueba}</h3> */}
 
@@ -75,7 +79,7 @@ export default function ArticuloView() {
                                     fontSize: '20px'
                                     
                                 }}>
-                                    Precio: S/ {articulo.productoPrecio}
+                                    Precio: S/ {arti.content.productoPrecio}
                                 </span>
                             </div>
                             <h5 className="fw-bold" style={{
@@ -88,7 +92,7 @@ export default function ArticuloView() {
                                 textJustify: 'inter-word',
                                 
 
-                            }}>{articulo.arti_descripcion}</p>
+                            }}>{arti.content.productoDescripcion}</p>
                             <button className="btn btn-dark btn-lg" onClick={anadirACarritoContext} style={{
                                     background: 'linear-gradient(to top, rgb(40, 113, 27), rgb(121, 206, 102))',
                                     border:'none'
@@ -101,7 +105,9 @@ export default function ArticuloView() {
                             </button>
                            
                         </div>
+                        
                     </div>
+                    
                 </div>
             </div>)}
         </div>

@@ -87,7 +87,7 @@ export default function GroupAdopciones({adopciones}) {
                                     <div className="card-body bg-light">
                                         <h6 className="card-title text-center fw-bold">
                                             {adop.adopcionNombre}
-                                            
+                                                        
                                         </h6>
                                         <p className="card-text text-secondary">
                                             {adop.adopcionCaracteristicas}

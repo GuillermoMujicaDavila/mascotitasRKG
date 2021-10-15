@@ -4,13 +4,14 @@ import { CarritoContext } from "../context/carritoContext"
 import Swal from "sweetalert2"
 import { Link } from "react-router-dom";
 import { useHistory } from 'react-router'
-import nyancat from '../assets/img/nyan-cat.gif'
+// import nyancat from '../assets/img/nyan-cat.gif'
 import Navbarkev from '../components/Narbarkev'
-import Kev2 from '../components/Kevinprinci2'
+// import Kev2 from '../components/Kevinprinci2'
 
 export default function CarritoView() {
 
     const { carrito } = useContext(CarritoContext)
+    console.log(carrito)
     const history = useHistory()
     const anadirACarritoContext = async() => {
         // anadirACarrito(articulo)
@@ -113,7 +114,7 @@ export default function CarritoView() {
                         }}>
                              <td style={{
                                  padding:'0.5rem 1.5rem'
-                             }}><img src={arti.arti_imagen} style={{
+                             }}><img src={arti.content.productoFoto} alt="fotoimagenarti" style={{
                                  width:'63%',
                                  
                                  
@@ -121,10 +122,10 @@ export default function CarritoView() {
                              
                             <td style={{
                                     padding: '3.5rem 2.5rem',
-                            }}>{arti.productoNombre}</td>
+                            }}>{arti.content.productoNombre}</td>
                             <td style={{
                                     padding: '3.5rem 2.5rem',
-                            }}>{arti.cantidad}</td>
+                            }}>{arti.content.productoCantidad}</td>
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                                
@@ -132,7 +133,7 @@ export default function CarritoView() {
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                                 
-                            }} >  S/{arti.productoPrecio}</td>
+                            }} >  S/{arti.content.productoPrecio}</td>
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                             }}>S/{((arti.arti_oferta ? 

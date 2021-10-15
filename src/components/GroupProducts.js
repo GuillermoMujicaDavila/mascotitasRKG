@@ -1,25 +1,25 @@
-import {useState, useEffect} from 'react'
+// import {useState, useEffect} from 'react'
 import {Link} from "react-router-dom"
 
-export default function GroupProducts({producto}) {
-    console.log(producto)
+export default function GroupProducts({articulo}) {
+    console.log(articulo)
     return (
         <div className="container">
             <div className="row mt-3">
-                {producto.content.map((prod, i) => (
+                {articulo.content.map((arti, i) => (
                     <div className="col-6 col-lg-3" key={i}>
-                        <Link className="card mb-4" to={`/producto/${prod.productoId}`}>
+                        <Link className="card mb-4" to={`/producto/${arti.productoId}`}>
                             <img 
-                                src={prod.productoFoto} 
+                                src={arti.productoFoto} 
                                 className="card-img-top"
-                                alt={prod.productoNombre}
+                                alt={arti.productoNombre}
                             />
                             <div className="card-body">
                                 <h6 className="card-title">
-                                    {prod.productoNombre}
+                                    {arti.productoNombre}
                                 </h6>
                                 <span className="fw-bold">
-                                    S/ {prod.productoPrecio}
+                                    S/ {arti.productoPrecio}
                                 </span>
                             </div>
                         </Link>
