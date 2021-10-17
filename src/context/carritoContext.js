@@ -6,23 +6,24 @@ const CarritoContextProvider = (props) => {
 
     const [carrito, setCarrito] = useState([])
 
-    const anadirACarrito = (articulos) => {
+    const anadirACarrito = (producto) => {
         for(let i = 0; i < carrito.length; i++){
-            if(carrito[i].productoId === articulos.productoId){
+            if(carrito[i].productoId === producto.productoId){
                 //significa que tenemos el producto ya dentro del carrito
-                const articulosExiste = {
+                const productoExiste = {
                     ...carrito[i],
                     cantidad: carrito[i].cantidad + 1
                 }
                 let carritoTmp = [...carrito] //como carrito es un estado, es inmutable, x eso tenemos una copia
                 carritoTmp.splice(i, 1) //remuevo el producto que aumentará su cantidad
-                carritoTmp.push(articulosExiste) //vuelvo a agregar el producto pero con su cantidad actualizada
+                carritoTmp.push(productoExiste) //vuelvo a agregar el producto pero con su cantidad actualizada
                 setCarrito(carritoTmp) //actualizo el carrito con la copia actualizada
                 return //corto la ejecución aquí
             }
         }
-        setCarrito([...carrito, {...articulos, cantidad:1}])
+        setCarrito([...carrito, {...producto, cantidad:1}])
     }
+
     useEffect(() => {
         const carritoStorage = JSON.parse(localStorage.getItem('carrito'))
         if(carritoStorage){

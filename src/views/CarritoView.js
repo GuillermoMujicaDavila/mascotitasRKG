@@ -11,6 +11,7 @@ import Navbarkev from '../components/Narbarkev'
 export default function CarritoView() {
 
     const { carrito } = useContext(CarritoContext)
+
     console.log(carrito)
     const history = useHistory()
     const anadirACarritoContext = async() => {
@@ -107,11 +108,10 @@ export default function CarritoView() {
                     </tr>
                 </thead>
                 <tbody>
-                   
+                
                     {carrito.map((arti, i) => (
-                        <tr key={i} style={{
-                            
-                        }}>
+                        
+                        <tr key={i}>
                              <td style={{
                                  padding:'0.5rem 1.5rem'
                              }}><img src={arti.content.productoFoto} alt="fotoimagenarti" style={{
@@ -125,7 +125,7 @@ export default function CarritoView() {
                             }}>{arti.content.productoNombre}</td>
                             <td style={{
                                     padding: '3.5rem 2.5rem',
-                            }}>{arti.content.productoCantidad}</td>
+                            }}>{arti.detalleCantidad}</td>
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                                
@@ -133,7 +133,7 @@ export default function CarritoView() {
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                                 
-                            }} >  S/{arti.content.productoPrecio}</td>
+                            }} >  S/{arti.productoPrecio}</td>
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                             }}>S/{((arti.arti_oferta ? 
