@@ -17,12 +17,12 @@ export default function GroupArticulos({articulos}) {
 
             <div className="container">
                 <div className="row mt-3">
-                    {articulos.map((arti, i) => (
+                    {articulos.content.map((arti, i) => (
                         <div className="col-6 col-lg-3" key={1}>
                             <div className="magic  card border border-secondary border border-3 text-center">
                                 <div className="overflow">
                                     <img 
-                                        src={arti.arti_imagen}
+                                        src={arti.productoImagen}
                                         className="card-img-top"
                                         alt={arti.arti_nombre}
                                     />
