@@ -114,7 +114,7 @@ export default function CarritoView() {
                         <tr key={i}>
                              <td style={{
                                  padding:'0.5rem 1.5rem'
-                             }}><img src={arti.productoFoto} alt="fotoimagenarti" style={{
+                             }}><img src={arti.content.productoFoto} alt="fotoimagenarti" style={{
                                  width:'63%',
                                  
                                  
@@ -125,7 +125,7 @@ export default function CarritoView() {
                             }}>{arti.content.productoNombre}</td>
                             <td style={{
                                     padding: '3.5rem 2.5rem',
-                            }}>{arti.detalleCantidad}</td>
+                            }}>{arti.content.detalleCantidad}</td>
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                                
@@ -133,12 +133,12 @@ export default function CarritoView() {
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                                 
-                            }} >  S/{arti.productoPrecio}</td>
+                            }} >  S/{arti.content.productoPrecio}</td>
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                             }}>S/{((arti.arti_oferta ? 
-                                     arti.arti_stock * arti.productoPrecio * 0.9 : 
-                                    arti.arti_stock * arti.productoPrecio)*100)*0.001}</td>
+                                     arti.content.productoCantidad * arti.content.productoPrecio * 0.9 : 
+                                    arti.content.productoCantidad * arti.content.productoPrecio)*100)*0.001}</td>
                         </tr>
                         // ------------------------------------------------
                         // S/{((arti.arti_oferta ? 

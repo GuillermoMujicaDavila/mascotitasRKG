@@ -12,7 +12,7 @@ const CarritoContextProvider = (props) => {
                 //significa que tenemos el producto ya dentro del carrito
                 const productoExiste = {
                     ...carrito[i],
-                    cantidad: carrito[i].productoCantidad + 1
+                    cantidad: carrito[i].cantidad + 1
                 }
                 let carritoTmp = [...carrito] //como carrito es un estado, es inmutable, x eso tenemos una copia
                 carritoTmp.splice(i, 1) //remuevo el producto que aumentará su cantidad
