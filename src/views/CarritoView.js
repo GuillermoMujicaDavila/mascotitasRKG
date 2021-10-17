@@ -12,7 +12,7 @@ export default function CarritoView() {
 
     const { carrito } = useContext(CarritoContext)
 
-    console.log(carrito)
+    console.log(carrito.productoNombre)
     const history = useHistory()
     const anadirACarritoContext = async() => {
         // anadirACarrito(articulo)
@@ -114,7 +114,7 @@ export default function CarritoView() {
                         <tr key={i}>
                              <td style={{
                                  padding:'0.5rem 1.5rem'
-                             }}><img src={arti.content.productoFoto} alt="fotoimagenarti" style={{
+                             }}><img src={arti.productoFoto} alt="fotoimagenarti" style={{
                                  width:'63%',
                                  
                                  
