@@ -12,7 +12,7 @@ export default function CarritoView() {
 
     const { carrito } = useContext(CarritoContext)
 
-    console.log(carrito.productoNombre)
+    console.log(carrito)
     const history = useHistory()
     const anadirACarritoContext = async() => {
         // anadirACarrito(articulo)
@@ -49,6 +49,7 @@ export default function CarritoView() {
                 top: '-16px',
                 width: '100vw',
                 right: '127px',
+                
             }}></Navbarkev>
             <section style={{
                 display:'flex',
