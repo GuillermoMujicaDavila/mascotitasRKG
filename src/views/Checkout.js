@@ -35,7 +35,7 @@ export default function CheckoutView() {
 	let total = 0;
 
 	total = carrito.reduce((acum, arti) => {
-		return acum + arti.cantidad * arti.productoPrecio;
+		return acum + arti.cantidad * arti.content.productoPrecio;
 	}, 0);
 
 	const recibirSubmit = (datos) => {
@@ -240,7 +240,7 @@ export default function CheckoutView() {
 								key={i}
 							>
 								<div>
-									<span className="fw-bold">{arti.productoNombre}</span>
+									<span className="fw-bold">{arti.content.productoNombre}</span>
 									<br />
 									<small style={{
 										
@@ -250,7 +250,7 @@ export default function CheckoutView() {
 								<small className="badge botonescheck rounded-pill p-3" style={{
 									backgroundColor:'#128a4d',
 									color:'white'}} >
-									S/ {arti.cantidad *arti.productoPrecio}
+									S/ {arti.cantidad *arti.content.productoPrecio}
 								</small>
 							</li>
 						))}

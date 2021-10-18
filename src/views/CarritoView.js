@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from 'react-router'
 // import nyancat from '../assets/img/nyan-cat.gif'
 import Navbarkev from '../components/Narbarkev'
+import Narbar from '../components/narvarcarrito'
 // import Kev2 from '../components/Kevinprinci2'
 
 export default function CarritoView() {
@@ -44,13 +45,10 @@ export default function CarritoView() {
             width:'1366px',
             
         }}>
-            <Navbarkev style={{
-                position:'relative',
-                top: '-16px',
-                width: '100vw',
-                right: '127px',
+            <Narbar style={{
+               
                 
-            }}></Navbarkev>
+            }}></Narbar>
             <section style={{
                 display:'flex',
                 justifyContent:'space-between'
@@ -126,7 +124,7 @@ export default function CarritoView() {
                             }}>{arti.content.productoNombre}</td>
                             <td style={{
                                     padding: '3.5rem 2.5rem',
-                            }}>{arti.content.detalleCantidad}</td>
+                            }}>{arti.content.cantidad}</td>
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                                
