@@ -5,7 +5,7 @@ import Swal from "sweetalert2"
 import { Link } from "react-router-dom";
 import { useHistory } from 'react-router'
 // import nyancat from '../assets/img/nyan-cat.gif'
-import Navbarkev from '../components/Narbarkev'
+
 import Narbar from '../components/narvarcarrito'
 // import Kev2 from '../components/Kevinprinci2'
 
@@ -45,10 +45,7 @@ export default function CarritoView() {
             width:'1366px',
             
         }}>
-            <Narbar style={{
-               
-                
-            }}></Narbar>
+            <Narbar></Narbar>
             <section style={{
                 display:'flex',
                 justifyContent:'space-between'
@@ -114,7 +111,7 @@ export default function CarritoView() {
                              <td style={{
                                  padding:'0.5rem 1.5rem'
                              }}><img src={arti.content.productoFoto} alt="fotoimagenarti" style={{
-                                 width:'63%',
+                                 width:'50%',borderRadius:'50px'
                                  
                                  
                              }}></img></td>
@@ -124,7 +121,7 @@ export default function CarritoView() {
                             }}>{arti.content.productoNombre}</td>
                             <td style={{
                                     padding: '3.5rem 2.5rem',
-                            }}>{arti.content.cantidad}</td>
+                            }}>{arti.cantidad}</td>
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                                
