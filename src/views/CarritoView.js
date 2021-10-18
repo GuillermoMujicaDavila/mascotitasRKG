@@ -100,7 +100,7 @@ export default function CarritoView() {
                         <th style={{
                             paddingRight:'20px',
                             paddingLeft:'30px'
-                        }}>P.U.Final</th>
+                        }}>Precio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -132,9 +132,9 @@ export default function CarritoView() {
                             }} >  S/{arti.content.productoPrecio}</td>
                             <td style={{
                                 padding: '3.5rem 2.5rem',
-                            }}>S/{((arti.arti_oferta ? 
-                                     arti.content.productoCantidad * arti.content.productoPrecio * 0.9 : 
-                                    arti.content.productoCantidad * arti.content.productoPrecio)*100)*0.001}</td>
+                            }}>S/{
+                                     (arti.cantidad * arti.content.productoPrecio ) -((arti.cantidad * arti.content.productoPrecio)* 0.18 )}
+                                   </td>
                         </tr>
                         // ------------------------------------------------
                         // S/{((arti.arti_oferta ? 
