@@ -1,7 +1,6 @@
-import { color } from '@material-ui/system';
+
 import React from 'react'
-import { AiFillFacebook, AiFillInstagram, AiFillTwitterSquare } from "react-icons/ai";
-import {ImInstagram,ImTwitter,ImFacebook } from "react-icons/im";
+
 
 // import {ImFacebook} from "../assets/img/iconos/perro/";
 
@@ -15,60 +14,60 @@ export default function Footer() {
                 minHeight:'100%',  
                 //top:'0%',
                 //left:'0%'
-                zIndex:-1,
-                color:'white'  
+                
+                color:'white'  ,
+                position: 'relative',
+                top: '27px',
+                
+                
             }}>
                 {/* Columna 1 */}
             <div className="container" style={{
-                position: 'relative',
-                top: '17px'
-            }}>
-                <div className="row">
-                    <div className="col-md-3 col-sm-6">
+                position: 'relative',}}>
+                <div className="row" style={{
+                    
+                }}>
+                    <div className="col-md-3 col-sm-6" style={{
+                        paddingTop:'30px'
+                    }}>
+
                         <h4>Autores</h4>
                         <ul className="list-unstyled">
-                            <li> <a href="https://github.com/kevinmore26" style={{color:"white",textDecoration:"none"}}>Kevin More</a></li>
-                            <li><a href="https://github.com/zen-rox93" style={{color:"white",textDecoration:"none"}}>Renzo Estrada</a></li>
-                            <li><a href="https://github.com/GuillermoMujicaDavila" style={{color:"white",textDecoration:"none"}}>Guillermo Mujica</a></li>
+                            <li> <a href="https://github.com/kevinmore26" target='blank' style={{color:"white",textDecoration:"none"}}>Kevin More</a></li>
+                            <li><a href="https://github.com/zen-rox93" target='blank'  style={{color:"white",textDecoration:"none"}}>Renzo Estrada</a></li>
+                            <li><a href="https://github.com/GuillermoMujicaDavila" target='blank' style={{color:"white",textDecoration:"none"}}>Guillermo Mujica</a></li>
                             <li></li>
                         </ul>
                     </div>
-                    {/* Columna 2 */}
                     <div className="col-md-3 col-sm-6">
                  
                     
                       </div>
-                    {/* Columna 3 */}
+                    
                     <div className="col-md-3 col-sm-6">
                      </div>
                          <div className="col-md-3 col-sm-6"  style={{position: 'relative',
     top: '23px'}} >
-                         <button style={{
-                           
-                             width:"50px",height:"50px",borderRadius:"50%"}}  >
-                           <a href='https://www.facebook.com/asociacionpatitas/' > <ImFacebook/></a>
-                            </button>
-                            <button  style={{
-                               
-                                width:"50px",height:"50px",borderRadius:"50%"}} >
-                               <a href='https://www.instagram.com/adoptamiu/' > <ImInstagram/> </a>
-                             </button>
-                             <button  style={{
-                               
-                                 width:"50px",height:"50px",borderRadius:"50%"}} >
-                                <a href='https://twitter.com/adopcionmascota?lang=es'  > <ImTwitter/></a>
-                         
-                        </button>
-
+                         <ul className="list-unstyled" style={{display:'flex',
+                        justifyContent:'space-around',fontSize:'40px'}}>
+                            <li> <a href='https://www.facebook.com/asociacionpatitas/' target='blank' className="fab fa-facebook" style={{color:"white",textDecoration:"none", width:'100px'}}><p></p></a></li>
+                            <li> <a href='https://www.facebook.com/asociacionpatitas/'  target='blank' className="fab fa-facebook" style={{color:"white",textDecoration:"none", width:'100px'}}><p></p></a></li>
+                            <li> <a href='https://www.instagram.com/adoptamiu/' target='blank'  className="fab fa-facebook" style={{color:"white",textDecoration:"none", width:'100px'}}><p></p></a></li>
+                            <li></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            
-            <div className="footer-bottom">
+                <div className="footer-bottom"style={{
+                    display:'flex',
+                    justifyContent:'end'
+                }}>
                 <p className="text-xs-center">
                     &copy;{new Date().getFullYear()} City Guide App- All Rights Reserved
                 </p>
+                
+                
 
+            </div>
             </div>
         
         </div>

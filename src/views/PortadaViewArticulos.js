@@ -5,6 +5,8 @@ import GroupArticulos from "../components/GroupArticulos";
 import Loading from '../components/Loading'
 import Slider from '@material-ui/core/Slider'
 import Narrbarkev from '../components/Narbarkev'
+import Footer from '../components/Footer'
+
 
 export default function PortadaViewArticulos() {
     const [articulos, setArticulos] = useState([])
@@ -30,10 +32,10 @@ export default function PortadaViewArticulos() {
     
     useEffect(() => {
         let productosFiltrados = productosOriginal.filter((arti) => {
-            return arti.productoPrecio >= filtroPrecio[0] && arti.productoPrecio <= filtroPrecio[1]
+            return arti.content.productoPrecio >= filtroPrecio[0] && arti.content.productoPrecio <= filtroPrecio[1]
         })
         setArticulos(productosFiltrados)
-    },[filtroPrecio])
+    },[])
 
     useEffect(() => {
         getArticulos()
@@ -69,7 +71,7 @@ export default function PortadaViewArticulos() {
                 </div>
                 <GroupArticulos articulos={articulos}/>
             </div>)}
-            
+            <Footer></Footer>
         </div>
     )
 }
