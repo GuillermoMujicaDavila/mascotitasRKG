@@ -31,7 +31,7 @@ export default function Footer() {
                         paddingTop:'30px'
                     }}>
 
-                        <h4>Autores</h4>
+                        <h4>Autores 🧨</h4>
                         <ul className="list-unstyled">
                             <li> <a href="https://github.com/kevinmore26" target='blank' style={{color:"white",textDecoration:"none"}}>Kevin More</a></li>
                             <li><a href="https://github.com/zen-rox93" target='blank'  style={{color:"white",textDecoration:"none"}}>Renzo Estrada</a></li>
@@ -47,12 +47,14 @@ export default function Footer() {
                     <div className="col-md-3 col-sm-6">
                      </div>
                          <div className="col-md-3 col-sm-6"  style={{position: 'relative',
-    top: '23px'}} >
+    top: '40px'}} >
                          <ul className="list-unstyled" style={{display:'flex',
                         justifyContent:'space-around',fontSize:'40px'}}>
                             <li> <a href='https://www.facebook.com/asociacionpatitas/' target='blank' className="fab fa-facebook" style={{color:"white",textDecoration:"none", width:'100px'}}><p></p></a></li>
-                            <li> <a href='https://www.facebook.com/asociacionpatitas/'  target='blank' className="fab fa-facebook" style={{color:"white",textDecoration:"none", width:'100px'}}><p></p></a></li>
-                            <li> <a href='https://www.instagram.com/adoptamiu/' target='blank'  className="fab fa-facebook" style={{color:"white",textDecoration:"none", width:'100px'}}><p></p></a></li>
+                            <li> <a href='https://www.instagram.com/adoptamiu/'  target='blank' className="fab fa-instagram" style={{color:"white",textDecoration:"none", width:'100px'}}><p></p></a></li>
+                            <li> <a href='https://twitter.com/adopcionmascota?lang=es' target='blank'  className="fab fa-twitter" style={{color:"white",textDecoration:"none", width:'100px'}}><p></p></a></li>
+                            <li> <a href='https://github.com/GuillermoMujicaDavila/mascotitasRKG' target='blank'  className="fab fa-github" style={{color:"white",textDecoration:"none", width:'100px'}}><p></p></a></li>
+        
                             <li></li>
                         </ul>
                     </div>
