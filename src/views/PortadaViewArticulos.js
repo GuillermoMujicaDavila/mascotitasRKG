@@ -32,10 +32,10 @@ export default function PortadaViewArticulos() {
     
     useEffect(() => {
         let productosFiltrados = productosOriginal.filter((arti) => {
-            return arti.content.productoPrecio >= filtroPrecio[0] && arti.content.productoPrecio <= filtroPrecio[1]
+            return arti.productoPrecio >= filtroPrecio[0] && arti.productoPrecio <= filtroPrecio[1]
         })
         setArticulos(productosFiltrados)
-    },[])
+    },[filtroPrecio])
 
     useEffect(() => {
         getArticulos()
