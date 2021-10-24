@@ -2,7 +2,14 @@ import  axios from "axios"
 
 const URL = `${process.env.REACT_APP_API}/gestion`
 
-
+const obtenerArticulos1 = async(busqueda = "") => {
+    try {
+        let { data } = await axios.get(`${URL}/producto-filtro?nombre=${busqueda}`)
+        return data //ya tenemos los datos
+    } catch (error) {
+        throw error
+    }
+}
 const obtenerArticulos = async() => {
     try {
         let { data } = await axios.get(`${URL}/productos`)
@@ -34,6 +41,7 @@ const obtenerArticulosPorId = async(id) => {
 export{
     obtenerArticulosPorId,
     obtenerArticulos,
-    obtenerPedidos
+    obtenerPedidos,
+    obtenerArticulos1
 }
 

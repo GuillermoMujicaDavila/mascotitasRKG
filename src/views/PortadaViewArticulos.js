@@ -1,5 +1,6 @@
 import { useState, useEffect,useRef } from "react";
 import { obtenerArticulos } from "../services/articulosService";
+import { obtenerArticulos1 } from "../services/articulosService";
 import GroupArticulos from "../components/GroupArticulos";
 
 import Loading from '../components/Loading'
@@ -14,32 +15,55 @@ export default function PortadaViewArticulos() {
     const[filtroPrecio, setFiltroPrecio] = useState([1,1500])
     const [productosOriginal, setProductosOriginal] = useState([])
 
-
     const inputBusqueda = useRef()
+
+    const getArticulos = async () => {
+        try {
+            const articulosObtenidos = await obtenerArticulos()
+            setArticulos(articulosObtenidos)
+            
+            setCargando(false)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    const getArticulosPrecio = async () => {
+        try {
+            const articulosObtenidos = await obtenerArticulos1()
+            setArticulos(articulosObtenidos)
+            setProductosOriginal(articulosObtenidos)
+            setCargando(false)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    // const inputBusqueda = useRef()
     const manejarPrecio = (evento, nuevosPrecios) => {
         setFiltroPrecio(nuevosPrecios)
     }
-    const getArticulos = async () => {
-        try {
-            const articulosObtenidas = await obtenerArticulos()
-            setArticulos(articulosObtenidas)
-            setProductosOriginal(articulosObtenidas)
-            setCargando(false)
-        } catch (error) {
-            console.log(error)            
-        }
-    }
-    
-    useEffect(() => {
-        let productosFiltrados = productosOriginal.filter((arti) => {
-            return arti.content.productoPrecio >= filtroPrecio[0] && arti.content.productoPrecio <= filtroPrecio[1]
-        })
+    const ejecutarBusqueda = async () => {
+        // console.log(inputBusqueda.current.value)
+        let miBusqueda = inputBusqueda.current.value
+        const productosFiltrados = await obtenerArticulos1(miBusqueda)
         setArticulos(productosFiltrados)
-    },[])
-
+    }
     useEffect(() => {
         getArticulos()
     }, [])
+    useEffect(() => {
+        getArticulosPrecio()
+    }, [])
+    
+    useEffect(() => {
+        let productosFiltrados = productosOriginal.filter((arti) =>  {
+            return arti.content.productoPrecio >= filtroPrecio[0] && arti.content.productoPrecio <= filtroPrecio[1]
+        })
+        setArticulos(productosFiltrados)
+        console.log(productosFiltrados)
+    
+    },[filtroPrecio])
+
+    
 
     return (
         <div>
@@ -64,6 +88,21 @@ export default function PortadaViewArticulos() {
                                 max={1500}
                             />
                        </div>
+
+                       <div className="col-sm-12 col-md-6">
+                           <h5>Filtro por nombre</h5>
+                           <div className="d-flex gap-1">
+                               <input 
+                                    type="text" 
+                                    className="form-control"
+                                    placeholder="Ingrese el nombre o descripción"
+                                    ref={inputBusqueda}
+                               />
+                               <button className="btn btn-dark" onClick={ejecutarBusqueda}>
+                                    <i className="fas fa-search" />
+                               </button>
+                           </div>
+                        </div>
 
                        
 
