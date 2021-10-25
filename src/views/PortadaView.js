@@ -10,6 +10,7 @@ import Footer from '../components/Footer'
 import KevPrinci from '../components/KevPrinci'
 // import Video from '../components/VideoBackground'
 import Kev1 from '../components/Kevinprinci2'
+import EstrellaPro2 from "../components/EstrellaPro2"
 
 const PortadaView = _=>
     {
@@ -17,8 +18,10 @@ const PortadaView = _=>
       return (<div>
           
             <Narvbar/>
+            
             <KevPrinci/>
             <Caracts/>
+            <EstrellaPro2/>
             <Kev1></Kev1>
             <Cards/>
             

@@ -7,6 +7,7 @@ import Loading from '../components/Loading'
 import Slider from '@material-ui/core/Slider'
 import Narrbarkev from '../components/Narbarkev'
 import Footer from '../components/Footer'
+import EstrellaProducto from "../components/EstrellaProducto"
 
 
 export default function PortadaViewArticulos() {
@@ -54,14 +55,14 @@ export default function PortadaViewArticulos() {
         getArticulosPrecio()
     }, [])
     
-    useEffect(() => {
-        let productosFiltrados = productosOriginal.filter((arti) =>  {
-            return arti.content.productoPrecio >= filtroPrecio[0] && arti.content.productoPrecio <= filtroPrecio[1]
-        })
-        setArticulos(productosFiltrados)
-        console.log(productosFiltrados)
+    // useEffect(() => {
+    //     let productosFiltrados = Object.values(articulos).filter((productosFiltrados) =>  {
+    //         return articulos.content.productoPrecio >= filtroPrecio[0] && articulos.content.productoPrecio <= filtroPrecio[1]
+    //     })
+    //     setArticulos(productosFiltrados)
+    //     // console.log(productosFiltrados)
     
-    },[filtroPrecio])
+    // },[filtroPrecio])
 
     
 
@@ -70,45 +71,69 @@ export default function PortadaViewArticulos() {
             <Narrbarkev ></Narrbarkev>
             {cargando ? 
             (<Loading/>) :
-            (<div className="py-4">
-                <div className="container text-center">
+            (<div className="py-3">
+                <div className="container " style={{
+                    display:'flex',
+                    maxWidth:'90vw',
+
+                }}>
+                   
+                    
+                       
+
                     
                     <div className="row my-2" style={{
                            display:'flex',
                            justifyContent:'center',
-                           textAlign:'center'
+                           textAlign:'center',
+                           width:'90vw'
                        }}>
-                       <div className="col-sm-12 col-md-6" >
-                           <h5>Filtrar Por precio</h5>
-                           <Slider
-                                value={filtroPrecio}
-                                onChange={manejarPrecio}
-                                valueLabelDisplay="auto"
-                                min={1}
-                                max={1500}
-                            />
-                       </div>
+                           <div style={{
+                               display :'flex',
+                               maxWidth:'90vw'
+                               
+                               
+                               
+                           }}>
+                            <div style={{display:'block',paddingTop:'50px',pmarginRight:'50px'}} className="col-sm-6 col-md-2" >
+                            <div className="col-sm-6 col-md-2" style={{width:'250px'}} >
+                                <h5>Filtrar Por precio</h5>
+                                <Slider
+                                        value={filtroPrecio}
+                                        onChange={manejarPrecio}
+                                        valueLabelDisplay="auto"
+                                        min={1}
+                                        max={1500}
+                                        style={{
+                                            color:'green'
+                                        }}
+                                    />
+                            </div>
 
-                       <div className="col-sm-12 col-md-6">
-                           <h5>Filtro por nombre</h5>
-                           <div className="d-flex gap-1">
-                               <input 
-                                    type="text" 
-                                    className="form-control"
-                                    placeholder="Ingrese el nombre o descripción"
-                                    ref={inputBusqueda}
-                               />
-                               <button className="btn btn-dark" onClick={ejecutarBusqueda}>
-                                    <i className="fas fa-search" />
-                               </button>
-                           </div>
+
+                            <div className="col-sm-12 col-md-2" style={{width:'250px'}} >
+                                <h5>Filtro por nombre 😼</h5>
+                                <div className="d-flex gap-1">
+                                    <input 
+                                        type="text" 
+                                        className="form-control"
+                                        placeholder="Ingrese el nombre "
+                                        ref={inputBusqueda}
+                                    />
+                                    <button className="btn " onClick={ejecutarBusqueda} style={{ border:'1px solid green', }}>
+                                        <i className="fas fa-search" style={{color:'green'}}/>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div>.</div>
+                            </div>
+                            <GroupArticulos articulos={articulos}/>
+                            </div>
+                            
+                            </div>
                         </div>
-
-                       
-
-                    </div>
-                </div>
-                <GroupArticulos articulos={articulos}/>
+                
             </div>)}
             <Footer></Footer>
         </div>
