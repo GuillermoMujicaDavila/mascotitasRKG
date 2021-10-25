@@ -38,7 +38,9 @@ export default function Narvbar() {
                 background: 'linear-gradient(to top,  rgb(255 255 255), rgb(121, 206, 102))',
                 top:'-16px  ',
                 width:'100vw',
-                right:'126px'
+                right:'126px',
+                display:'flex',
+                justifyContent:'center'
                 
                     }
                 }

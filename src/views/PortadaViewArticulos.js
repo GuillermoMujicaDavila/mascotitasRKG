@@ -7,7 +7,8 @@ import Loading from '../components/Loading'
 import Slider from '@material-ui/core/Slider'
 import Narrbarkev from '../components/Narbarkev'
 import Footer from '../components/Footer'
-import EstrellaProducto from "../components/EstrellaProducto"
+// import EstrellaProducto from "../components/EstrellaProducto"
+import Kev3 from '../components/KevPromo'
 
 
 export default function PortadaViewArticulos() {
@@ -69,6 +70,7 @@ export default function PortadaViewArticulos() {
     return (
         <div>
             <Narrbarkev ></Narrbarkev>
+            <Kev3/>
             {cargando ? 
             (<Loading/>) :
             (<div className="py-3">
