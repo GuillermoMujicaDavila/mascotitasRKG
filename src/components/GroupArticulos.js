@@ -19,7 +19,7 @@ export default function GroupArticulos({articulos}) {
             <div className="container">
                 <div className="row mt-2">
                     {articulos.content.map((arti, i) => (
-                        <div className="col-12 col-lg-4 col-md-12 col-xl-12" key={1}>
+                        <div className="col-12 col-lg-4 col-md-6 col-xl-4" key={1}>
                             <div className="magic  card border border-secondary border border-3 text-center">
                                 <div className="overflow">
                                     <img 
