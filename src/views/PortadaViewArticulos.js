@@ -75,8 +75,8 @@ export default function PortadaViewArticulos() {
             (<Loading/>) :
             (<div className="py-3">
                 <div className="container " style={{
-                    display:'flex',
-                    maxWidth:'90vw',
+                    // display:'flex',
+                    // maxWidth:'90vw',
 
                 }}>
                    
@@ -85,14 +85,14 @@ export default function PortadaViewArticulos() {
 
                     
                     <div className="row my-2" style={{
-                           display:'flex',
-                           justifyContent:'center',
-                           textAlign:'center',
-                           width:'90vw'
+                        //    display:'flex',
+                        //    justifyContent:'center',
+                        //    textAlign:'center',
+                        //    width:'90vw'
                        }}>
                            <div style={{
-                               display :'flex',
-                               maxWidth:'90vw'
+                            //    display :'flex',
+                            //    maxWidth:'90vw'
                                
                                
                                
