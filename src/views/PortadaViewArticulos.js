@@ -29,16 +29,16 @@ export default function PortadaViewArticulos() {
             console.error(error)
         }
     }
-    // const getArticulosPrecio = async () => {
-    //     try {
-    //         const articulosObtenidos = await obtenerArticulos1()
-    //         setArticulos(articulosObtenidos)
-    //         setProductosOriginal(articulosObtenidos)
-    //         setCargando(false)
-    //     } catch (error) {
-    //         console.error(error)
-    //     }
-    // }
+    const getArticulosPrecio = async () => {
+        try {
+            const articulosObtenidos = await obtenerArticulos1()
+            setArticulos(articulosObtenidos)
+            setProductosOriginal(articulosObtenidos)
+            setCargando(false)
+        } catch (error) {
+            console.error(error)
+        }
+    }
     // const inputBusqueda = useRef()
     const manejarPrecio = (evento, nuevosPrecios) => {
         setFiltroPrecio(nuevosPrecios)
@@ -52,17 +52,17 @@ export default function PortadaViewArticulos() {
     useEffect(() => {
         getArticulos()
     }, [])
-    // useEffect(() => {
-    //     getArticulosPrecio()
-    // }, [])
-
     useEffect(() => {
-        let productosFiltrados = articulos.filter((arti) => {
-            return arti.productoPrecio >= filtroPrecio[0] && arti.productoPrecio <= filtroPrecio[1]
-        })
+        getArticulosPrecio()
+    }, [])
 
-        setArticulos(productosFiltrados)
-    }, [filtroPrecio])
+    // useEffect(() => {
+    //     let productosFiltrados = articulos.filter((arti) => {
+    //         return arti.productoPrecio >= filtroPrecio[0] && arti.productoPrecio <= filtroPrecio[1]
+    //     })
+
+    //     setArticulos(productosFiltrados)
+    // }, [filtroPrecio])
     
     // useEffect(() => {
     //     let productosFiltrados = Object.values(articulos).filter((productosFiltrados) =>  {
