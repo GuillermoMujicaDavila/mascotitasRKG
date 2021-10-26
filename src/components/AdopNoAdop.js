@@ -1,28 +1,28 @@
 import React,{Component} from 'react';
-import {Pie} from 'react-chartjs-2';
+import {Bar} from 'react-chartjs-2';
 import "chart.piecelabel.js"
 
-class EstrellaProducto2 extends Component{
+class AdopNoAdop extends Component{
     state={
         respuesta:[],
         nombre:[],
-        cantidad:[],
+        cuenta:[],
         colores:[],
         data:[],
         opciones:{}
     }
 
 async peticion(){
-    var peticion=await fetch('http://127.0.0.1:8000/gestion/producto-estrella');
+    var peticion=await fetch('http://127.0.0.1:8000/gestion/cliente_especial');
     var respuesta=await peticion.json();
     this.setState({respuesta:respuesta});
-    var nombre=[],cantidad=[]
+    var nombre=[],cuenta=[]
     this.state.respuesta.content.map((elemento)=>{
         nombre.push(elemento.nombre);
-        cantidad.push(elemento.cantidad);   
+        cuenta.push(elemento.cuenta);   
         return elemento
     });
-    this.setState({nombre:nombre,cantidad:cantidad});
+    this.setState({nombre:nombre,cuenta:cuenta});
 // array prototypemap expects a return value from arrow function
     }
     generarCaracter(){
@@ -39,7 +39,7 @@ async peticion(){
     }
     generarColores(){
         var colores=[];
-        for(var i=0;i<this.state.respuesta.content.length;i++){
+        for(var i=0;i<this.state.respuesta.length;i++){
             colores.push(this.colorHEX());
         }
         this.setState({colores:colores})
@@ -47,9 +47,15 @@ async peticion(){
     configurarGrafica(){
         const data={
             labels:this.state.nombre,
+            
             datasets:[{
-                data:this.state.cantidad,
-                backgroundColor:this.state.colores
+                label:'Clientes',
+                data:this.state.cuenta,
+                // backgroundColor:this.state.colores,
+                // background:this.state.colores,
+                // color:this.state.colores
+
+                backgroundColor:'rgb(25, 135, 84)'
             }]
         };
         const opciones={
@@ -60,7 +66,7 @@ async peticion(){
                     return args.label +": "+ args.value+"%";
                 },
                 fontSize:2,
-                fontColor:'#fff',
+                // fontColor:'#fff',
                 fontFamily:'Arial'
             }
         }
@@ -76,14 +82,14 @@ async peticion(){
     render(){
 
         return(
-            <div style={{maxWidth:'45vw',marginBottom:'200px',position:'relative',bottom:'100px'}}>
-                <h3 style={{textAlign:'center'}}>Productos más vendidos</h3>
-                <Pie data={this.state.data} options={this.state.opciones} style={{maxHeight:'400px'}}/>
+            <div style={{maxWidth:'48vw',marginBottom:'200px',position:'relative',bottom:'100px'}}>
+                <h3 style={{textAlign:'center'}}>Top Clientes Octubre</h3>
+                <Bar data={this.state.data} options={this.state.opciones} style={{maxHeight:'400px'}}/>
             </div>
         );
     }
 }
 
-export default EstrellaProducto2;
+export default AdopNoAdop;
 
 

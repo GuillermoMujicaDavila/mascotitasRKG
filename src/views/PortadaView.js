@@ -11,6 +11,7 @@ import KevPrinci from '../components/KevPrinci'
 // import Video from '../components/VideoBackground'
 import Kev1 from '../components/Kevinprinci2'
 import EstrellaPro2 from "../components/EstrellaPro2"
+import AdopNoAdop from "../components/AdopNoAdop"
 
 const PortadaView = _=>
     {
@@ -21,7 +22,9 @@ const PortadaView = _=>
             
             <KevPrinci/>
             <Caracts/>
+            <section style={{display:'flex',justifyContent:'space-around'}}>
             <EstrellaPro2/>
+            <AdopNoAdop/></section>
             <Kev1></Kev1>
             <Cards/>
             
