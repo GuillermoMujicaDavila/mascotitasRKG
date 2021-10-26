@@ -77,7 +77,7 @@ async peticion(){
 
         return(
             <div style={{maxWidth:'45vw',marginBottom:'200px',position:'relative',bottom:'100px'}}>
-                <h3 style={{textAlign:'center'}}>Productos más vendidos</h3>
+                <h3 style={{textAlign:'center',fontFamily:'cursive'}}>Productos más vendidos</h3>
                 <Pie data={this.state.data} options={this.state.opciones} style={{maxHeight:'400px'}}/>
             </div>
         );

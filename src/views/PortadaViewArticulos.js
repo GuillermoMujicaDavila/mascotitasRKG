@@ -97,7 +97,7 @@ export default function PortadaViewArticulos() {
                                
                                
                            }}>
-                            <div style={{display:'block',paddingTop:'50px',pmarginRight:'50px'}} className="col-sm-6 col-md-2" >
+                            <div style={{display:'block',paddingTop:'50px',marginRight:'50px'}} className="col-sm-6 col-md-2" >
                             <div className="col-sm-6 col-md-2" style={{width:'250px'}} >
                                 <h5>Filtrar Por precio</h5>
                                 <Slider

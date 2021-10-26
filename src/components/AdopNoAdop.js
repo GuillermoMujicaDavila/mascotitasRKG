@@ -82,9 +82,9 @@ async peticion(){
     render(){
 
         return(
-            <div style={{maxWidth:'48vw',marginBottom:'200px',position:'relative',bottom:'100px'}}>
-                <h3 style={{textAlign:'center'}}>Top Clientes Octubre</h3>
-                <Bar data={this.state.data} options={this.state.opciones} style={{maxHeight:'400px'}}/>
+            <div style={{maxWidth:'45vw',marginBottom:'200px',position:'relative',bottom:'80px'}}>
+                <h3 style={{textAlign:'center',fontFamily:'cursive'}}>Top Clientes Octubre</h3>
+                <Bar data={this.state.data} options={this.state.opciones} style={{height:'400px'}}/>
             </div>
         );
     }
