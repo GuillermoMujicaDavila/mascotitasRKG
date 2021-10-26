@@ -4,6 +4,7 @@ import GroupAdopciones from "../components/GroupAdopciones";
 import Narbarkev from "../components/Narbarkev"
 import Footer from "../components/Footer"
 
+
 export default function PortadaViewAdopciones() {
     const [adopciones, setAdopciones] = useState([])
 

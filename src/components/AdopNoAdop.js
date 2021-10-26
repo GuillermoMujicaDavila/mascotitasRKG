@@ -59,7 +59,7 @@ async peticion(){
             }]
         };
         const opciones={
-            responsive:true,
+            responsive:false,
             maintainAspectRatio:false,
             piecelabel:{
                 render:function(args){

@@ -27,8 +27,6 @@ const PortadaView = _=>
             <AdopNoAdop/></section>
             <Kev1></Kev1>
             <Cards/>
-            
-            
           <Footer/>
           
           </div>)}
