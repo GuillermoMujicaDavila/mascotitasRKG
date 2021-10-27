@@ -14,7 +14,7 @@ import Kev3 from '../components/KevPromo'
 export default function PortadaViewArticulos() {
     const [articulos, setArticulos] = useState([])
     const[cargando,setCargando]=useState(true)
-    const[filtroPrecio, setFiltroPrecio] = useState([1,1500])
+    const[filtroPrecio, setFiltroPrecio] = useState([1,100])
     const [productosOriginal, setProductosOriginal] = useState([])
 
     const inputBusqueda = useRef()
@@ -23,22 +23,23 @@ export default function PortadaViewArticulos() {
         try {
             const articulosObtenidos = await obtenerArticulos()
             setArticulos(articulosObtenidos)
+            setProductosOriginal(articulosObtenidos)
             
             setCargando(false)
         } catch (error) {
             console.error(error)
         }
     }
-    const getArticulosPrecio = async () => {
-        try {
-            const articulosObtenidos = await obtenerArticulos1()
-            setArticulos(articulosObtenidos)
-            setProductosOriginal(articulosObtenidos)
-            setCargando(false)
-        } catch (error) {
-            console.error(error)
-        }
-    }
+    // const getArticulosPrecio = async () => {
+    //     try {
+    //         const articulosObtenidos = await obtenerArticulos1()
+    //         setArticulos(articulosObtenidos)
+    //         setProductosOriginal(articulosObtenidos)
+    //         setCargando(false)
+    //     } catch (error) {
+    //         console.error(error)
+    //     }
+    // }
     // const inputBusqueda = useRef()
     const manejarPrecio = (evento, nuevosPrecios) => {
         setFiltroPrecio(nuevosPrecios)
@@ -46,23 +47,24 @@ export default function PortadaViewArticulos() {
     const ejecutarBusqueda = async () => {
         // console.log(inputBusqueda.current.value)
         let miBusqueda = inputBusqueda.current.value
-        const productosFiltrados = await obtenerArticulos(miBusqueda)
+        const productosFiltrados = await obtenerArticulos1(miBusqueda)
         setArticulos(productosFiltrados)
     }
     useEffect(() => {
         getArticulos()
     }, [])
+
     useEffect(() => {
-        getArticulosPrecio()
-    }, [])
-
+        let productosFiltrados = productosOriginal.filter((arti) => {
+            return articulos.productoPrecio >= filtroPrecio[0] && articulos.productoPrecio <= filtroPrecio[1] 
+        })
+        
+        setArticulos(productosFiltrados)
+    }, [filtroPrecio])
+    
     // useEffect(() => {
-    //     let productosFiltrados = articulos.filter((arti) => {
-    //         return arti.productoPrecio >= filtroPrecio[0] && arti.productoPrecio <= filtroPrecio[1]
-    //     })
-
-    //     setArticulos(productosFiltrados)
-    // }, [filtroPrecio])
+    //     getArticulosPrecio()
+    // }, [])
     
     // useEffect(() => {
     //     let productosFiltrados = Object.values(articulos).filter((productosFiltrados) =>  {
@@ -113,7 +115,7 @@ export default function PortadaViewArticulos() {
                                         onChange={manejarPrecio}
                                         valueLabelDisplay="auto"
                                         min={1}
-                                        max={1500}
+                                        max={100}
                                         style={{
                                             color:'green'
                                         }}
