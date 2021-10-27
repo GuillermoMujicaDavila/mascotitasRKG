@@ -1,4 +1,4 @@
-import { useState, useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { obtenerArticulos } from "../services/articulosService";
 import { obtenerArticulos1 } from "../services/articulosService";
 import GroupArticulos from "../components/GroupArticulos";
@@ -13,9 +13,9 @@ import Kev3 from '../components/KevPromo'
 
 export default function PortadaViewArticulos() {
     const [articulos, setArticulos] = useState([])
-    const[cargando,setCargando]=useState(true)
-    const[filtroPrecio, setFiltroPrecio] = useState([1,100])
-    const [productosOriginal, setProductosOriginal] = useState([])
+    const [articulosOriginal, setArticulosOriginal] = useState([])
+    const [cargando,setCargando]=useState(true)
+    const [filtroPrecio, setFiltroPrecio] = useState([1,100])
 
     const inputBusqueda = useRef()
 
@@ -23,8 +23,7 @@ export default function PortadaViewArticulos() {
         try {
             const articulosObtenidos = await obtenerArticulos()
             setArticulos(articulosObtenidos)
-            setProductosOriginal(articulosObtenidos)
-            
+            setArticulosOriginal(articulosObtenidos)
             setCargando(false)
         } catch (error) {
             console.error(error)
@@ -55,10 +54,9 @@ export default function PortadaViewArticulos() {
     }, [])
 
     useEffect(() => {
-        let productosFiltrados = productosOriginal.filter((arti) => {
-            return articulos.productoPrecio >= filtroPrecio[0] && articulos.productoPrecio <= filtroPrecio[1] 
+        let productosFiltrados = articulosOriginal.filter((arti) => {
+            return arti.productoPrecio >= filtroPrecio[0] && arti.productoPrecio <= filtroPrecio[1] 
         })
-        
         setArticulos(productosFiltrados)
     }, [filtroPrecio])
     
