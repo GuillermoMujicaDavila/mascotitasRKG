@@ -61,7 +61,8 @@ export default function PortadaViewAdopciones() {
                 display:'flex',
                 justifyContent:'center',
                 textAlign:'center',
-                width:'90vw'
+                width:'90vw',
+                margin:'0 auto'
             }}>
                 <div>
                     <div  style={{
