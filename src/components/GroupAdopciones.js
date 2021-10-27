@@ -74,7 +74,7 @@ export default function GroupAdopciones({adopciones}) {
             <div className="container">
                 <div className="row mt-3">
                     {adopciones.map((adop, i) => (
-                        <div className="col-6 col-lg-3">
+                        <div className="col-12 col-lg-4 col-md-6 col-xl-4">
                             <div className="magic  card border border-secondary border border-3 text-center">
                                 <div className="overflow">
                                     <img 
