@@ -12,7 +12,7 @@ export default function Loading() {
             backgroundColor:'white'
         }}>
             <i 
-                className="fas fa-spinner fa-spin fa-6x" 
+                className="fab fa-hornbill fa-spin fa-4x" 
                 style={{
                     color:'rgb(25, 135, 84)',
                     position:'absolute',
@@ -24,3 +24,4 @@ export default function Loading() {
         </div>
     )
 }
+
