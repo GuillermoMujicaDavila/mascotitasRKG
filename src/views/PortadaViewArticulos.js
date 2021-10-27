@@ -9,6 +9,7 @@ import Narrbarkev from '../components/Narbarkev'
 import Footer from '../components/Footer'
 // import EstrellaProducto from "../components/EstrellaProducto"
 import Kev3 from '../components/KevPromo'
+import Slidertienda from '../components/Carrusel-productos'
 
 
 export default function PortadaViewArticulos() {
@@ -70,7 +71,8 @@ export default function PortadaViewArticulos() {
     return (
         <div>
             <Narrbarkev ></Narrbarkev>
-            <Kev3/>
+            <Slidertienda/>
+            
             {cargando ? 
             (<Loading/>) :
             (<div className="py-3">
