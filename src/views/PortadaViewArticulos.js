@@ -91,8 +91,10 @@ export default function PortadaViewArticulos() {
                                     <div style={{display:'block',paddingTop:'50px',
                                      marginRight:'50px'
                                 }} className="col-sm-6 col-md-2" >
-                                    <div className="col-sm-6 col-md-2" style={{width:'250px'}} >
-                                        <h5>Filtrar Por precio</h5>
+                                    <h5 style={{color:'rgb(87, 87, 87)'}}>Filtrar por</h5>
+                                    <hr/>
+                                    <div className="col-sm-6 col-md-2" style={{width:'250px',color:'rgb(87, 87, 87)'}} >
+                                        <h6 >Precio</h6>
                                         <Slider
                                                 value={filtroPrecio}
                                                 onChange={manejarPrecio}
@@ -105,9 +107,9 @@ export default function PortadaViewArticulos() {
                                             />
                                     </div>
 
-
+                                    <hr/>                        
                                     <div className="col-sm-12 col-md-2" style={{width:'250px'}} >
-                                        <h5>Filtro por nombre 😼</h5>
+                                        <h6 style={{color:'rgb(87, 87, 87)'}}>Nombre </h6>
                                         <div className="d-flex gap-1">
                                             <input 
                                                 type="text" 
