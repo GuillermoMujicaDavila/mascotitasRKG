@@ -30,32 +30,32 @@ export default function PortadaViewArticulos() {
             console.error(error)
         }
     }
-    const getArticulosPrecio = async () => {
-        try {
-            const articulosObtenidos = await obtenerArticulos1()
-            setArticulos(articulosObtenidos)
-            setProductosOriginal(articulosObtenidos)
-            setCargando(false)
-        } catch (error) {
-            console.error(error)
-        }
-    }
-    // const inputBusqueda = useRef()
-    const manejarPrecio = (evento, nuevosPrecios) => {
-        setFiltroPrecio(nuevosPrecios)
-    }
+    // const getArticulosPrecio = async () => {
+    //     try {
+    //         const articulosObtenidos = await obtenerArticulos1()
+    //         setArticulos(articulosObtenidos)
+    //         setProductosOriginal(articulosObtenidos)
+    //         setCargando(false)
+    //     } catch (error) {
+    //         console.error(error)
+    //     }
+    // }
+    // // const inputBusqueda = useRef()
+    // const manejarPrecio = (evento, nuevosPrecios) => {
+    //     setFiltroPrecio(nuevosPrecios)
+    // }
     const ejecutarBusqueda = async () => {
         // console.log(inputBusqueda.current.value)
-        let miBusqueda = inputBusqueda.current.value
-        const productosFiltrados = await obtenerArticulos1(miBusqueda)
+        let miBusqueda1 = inputBusqueda.current.value
+        const productosFiltrados = await obtenerArticulos1(miBusqueda1)
         setArticulos(productosFiltrados)
     }
     useEffect(() => {
         getArticulos()
     }, [])
-    useEffect(() => {
-        getArticulosPrecio()
-    }, [])
+    // useEffect(() => {
+    //     getArticulosPrecio()
+    // }, [])
     
     // useEffect(() => {
     //     let productosFiltrados = Object.values(articulos).filter((productosFiltrados) =>  {
@@ -79,64 +79,57 @@ export default function PortadaViewArticulos() {
                 <div className="container " style={{
                     display:'flex',
                     maxWidth:'90vw',
-
-                }}>
-                   
-                    
-                       
-
-                    
-                    <div className="row my-2" style={{
-                           display:'flex',
-                           justifyContent:'center',
-                           textAlign:'center',
-                           width:'90vw'
-                       }}>
-                           <div style={{
-                               display :'flex',
-                               maxWidth:'90vw'
-                               
-                               
-                               
-                           }}>
-                            <div style={{display:'block',paddingTop:'50px',marginRight:'50px'}} className="col-sm-6 col-md-2" >
-                            <div className="col-sm-6 col-md-2" style={{width:'250px'}} >
-                                <h5>Filtrar Por precio</h5>
-                                <Slider
-                                        value={filtroPrecio}
-                                        onChange={manejarPrecio}
-                                        valueLabelDisplay="auto"
-                                        min={1}
-                                        max={1500}
-                                        style={{
-                                            color:'green'
-                                        }}
-                                    />
-                            </div>
+                    margin:'0 auto'}}>
+                        <div className="row my-2" style={{
+                            display:'flex',
+                            // justifyContent:'center',
+                            // textAlign:'center',
+                            // width:'90vw'
+                        }}>
+                                <div style={{
+                                    display :'flex',
+                                    // maxWidth:'90vw'  
+                                }}>
+                                    <div style={{display:'block',paddingTop:'50px',
+                                    // marginRight:'50px'
+                                }} className="col-sm-6 col-md-2" >
+                                    <div className="col-sm-6 col-md-2" style={{width:'250px'}} >
+                                        <h5>Filtrar Por precio</h5>
+                                        {/* <Slider
+                                                value={filtroPrecio}
+                                                onChange={manejarPrecio}
+                                                valueLabelDisplay="auto"
+                                                min={1}
+                                                max={1500}
+                                                style={{
+                                                    color:'green'
+                                                }}
+                                            /> */}
+                                    </div>
 
 
-                            <div className="col-sm-12 col-md-2" style={{width:'250px'}} >
-                                <h5>Filtro por nombre 😼</h5>
-                                <div className="d-flex gap-1">
-                                    <input 
-                                        type="text" 
-                                        className="form-control"
-                                        placeholder="Ingrese el nombre "
-                                        ref={inputBusqueda}
-                                    />
-                                    <button className="btn " onClick={ejecutarBusqueda} style={{ border:'1px solid green', }}>
-                                        <i className="fas fa-search" style={{color:'green'}}/>
-                                    </button>
+                                    <div className="col-sm-12 col-md-2" style={{width:'250px'}} >
+                                        <h5>Filtro por nombre 😼</h5>
+                                        <div className="d-flex gap-1">
+                                            <input 
+                                                type="text" 
+                                                className="form-control"
+                                                placeholder="Ingrese el nombre "
+                                                ref={inputBusqueda}
+                                            />
+                                            <button className="btn " onClick={ejecutarBusqueda} style={{ border:'1px solid green', }}>
+                                                <i className="fas fa-search" style={{color:'green'}}/>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>.</div>
+                                    </div>
+                                    <GroupArticulos articulos={articulos}/>
                                 </div>
-                            </div>
-                            
-                            <div>.</div>
-                            </div>
-                            <GroupArticulos articulos={articulos}/>
-                            </div>
-                            
-                            </div>
+                                
                         </div>
+                </div>
                 
             </div>)}
             <Footer></Footer>

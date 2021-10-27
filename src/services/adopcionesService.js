@@ -10,26 +10,19 @@ const obtenerAdopciones = async() => {
         throw error
     }
 }
-const obtenerTamanioAdopcion = async(busqueda = "") => {
+const obtenerAdopciones1 = async(busqueda = "") => {
     try {
         let { data } = await axios.get(`${URL}/adopcion-filtro?tamanio=${busqueda}`)
-        return data //ya tenemos los datos
-    } catch (error) {
-        throw error
-    }
-}
-const obtenerAdopcionesImagen = async(adopcionImagen) => {
-    try {
-        let { data } = await axios.get(`${URL}/adopciones/${adopcionImagen}`)
-        return data // ya tengo los datos
+        return data.content //ya tenemos los datos
     } catch (error) {
         throw error
     }
 }
 
+
 const obtenerAdopcionesPorId = async(id) => {
     try {
-        let { data } = await axios.get(`${URL}/adopciones/${id}`)
+        let { data } = await axios.get(`${URL}/adopcion/${id}`)
         return data // ya tengo los datos
     } catch (error) {
         throw error
@@ -39,8 +32,8 @@ const obtenerAdopcionesPorId = async(id) => {
 
 export{
     obtenerAdopcionesPorId,
-    obtenerAdopcionesImagen,
+    // 
     obtenerAdopciones,
-    obtenerTamanioAdopcion
+    obtenerAdopciones1
 }
 

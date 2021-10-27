@@ -20,18 +20,35 @@ import imagenModal from '../assets/img/relleno.jpg'
 //     }
 // }
 
-export default function GroupAdopciones({adopciones}) {
+export default function GroupAdopciones1({adopciones1}) {
    
-    console.log(adopciones)
+    console.log(adopciones1)
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    
+    
+    // const getImagen(){
+    //     const result=await fetch('http://127.0.0.1:8000/assets/',{
+    //         method:'GET',
+    //         headers:{
+    //             "Content-Type":"application/json",
+    //         },
+    //     });
+
+
+    
+    //     console.log(result);
+    //     const data=await result.json();
+    //     console.log(data);
+    //     return data;
+    // }
 
 
     return (
 
-       <div> 
+       <div style={{marginTop:'100px'}}> 
            
             <h1 className="text-center text-success my-4 fw-bold">
                 
@@ -56,8 +73,8 @@ export default function GroupAdopciones({adopciones}) {
 
             <div className="container">
                 <div className="row mt-3">
-                    {adopciones.map((adop, i) => (
-                        <div className="col-12 col-lg-4 col-md-6 col-xl-4"  key={1}>
+                    {adopciones1.content.map((adop, i) => (
+                        <div className="col-12 col-lg-4 col-md-6 col-xl-4">
                             <div className="magic  card border border-secondary border border-3 text-center">
                                 <div className="overflow">
                                     <img 
