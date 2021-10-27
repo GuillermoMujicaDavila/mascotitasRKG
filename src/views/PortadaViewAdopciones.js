@@ -4,7 +4,7 @@ import GroupAdopciones from "../components/GroupAdopciones";
 import Narbarkev from "../components/Narbarkev"
 import Footer from "../components/Footer"
 import Loading from '../components/Loading'
-
+import KitAdop from "../components/KitAdop"
 export default function PortadaViewAdopciones() {
     const [adopciones, setAdopciones] = useState([])
     const [adopciones1, setAdopciones1] = useState([])
@@ -55,6 +55,7 @@ export default function PortadaViewAdopciones() {
     return (
         <div>
             <Narbarkev style={{marginBottom:"150px"}}></Narbarkev>
+            <KitAdop/>
             {cargando ? 
             (<Loading/>) :
             (<div className="row my-2" style={{
