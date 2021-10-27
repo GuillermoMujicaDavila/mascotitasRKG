@@ -33,7 +33,7 @@ export default function GroupAdopciones({adopciones}) {
 
        <div> 
            
-            <h1 className="text-center text-success my-4 fw-bold">
+            {/* <h1 className="text-center text-success my-4 fw-bold">
                 
                 <i className="fas fa-cat" >
                 
@@ -51,7 +51,7 @@ export default function GroupAdopciones({adopciones}) {
                 >
                 </i>
 
-            </h1>
+            </h1> */}
            
 
             <div className="container">

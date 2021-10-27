@@ -41,9 +41,9 @@ export default function PortadaViewArticulos() {
     //     }
     // }
     // // const inputBusqueda = useRef()
-    // const manejarPrecio = (evento, nuevosPrecios) => {
-    //     setFiltroPrecio(nuevosPrecios)
-    // }
+    const manejarPrecio = (evento, nuevosPrecios) => {
+        setFiltroPrecio(nuevosPrecios)
+    }
     const ejecutarBusqueda = async () => {
         // console.log(inputBusqueda.current.value)
         let miBusqueda1 = inputBusqueda.current.value
@@ -82,20 +82,18 @@ export default function PortadaViewArticulos() {
                     margin:'0 auto'}}>
                         <div className="row my-2" style={{
                             display:'flex',
-                            // justifyContent:'center',
-                            // textAlign:'center',
-                            // width:'90vw'
+                            
                         }}>
                                 <div style={{
                                     display :'flex',
                                     // maxWidth:'90vw'  
                                 }}>
                                     <div style={{display:'block',paddingTop:'50px',
-                                    // marginRight:'50px'
+                                     marginRight:'50px'
                                 }} className="col-sm-6 col-md-2" >
                                     <div className="col-sm-6 col-md-2" style={{width:'250px'}} >
                                         <h5>Filtrar Por precio</h5>
-                                        {/* <Slider
+                                        <Slider
                                                 value={filtroPrecio}
                                                 onChange={manejarPrecio}
                                                 valueLabelDisplay="auto"
@@ -104,7 +102,7 @@ export default function PortadaViewArticulos() {
                                                 style={{
                                                     color:'green'
                                                 }}
-                                            /> */}
+                                            />
                                     </div>
 
 
