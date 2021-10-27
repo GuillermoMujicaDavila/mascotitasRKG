@@ -10,7 +10,7 @@ import { Carousel } from 'react-bootstrap'
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://i.imgur.com/fvtHgA6.png"
+      src="https://i.imgur.com/iL3m7Ve.png"
       alt="First slide"
     />
     <Carousel.Caption>
@@ -20,7 +20,7 @@ import { Carousel } from 'react-bootstrap'
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://i.imgur.com/zHkymfX.png"
+      src="https://i.imgur.com/tZhJTcC.png"
       alt="Second slide"
     />
     <Carousel.Caption>
@@ -30,7 +30,7 @@ import { Carousel } from 'react-bootstrap'
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://i.imgur.com/fvtHgA6.png"
+      src="https://i.imgur.com/iL3m7Ve.png"
       alt="Third slide"
     />
     <Carousel.Caption>
