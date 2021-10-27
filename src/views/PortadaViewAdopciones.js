@@ -70,8 +70,10 @@ export default function PortadaViewAdopciones() {
                                     display :'flex',
                                     maxWidth:'90vw'  
                                 }}>
-                        <div className="col-sm-12 col-md-2" style={{width:'250px',display:'block',paddingTop:'50px',marginRight:'50px'}} >
-                                            <h5>Filtro por tamaño 😼</h5>
+                        <div className="col-sm-12 col-md-2" style={{width:'250px',display:'block',paddingTop:'50px',marginRight:'50px',textAlign:'left', color:'rgb(87, 87, 87)'}} >
+                                            <h5>Filtro por </h5>
+                                            <hr/>
+                                            <h6>Tamaño</h6>
                                             <div className="d-flex gap-1">
                                                 <input 
                                                     type="text" 
