@@ -10,7 +10,7 @@ import VideoBackground from '../components/VideoBackground';
 export default function RegistroView() {
     return (
         <div>
-            <VideoBackground/>
+            
             <div >
             <ButtonGroup
                 style={{display:'flex', 

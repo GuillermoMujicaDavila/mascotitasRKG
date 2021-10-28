@@ -55,14 +55,14 @@ export default function PortadaViewArticulos() {
     }, [])
     
     
-    useEffect(() => {
-        let productosFiltrados = Object.values(articulos).filter((productosFiltrados) =>  {
-            return articulos.content.productoPrecio >= filtroPrecio[0] && articulos.content.productoPrecio <= filtroPrecio[1]
-        })
-        setArticulos(productosFiltrados)
-        // console.log(productosFiltrados)
+    // useEffect(() => {
+    //     let productosFiltrados = Object.values(productosOriginal).filter((articulos) =>  {
+    //         return articulos.content.productoPrecio >= filtroPrecio[0] && articulos.content.productoPrecio <= filtroPrecio[1]
+    //     })
+    //     setArticulos(productosFiltrados)
+    //     // console.log(productosFiltrados)
     
-    },[filtroPrecio])
+    // },[filtroPrecio])
 
     
 
