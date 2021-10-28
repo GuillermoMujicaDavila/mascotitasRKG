@@ -12,6 +12,7 @@ import KevPrinci from '../components/KevPrinci'
 import Kev1 from '../components/Kevinprinci2'
 import EstrellaPro2 from "../components/EstrellaPro2"
 import AdopNoAdop from "../components/AdopNoAdop"
+import SimpleSlider from "../components/SlickSlider1"
 
 const PortadaView = _=>
     {
@@ -26,7 +27,8 @@ const PortadaView = _=>
             <EstrellaPro2/>
             <AdopNoAdop/></section>
             <Kev1></Kev1>
-            <Cards/>
+            
+            <SimpleSlider/>
           <Footer/>
           
           </div>)}

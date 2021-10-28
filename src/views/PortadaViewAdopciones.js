@@ -78,7 +78,7 @@ export default function PortadaViewAdopciones() {
                                                 <input 
                                                     type="text" 
                                                     className="form-control"
-                                                    placeholder="Ingrese el nombre "
+                                                    placeholder="Ingrese el tamaño "
                                                     ref={inputBusqueda}
                                                 />
                                                 
