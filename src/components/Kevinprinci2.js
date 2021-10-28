@@ -15,7 +15,7 @@ import {Link} from "react-router-dom";
       return (
         <div style={{
           position:'relative',
-          bottom: '122px',
+          bottom: '216px',
         }}>   
           
           <h1>

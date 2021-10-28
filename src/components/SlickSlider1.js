@@ -17,7 +17,7 @@ export default function SimpleSlider() {
       
     };
     return (
-      <Slider {...settings} style={{width:'98vw',display:'flex',justifyContent:'space-between',borderRadius:'50px'}}>
+      <Slider {...settings} style={{width:'98vw',display:'flex',justifyContent:'space-between',borderRadius:'50px',position:'relative',bottom:'100px'}}>
         <div style={{display:'flex',justifyContent:'center'}}>
           <h1 className="text-center text-success my-4 fw-bold" style={{
                 background:'rgb(121, 206, 102))',

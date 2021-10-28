@@ -27,8 +27,8 @@ const PortadaView = _=>
             <EstrellaPro2/>
             <AdopNoAdop/></section>
             <Kev1></Kev1>
+            <SimpleSlider />
             
-            <SimpleSlider/>
           <Footer/>
           
           </div>)}
