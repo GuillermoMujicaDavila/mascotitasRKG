@@ -72,10 +72,13 @@ export default function GroupAdopciones({adopciones}) {
                                             {adop.adopcionNombre}
                                                         
                                         </h6>
-                                        <p className="card-text text-secondary">
+                                        <p className="card-text text-secondary" >
+                                            {adop.adopcionTamanio}
+                                        </p>
+                                        <p className="card-text text-secondary" style={{marginBottom:'10px'}}>
                                             {adop.adopcionCaracteristicas}
                                         </p>
-                                        <button className="btn btn btn-outline-success" onClick={handleShow}>
+                                        <button className="btn btn btn-outline-success"  onClick={handleShow}>
                                         Adóptame
                                         </button>
                                     </div>

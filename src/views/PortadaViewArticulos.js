@@ -114,7 +114,7 @@ export default function PortadaViewArticulos() {
                                             <input 
                                                 type="text" 
                                                 className="form-control"
-                                                placeholder="Ingrese el nombre "
+                                                placeholder="Ingrese palabra clave "
                                                 ref={inputBusqueda}
                                             />
                                             <button className="btn " onClick={ejecutarBusqueda} style={{ border:'1px solid green', }}>
