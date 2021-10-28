@@ -53,18 +53,16 @@ export default function PortadaViewArticulos() {
     useEffect(() => {
         getArticulos()
     }, [])
-    // useEffect(() => {
-    //     getArticulosPrecio()
-    // }, [])
     
-    // useEffect(() => {
-    //     let productosFiltrados = Object.values(articulos).filter((productosFiltrados) =>  {
-    //         return articulos.content.productoPrecio >= filtroPrecio[0] && articulos.content.productoPrecio <= filtroPrecio[1]
-    //     })
-    //     setArticulos(productosFiltrados)
-    //     // console.log(productosFiltrados)
     
-    // },[filtroPrecio])
+    useEffect(() => {
+        let productosFiltrados = Object.values(articulos).filter((productosFiltrados) =>  {
+            return articulos.content.productoPrecio >= filtroPrecio[0] && articulos.content.productoPrecio <= filtroPrecio[1]
+        })
+        setArticulos(productosFiltrados)
+        // console.log(productosFiltrados)
+    
+    },[filtroPrecio])
 
     
 
