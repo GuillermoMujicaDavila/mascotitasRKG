@@ -6,7 +6,8 @@ function Membresiapart3 () {
     return (
     <div style={{
         marginTop:'60px',
-        fontSize:'cursive'
+        fontSize:'cursive',
+        marginBottom:'100px'
 
     }}>
         <h3 style={{
