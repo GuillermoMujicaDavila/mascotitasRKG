@@ -12,7 +12,7 @@ export default function Loading() {
             backgroundColor:'white'
         }}>
             <i 
-                className="fab fa-hornbill fa-spin fa-4x" 
+                className="fas fa-bone fa-spin fa-4x" 
                 style={{
                     color:'rgb(25, 135, 84)',
                     position:'absolute',
