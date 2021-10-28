@@ -14,20 +14,23 @@ import CarritoContextProvider from "./context/carritoContext";
 import Caracts from './components/Caracts'
 import  {AuthContextProvider} from './context/authContext'
 import { Navbar } from 'react-bootstrap'
+import { AuthReactProvider } from './context/reactAuthContext'
 
 
 export default function App() {
 	
 	return (
 		<Router>
-			<AuthContextProvider>
-				<CarritoContextProvider>
-					<Navbar/>
-					<Switch>
-						<Routes />
-					</Switch>
-				</CarritoContextProvider>
-			</AuthContextProvider>
+			<AuthReactProvider>
+				<AuthContextProvider>		
+					<CarritoContextProvider>
+						<Navbar/>
+						<Switch>
+							<Routes />
+						</Switch>
+					</CarritoContextProvider>
+				</AuthContextProvider>
+			</AuthReactProvider>
 		</Router>
 	);
 }

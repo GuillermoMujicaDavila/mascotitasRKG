@@ -9,11 +9,13 @@ const proveedorGoogle = new firebase.auth.GoogleAuthProvider()
 export const AuthContext = createContext()
 
 export const AuthContextProvider = (props) => {
+    // console.log (props)
     const [userState, setUserState] = useState(null)
     const [authPending, setAuthPending] = useState(true)
 
     const signIn = async () => {
         const rpta = await auth.signInWithPopup(proveedorGoogle)
+        // console.log(proveedorGoogle)
         // console.log("google!!",rpta)
     }
 
@@ -22,6 +24,8 @@ export const AuthContextProvider = (props) => {
     useEffect(() => {
         return auth.onAuthStateChanged((user) => {
             setUserState(user)
+            // console.log( setUserState(user))
+            // console.log(user)
             setAuthPending(false)
         })
     },[])

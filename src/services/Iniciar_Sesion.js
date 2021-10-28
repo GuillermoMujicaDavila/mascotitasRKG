@@ -1,16 +1,34 @@
 import axios from "axios";
+// import { AuthReactContext } from "../context/reactAuthContext";
+// import { useContext } from "react";
+// import { useCallback } from "react";
 
-const URL = `${process.env.REACT_APP_API}/usuarios`
+// const URL = `${process.env.REACT_LOCAL_HOST}/login`
+const URL = "http://127.0.0.1:8000/gestion/login"
 
-const obtenerUsuarios = async () =>{
+// const {token, setAuthToken} = useContext(AuthReactContext)
+
+const login = async (usuario) =>{   
+    
     try {
-        let {data} = await axios.get(URL)
+        const headers ={
+            "Content-Type": "application/json"
+        }
+
+        let {data} = await axios.post(URL, usuario, {headers})
+        // setAuthToken(data.content.access)
+        // console.log(token)
+
+        // "data.content.access" sirve para separar el token que esta.
+        // console.log(data.content.access)
         return data
+        
     }catch (error){
+        console.log(error)
         throw error
     }
 }
 
 export{
-    obtenerUsuarios
+    login
 }
