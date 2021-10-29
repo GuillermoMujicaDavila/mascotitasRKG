@@ -25,8 +25,10 @@ export default function Routes ()
        <Route path="/IniciarSecion" exact component = {IniciarSecionView}/>
        <Route path="/registro" exact component = {RegistroView}/>
          <Route path="/producto/:id" exact component = {ArticuloView}/>
-          <Route path="/Registro" exact component = {RegistroView}/>
-          <Route path="/checkout2" exact component = {PruebaViewCheckout}/>
+
+        <Route path="/Registro" exact component = {RegistroView}/>
+        <Route path="/checkout2" exact component = {PruebaViewCheckout}/>
+
     </div>
     
     )
