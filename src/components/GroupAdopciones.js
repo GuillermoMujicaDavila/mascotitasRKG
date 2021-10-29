@@ -58,7 +58,7 @@ export default function GroupAdopciones({adopciones}) {
                 <div className="row mt-3">
                     {adopciones.map((adop, i) => (
                         <div className="col-12 col-lg-4 col-md-6 col-xl-4"  key={1}>
-                            <div className="magic  card border border-secondary border border-3 text-center">
+                            <div className="magic  card  text-center">
                                 <div className="overflow">
                                     <img 
                                         src={adop.adopcionFoto}
@@ -67,18 +67,19 @@ export default function GroupAdopciones({adopciones}) {
                                     />
                                     
                                 </div>    
-                                    <div className="card-body bg-light">
+                                    <div className="card-body bg-success">
                                         <h6 className="card-title text-center fw-bold">
                                             {adop.adopcionNombre}
                                                         
                                         </h6>
-                                        <p className="card-text text-secondary" >
-                                            {adop.adopcionTamanio}
-                                        </p>
-                                        <p className="card-text text-secondary" style={{marginBottom:'10px'}}>
+                                        <p className="card-text text-white" style={{marginBottom:'10px'}}>
                                             {adop.adopcionCaracteristicas}
                                         </p>
-                                        <button className="btn btn btn-outline-success"  onClick={handleShow}>
+                                        <p className="card-text  text-white" >
+                                            {adop.adopcionTamanio}
+                                        </p>
+                                        
+                                        <button className="btn btn btn btn-warning"  onClick={handleShow}>
                                         Adóptame
                                         </button>
                                     </div>

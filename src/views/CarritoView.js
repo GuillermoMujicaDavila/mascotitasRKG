@@ -100,7 +100,7 @@ export default function CarritoView() {
                         <th style={{
                             paddingRight:'20px',
                             paddingLeft:'30px'
-                        }}>Precio</th>
+                        }}>Precio+IGV </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -133,7 +133,7 @@ export default function CarritoView() {
                             <td style={{
                                 padding: '3.5rem 2.5rem',
                             }}>S/{
-                                     (arti.cantidad * arti.content.productoPrecio ) -((arti.cantidad * arti.content.productoPrecio)* 0.18 )}
+                                     (arti.cantidad * arti.content.productoPrecio ) +((arti.cantidad * arti.content.productoPrecio)* 0.18 )}
                                    </td>
                         </tr>
                         // ------------------------------------------------
