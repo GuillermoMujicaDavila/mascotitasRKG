@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const URL = `${process.env.REACT_APP_API}/gestion/buscar-cliente`
-const URL1 = `${process.env.REACT_APP_API}/gestion/login"`
+const URL1 = "http://127.0.0.1:8000/gestion/login"
 const obtenerUsuarios = async () =>{
     try {
         let {data} = await axios.get(URL)
