@@ -53,7 +53,7 @@ export default function RegistroView() {
 
     return ( 
         <div>
-            {/* <VideoBackground/> */}
+           
 
         <Row>   
               <Col xs="3"></Col> 
