@@ -11,7 +11,7 @@ import RegistroView from './views/RegistroView'
 import PlanesKev from "./views/PlanesKev"
 import Checkout from './views/Checkout'
 import CarritoView from './views/CarritoView'
-
+import ContactUs from './views/EmailPrueba'
 export default function Routes ()
 {return(
     <div>
@@ -21,6 +21,7 @@ export default function Routes ()
        <Route path="/Donar" exact component={PlanesKev} />
        <Route path="/Adoptar" exact component={PortadaViewAdopciones} />
        <Route path="/Tienda" exact component={PortadaViewArticulos} />
+       <Route path="/email" exact component={ContactUs} />
        <Route path="/IniciarSecion" exact component = {IniciarSecionView}/>
        <Route path="/registro" exact component = {RegistroView}/>
          <Route path="/producto/:id" exact component = {ArticuloView}/>
