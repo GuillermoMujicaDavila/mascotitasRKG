@@ -13,3 +13,5 @@ const Registro = async (cliente) =>{
 export{
     Registro
 }
+
+
