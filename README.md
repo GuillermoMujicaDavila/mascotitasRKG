@@ -9,11 +9,17 @@
  
 AUTORES 💻 :
 
->  _Kevin More_ 😎
+> _Kevin More_ 😎
+                                                                 
+![cat1](https://user-images.githubusercontent.com/84250823/139494326-c2e8ec8c-1724-4f06-92e4-3245e242fcb3.gif)
 
 >  _Renzo Estrada_ 😎
+                                                                 
+![dog1](https://user-images.githubusercontent.com/84250823/139495182-fd83f2fd-5084-441d-be0c-1c72e9ce7558.gif)
  
 >  _Guillermo Mujica_ 😎
+                                                                 
+![cat2](https://user-images.githubusercontent.com/84250823/139495453-05ffd455-cb42-4e10-9966-51d2383f4492.gif)
                                                                  
 ### Idea del proyecto 😼:
 La idea principal es tener un ecommerce enfocado a las
