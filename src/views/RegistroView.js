@@ -56,7 +56,7 @@ export default function RegistroView() {
             {/* <VideoBackground/> */}
 
         <Row>   
-            <Col xs="3"></Col> 
+              <Col xs="3"></Col> 
             <Col xs="6">
                 <div >
                 <ButtonGroup
