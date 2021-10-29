@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const URL = `${process.env.REACT_APP_API}/gestion/buscar-cliente`
-
+const URL1 = `${process.env.REACT_APP_API}/gestion/login"`
 const obtenerUsuarios = async () =>{
     try {
         let {data} = await axios.get(URL)
@@ -13,4 +13,29 @@ const obtenerUsuarios = async () =>{
 
 export{
     obtenerUsuarios
+}
+
+const login = async (usuario) =>{   
+
+    try {
+        const headers ={
+            "Content-Type": "application/json"
+        }
+
+        let {data} = await axios.post(URL1, usuario, {headers})
+        // setAuthToken(data.content.access)
+        // console.log(token)
+
+        // "data.content.access" sirve para separar el token que esta.
+        // console.log(data.content.access)
+        return data
+
+    }catch (error){
+        console.log(error)
+        throw error
+    }
+}
+
+export{
+    login
 }
