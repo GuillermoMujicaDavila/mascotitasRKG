@@ -15,7 +15,7 @@ export default function PortadaViewArticulos() {
     const [articulos, setArticulos] = useState([])
     const [articulosOriginal, setArticulosOriginal] = useState([])
     const [cargando,setCargando]=useState(true)
-    const [filtroPrecio, setFiltroPrecio] = useState([1,100])
+    const [filtroPrecio, setFiltroPrecio] = useState([1,1500])
 
     const inputBusqueda = useRef()
 
@@ -113,7 +113,7 @@ export default function PortadaViewArticulos() {
                                         onChange={manejarPrecio}
                                         valueLabelDisplay="auto"
                                         min={1}
-                                        max={100}
+                                        max={1500}
                                         style={{
                                             color:'green'
                                         }}
