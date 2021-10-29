@@ -21,18 +21,6 @@ export default function RegistroView() {
             clienteCelular: 0
         }
     ) 
-
-    // const [kevin, setKevin] = useState(
-    //     {
-    //         clienteId : -1,
-    //         vendedorid: -1,
-    //     }
-    // )
-
-
-
-
-
     const [re, setRe] = useState(null)
     
     const crearUsuario = (e) =>{
@@ -47,10 +35,6 @@ export default function RegistroView() {
         setRe(await Registro(value))
         console.log(re)
     }
-
-
-
-
     return ( 
         <div>
            

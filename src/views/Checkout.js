@@ -5,13 +5,42 @@ import Modalcheckout from "../components/Modalcheckout"
 // import Tarjeta from "../components/CreditCard"
 // import Narvbar from "../components/Narvbar"
 import Narbarkev from "../components/Narbarkev"
-
+import {Pedido} from "../services/Pedido"
 
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet"
 
 
 export default function CheckoutView() {
     // const [marcador, setMarcador] = useState([-12.0433, -77.0283])
+	const [value, setValue] = useState(
+        {
+			cliente_id: 2,
+			vendedor_id: 1,
+			detalle: [
+				{
+					cantidad:"",
+					producto_id: ""
+					
+				}
+			]
+		}
+    ) 
+    const [re, setRe] = useState(null)
+    
+    const crearPedido = (e) =>{
+        setValue({
+            ...value,
+            [e.target.name]:e.target.value,
+       });
+       console.log(value)
+    }
+    const Registarpedido = async(e)=>{
+        e.preventDefault()
+        setRe(await Pedido(value))
+        console.log(re)
+    }
+
+
 	const { carrito } = useContext(CarritoContext);
 	const [marcador, setMarcador] = useState([-12.2833, -76.8667])
 
