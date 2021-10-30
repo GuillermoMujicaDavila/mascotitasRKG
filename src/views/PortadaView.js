@@ -11,9 +11,9 @@ import KevPrinci from '../components/KevPrinci'
 import Video from '../components/VideoBackground'
 import Kev1 from '../components/Kevinprinci2'
 
+
 const PortadaView = _=>
     {
-      
       return (<div>
           
             <Narvbar/>

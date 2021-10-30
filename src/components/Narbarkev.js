@@ -18,7 +18,7 @@ import {AuthReactContext} from "../context/reactAuthContext"
 export default function Narvbar() {
     const {carrito} = useContext(CarritoContext)
     const {userState,signOut} = useContext(AuthContext)
-    const {user,Salir} = useContext(AuthReactContext)
+    const {user,Out} = useContext(AuthReactContext)
     const totalCarrito = carrito.reduce((total, articulo) => {
 		return total + articulo.cantidad;
 	}, 0);
@@ -130,7 +130,19 @@ export default function Narvbar() {
                     
                     </DropdownButton>  
                     </ButtonGroup> )}
-            {user != null && (<div></div>)}
+            {user != null && (<NavDropdown   style={{
+                                            position:'relative',
+                                            top: '26px',
+                                            left: '63px',
+                                            }}
+								            title={
+									            <div className="d-inline">
+										        <span>{user.clienteNombre}  {user.clienteApellido}</span>
+									        </div>
+								            }
+							                >
+								            <NavDropdown.Item onClick={Out}>Salir</NavDropdown.Item>
+							                </NavDropdown>)}
             {userState != null && (<NavDropdown   style={{
                      position:'relative',
                     top: '26px',
