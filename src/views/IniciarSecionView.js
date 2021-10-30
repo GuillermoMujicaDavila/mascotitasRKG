@@ -14,9 +14,15 @@ import { set } from 'animejs';
 
 export default function IniciarSecionView() {
     const { signIn } = useContext(AuthContext)
+    const {signOut} = useContext(AuthContext)
     const {userState} = useContext(AuthContext)  
-    const {token,setAuthToken} = useContext(AuthReactContext)  
-    const {user, setUser} = useContext(AuthReactContext)
+    const {Login} = useContext (AuthReactContext)   
+    const {Out} = useContext (AuthReactContext)
+    const{ObtenerUsuario} = useContext(AuthReactContext)
+
+    const {setAuthToken} = useContext(AuthReactContext)  
+   const {token} = useContext(AuthContext)
+    const {user} = useContext(AuthReactContext)
     const [value, setValue] = useState(
         {clienteCorreo:"",
         password:""
@@ -30,30 +36,10 @@ export default function IniciarSecionView() {
             [e.target.name]:e.target.value,
        });
     }
-
     const inicioSesion = async (e) =>{
         e.preventDefault()
-        setRespuesta(await login(value))
-        try {
-            e.preventDefault()
-            setAuthToken(respuesta.content.access)
-            e.preventDefault()
-            setRespuesta2(await perfil_cliente(token))
-            // console.log(respuesta2.content)
-            try{
-                e.preventDefault()
-                setUser(respuesta2.content)
-                console.log(user)
-            }catch{}
-
-        }catch{
-
-        }
-        console.log(token)
-
-    
-    }
-    
+        Login(value)
+    } 
 
 
 
@@ -71,39 +57,8 @@ export default function IniciarSecionView() {
                 </ButtonGroup>           
 
             </div>
-           {
-               useState?(<div >
-                <img
-                    src={userState.photoURL}
-                    className="me-3"
-                    style={{ borderRadius: "50%",
-                    marginRight:'45%',
-                    marginLeft:'45%',
-                    width: "100px",
-                    display:'flex', 
-                    justifyContent:'center'
-                    }}
-                    alt="avatar"
-                />
-                <h1 style={{
-                    display:'flex', 
-                    justifyContent:'center'}} 
-                >Bienvenido  
-                </h1>
-                <h1>
-                    <span style={{
-                        display:'flex', 
-                        justifyContent:'center'
-                        }}>{userState.displayName}
-                    </span>
-                </h1>
-                <h2 style={{
-                    display:'flex', 
-                    justifyContent:'center'}}>Por favor hacer click en el logo para volver a la navegar</h2>
-        </div>):
-               token?(<div></div>):
-               ( 
-               <div>
+            {userState == null && user ==null &&(
+                <div>
                 <Form className = "login-form"
                 //  onSubmit={(e)=>{obtenerDatosPerfil(e)}}
                  >
@@ -133,7 +88,7 @@ export default function IniciarSecionView() {
                        </label>
                     </FormGroup >
                     <FormGroup  className="text-center">
-                        <Button className="btn-lg btn-dark btn-block " type="submit" onClick={inicioSesion}
+                        <Button className="btn-lg btn-dark btn-block " type="submit" onClick={inicioSesion} 
                          >Log in</Button>        
                         </FormGroup>         
                    </Form>
@@ -148,10 +103,60 @@ export default function IniciarSecionView() {
                             Ingresa con google
                         </button>
                    </div> 
-            </div>)
-               
-           }      
-          
+            </div>
+            )
+            }
+            {user != null && (<div >
+                <h1 style={{
+                    display:'flex', 
+                    justifyContent:'center'}} 
+                >Bienvenido  
+                </h1>
+                <h1>
+                    <span style={{
+                        display:'flex', 
+                        justifyContent:'center'
+                        }}>{user.clienteNombre}  {user.clienteApellido}
+                    </span>
+                </h1>
+                <h2 style={{
+                    display:'flex', 
+                    justifyContent:'center'}}>Por favor hacer click en el logo para volver a la navegar</h2>
+                </div>  )}
+            {userState != null && (<div >
+                <img
+                    src={userState.photoURL}
+                    className="me-3"
+                    style={{ borderRadius: "50%",
+                    marginRight:'45%',
+                    marginLeft:'45%',
+                    width: "100px",
+                    display:'flex', 
+                    justifyContent:'center'
+                    }}
+                    alt="avatar"
+                />
+                <h1 style={{
+                    display:'flex', 
+                    justifyContent:'center'}} 
+                >Bienvenido  
+                </h1>
+                <h1>
+                    <span style={{
+                        display:'flex', 
+                        justifyContent:'center'
+                        }}>{userState.displayName}
+                    </span>
+                </h1>
+                <h2 style={{
+                    display:'flex', 
+                    justifyContent:'center'}}>Por favor hacer click en el logo para volver a la navegar</h2>
+                    
+                </div>  )
+            }
+           
+
+   
             
                             
         </div>

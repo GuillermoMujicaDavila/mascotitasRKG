@@ -12,12 +12,14 @@ import Badge from '@material-ui/core/Badge';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import Narvbarcss from './Narvbar.css'
 import Video from "./VideoBackground"
-
+import {AuthReactContext} from "../context/reactAuthContext"
 
 
 export default function Narvbar() {
     const {carrito} = useContext(CarritoContext)
     const {userState,signOut} = useContext(AuthContext)
+    const {user,Salir} = useContext(AuthReactContext)
+
     const totalCarrito = carrito.reduce((total, articulo) => {
 		return total + articulo.cantidad;
 	}, 0);
@@ -83,28 +85,7 @@ export default function Narvbar() {
             </Navbar>
             </div>
 
-            {userState? (
-                 <NavDropdown   style={{
-                     position:'relative',
-                    top: '26px',
-                    left: '63px',
-                 }}
-								title={
-									<div className="d-inline">
-										<img
-											src={userState.photoURL}
-											className="me-2"
-											style={{ borderRadius: "50%", width: "30px" }}
-											alt="avatar"
-										/>
-										<span>{userState.displayName}</span>
-									</div>
-								}
-							>
-								<NavDropdown.Item onClick={signOut}>Salir</NavDropdown.Item>
-							</NavDropdown>
-            ) : (
-                <ButtonGroup style={{
+            {userState == null && user ==null &&( <ButtonGroup style={{
                     height:'40px',
                     border:'none'
                 }}>
@@ -126,8 +107,31 @@ export default function Narvbar() {
                     <Dropdown.Item eventKey="1"  href="/IniciarSecion">Iniciar Sesión</Dropdown.Item>
                     
                     </DropdownButton>  
-                    </ButtonGroup>            
-              )}
+                    </ButtonGroup> )}
+            {user != null && (<div></div>)}
+            {userState != null && (<NavDropdown   style={{
+                     position:'relative',
+                    top: '26px',
+                    left: '63px',
+                 }}
+								title={
+									<div className="d-inline">
+										<img
+											src={userState.photoURL}
+											className="me-2"
+											style={{ borderRadius: "50%", width: "30px" }}
+											alt="avatar"
+										/>
+										<span>{userState.displayName}</span>
+									</div>
+								}
+							>
+								<NavDropdown.Item onClick={signOut}>Salir</NavDropdown.Item>
+							</NavDropdown>)}
+
+          
+                       
+              
                 
               <Link className="nav-link2" to="/carrito" style={{
                         display:'flex',  

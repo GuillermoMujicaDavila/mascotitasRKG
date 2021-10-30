@@ -11,7 +11,7 @@ const perfil_cliente = async (value) => {
         }
 
         let {data} = await axios.get(URL, {headers})
-        console.log(data)
+        // console.log(data)
         return data
         
     }catch (error){
