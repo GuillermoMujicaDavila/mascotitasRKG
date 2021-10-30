@@ -1,18 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import {Modal,TexField,Button} from '@material-ui/core';
-import TextField from '@material-ui/core/TextField';
-import  { useEffect, useState } from "react";
+import {Modal,Button} from '@material-ui/core';
+
+import  {  useState } from "react";
 // import {Modal} from '@material-ui/core';
 // import Button from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-import swal from 'sweetalert'
+
 import Swal from "sweetalert2"
 import Tarjeta from './CreditCard'
-import Particles from '../components/Particles'
-import Boid from '../components/Boid'
-import serviceWorker from '../components/serviceWorker'
-import nyancat from "../assets/img/nyan-cat.gif"
 import { useHistory } from 'react-router'
 import ContactUs from "../views/EmailPrueba"
 import emailjs from "emailjs-com";
