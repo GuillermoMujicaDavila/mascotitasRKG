@@ -14,7 +14,8 @@ import Boid from '../components/Boid'
 import serviceWorker from '../components/serviceWorker'
 import nyancat from "../assets/img/nyan-cat.gif"
 import { useHistory } from 'react-router'
-
+import ContactUs from "../views/EmailPrueba"
+import emailjs from "emailjs-com";
 const useStyles=makeStyles((theme)=>(
 {
     modal:{
@@ -39,6 +40,23 @@ const useStyles=makeStyles((theme)=>(
 }))
 
 function Modalcheckout(){
+    
+    function sendEmail(e) {
+        e.preventDefault();
+
+    emailjs.sendForm('service_9rrw8aa', 'template_9yeh0sx', e.target, 'user_ZnkxZdX2J0UBPeZvXjpzK')
+
+        .then((result) => {
+            alert("Mensagem enviada com sucesso! 👍");
+           
+        }, (error) => {
+            alert(error.message)
+            
+        });
+        e.target.reset()
+
+ 
+    }
     const history = useHistory()
     const mostrarAlerta= async()=>
 {
@@ -81,33 +99,48 @@ const body=(
     <div className={styles.modal} style={{
         border:'none',
         borderRadius:'30px',
-        padding:'85px'
+        padding:'85px',
+        paddingBottom:'30px',
+        paddingLeft:'30px',
+        paddingRight:'30px'
     }}>
     <div align="center" 
-            >
+            style={{}}>
                 <Tarjeta></Tarjeta>
-                <section>
+                {/* <div className="col-lg-8 col-sm-12 form-group pt-1 mx-auto">
+                        <label>Email</label>
+                            <input type="email" className="form-control" required placeholder="Seu email" name="email"/>
+                        </div>    */}
+                         <ContactUs/>
+                <section style={{
+                    position:'relative  ',
+                    buttom:'240px'
+                }}>
+               
                 <Button  onClick={()=>mostrarAlerta()} onClick={()=>abrirCerrarModal()} style={{
                     textDecoration:'none',
-                    postition:'relative',
-                    top:'70px',
+                    // postition:'relative',
+                    // top:'70px',
                     
                 }}><Link style={{
                 textDecoration:'none'
                 }}>Cancelar</Link></Button>
-                <Button color="primary" onClick={(e)=>{
+                <Button color="primary" ype="submit" className="btn btn-info" value="Enviar mensagem" onClick={(e)=>{
                     mostrarAlerta();
                     abrirCerrarModal()
                 }} style={{
                     textDecoration:'none',
-                    postition:'relative',
-                    top:'70px',
+                    
                     backgroundColor: '#33b665',
     color: 'white',
     borderRadius: '37px',
     width: '132px',
     height: '37px',
                 }}>Pagar</Button>
+                
+                {/* <div className="col-lg-8 col-sm-12 pt-3 mx-auto">
+                            <input type="submit" className="btn btn-info" value="Enviar mensagem"></input>
+                        </div> */}
                 </section>
                 
                 </div>
@@ -131,6 +164,7 @@ const body=(
                 width: '480px',
                 
             }}>Comprar</h5></Button>
+            
             <Modal open={modal} onClose={abrirCerrarModal}>
                 {body}
             </Modal>

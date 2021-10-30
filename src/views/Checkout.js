@@ -208,7 +208,7 @@ export default function CheckoutView() {
                 alignItems: 'flex-start',
                 position: 'relative',
                 right: '15px',
-                textDecoration: 'none',
+                
                 bottom: '10px',
 				marginTop:'30px'
               }}  >
