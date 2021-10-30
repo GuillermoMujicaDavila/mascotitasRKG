@@ -109,7 +109,7 @@ export default function IniciarSecionView() {
                             Ingresa con google
                         </button>
                    </div> 
-                   <p style={{fontFamily:'cursive', margin:'0 auto', textAlign:'center', paddingTop:'20px'}}>No tienes una cuenta?<a href="/registro" style={{textDecoration:'none',color:''}}>Crear cuenta</a></p>
+                   <p style={{fontFamily:'cursive', margin:'0 auto', textAlign:'center', paddingTop:'20px'}}>¿No tienes una cuenta?  <a href="/registro" style={{textDecoration:'none',color:'blue'}}>Crear cuenta</a></p>
             </div>
             )
             }
@@ -157,7 +157,8 @@ export default function IniciarSecionView() {
                 </h1>
                 <h2 style={{
                     display:'flex', 
-                    justifyContent:'center'}}>Por favor hacer click en el logo para volver a la navegar</h2>
+                    justifyContent:'center',
+                    fontFamily:'cursive'}}>Por favor hacer click en el logo para volver a la navegar</h2>
                     
                 </div>  )
             }
