@@ -12,12 +12,13 @@ import Badge from '@material-ui/core/Badge';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import Narvbarcss from './Narvbar.css'
 import Video from "./VideoBackground"
-
+import {AuthReactContext} from "../context/reactAuthContext"
 
 
 export default function Narvbar() {
     const {carrito} = useContext(CarritoContext)
     const {userState,signOut} = useContext(AuthContext)
+    const {user,Out} = useContext(AuthReactContext)
     const totalCarrito = carrito.reduce((total, articulo) => {
 		return total + articulo.cantidad;
 	}, 0);
@@ -106,12 +107,47 @@ export default function Narvbar() {
             </Navbar>
             </div>
 
-            {userState ? (
-                <NavDropdown style={{
+            {userState == null && user ==null &&( <ButtonGroup style={{
+                    height:'40px',
+                    border:'none'
+                }}>
+                    <DropdownButton as={ButtonGroup} id="bg-vertical-dropdown-2" 
+                     title={
+                        <BiUserCircle />}
+                    style={{
+                    maxHeight:'100%',
+                    objectFit:'cover',
+                    border:'none',
                     position:'relative',
-                    top:'30px',
-                    left:'35px'
-                }}
+                    top:'20px',
+                    left:'44px'
+                     }}
+                    alt="imagen login"
+                    variant="outline-dark"
+                     >
+                        
+                    <Dropdown.Item eventKey="1"  href="/IniciarSecion">Iniciar Sesión</Dropdown.Item>
+                    
+                    </DropdownButton>  
+                    </ButtonGroup> )}
+            {user != null && (<NavDropdown   style={{
+                                            position:'relative',
+                                            top: '26px',
+                                            left: '63px',
+                                            }}
+								            title={
+									            <div className="d-inline">
+										        <span>{user.clienteNombre}  {user.clienteApellido}</span>
+									        </div>
+								            }
+							                >
+								            <NavDropdown.Item onClick={Out}>Salir</NavDropdown.Item>
+							                </NavDropdown>)}
+            {userState != null && (<NavDropdown   style={{
+                     position:'relative',
+                    top: '26px',
+                    left: '63px',
+                 }}
 								title={
 									<div className="d-inline">
 										<img
@@ -125,32 +161,12 @@ export default function Narvbar() {
 								}
 							>
 								<NavDropdown.Item onClick={signOut}>Salir</NavDropdown.Item>
-							</NavDropdown>
-            ) : (
-                <ButtonGroup style={{
-                    height:'40px',
-                    border:'none',
-                    
-                }}>
-                    <DropdownButton as={ButtonGroup} id="bg-vertical-dropdown-2" 
-                     title={
-                        <BiUserCircle />}
-                    style={{
-                    maxHeight:'100%',
-                    objectFit:'cover',
-                    border:'none'
-                     }}
-                    alt="imagen login"
-                    variant="outline-dark"
-                     >
-                        
-                    <Dropdown.Item eventKey="1"  href="/IniciarSecion">Iniciar Sesión</Dropdown.Item>
-                     </DropdownButton>  
-                    
-               
-                 
-                </ButtonGroup>
-              )}
+							</NavDropdown>)}
+
+          
+                       
+
+
             <Link className="nav-link2" to="/carrito" style={{
                         display:'flex',
                        

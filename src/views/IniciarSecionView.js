@@ -13,7 +13,7 @@ import { set } from 'animejs';
 
 export default function IniciarSecionView() {
     const { signIn } = useContext(AuthContext)
-    const {signOut} = useContext(AuthContext)
+    
     const {userState} = useContext(AuthContext)  
     const {Login} = useContext (AuthReactContext)   
     const {
@@ -25,16 +25,14 @@ export default function IniciarSecionView() {
 		console.log(datos);
 	};
 
-    const {setAuthToken} = useContext(AuthReactContext)  
-   const {token} = useContext(AuthContext)
+   
     const {user} = useContext(AuthReactContext)
     const [value, setValue] = useState(
         {clienteCorreo:"",
         password:""
         }
     );
-    const [respuesta,setRespuesta] = useState(null)
-    const[respuesta2,setRespuesta2]= useState(null)
+    
     const crearUsuario = (e) =>{
         setValue({
             ...value,
