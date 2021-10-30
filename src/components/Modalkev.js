@@ -56,7 +56,8 @@ const body=(
         borderRadius:'30px',
         padding:'55px',
         fontFamily:'cursive',
-        height:'50vh'
+        height:'40vh',
+        width:'40vw'
     }}>
             <div align="center"
             >
