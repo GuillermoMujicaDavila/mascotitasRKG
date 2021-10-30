@@ -126,7 +126,7 @@ function MembresíaKev  ()  {
               position
               :'relative',
               bottom:'-16px',
-              zIndex:'2'
+              zIndex:'-23'
             }}></img>
             </section>
            
@@ -148,7 +148,7 @@ function MembresíaKev  ()  {
           border:'none',
           // boxShadow: '0px 4px 8px rgb(0 0 0 / 29%)',
           padding:' 0px',
-          zIndex: '5',
+          zIndex: '-25',
       
         }}>
             <section className="name" style={{
@@ -159,7 +159,7 @@ function MembresíaKev  ()  {
               fontWeight: '900',
               lineHeight: '1.15',
               color: '#fff',
-              fontFamily:'cursive'
+             
             }}>
             Plan <br/> Mishifu
             </section>
@@ -189,7 +189,7 @@ function MembresíaKev  ()  {
                 alignItems: 'flex-start',
                 position: 'relative',
                 right: '15px',
-                textDecoration: 'none',
+                
                 bottom: '10px',
                 fontFamily:'cursive'
               }}  >
@@ -308,7 +308,7 @@ function MembresíaKev  ()  {
               position
               :'relative',
               bottom:'-16px',
-              zIndex:'5',
+              zIndex:'-2',
               fontFamily:'cursive'
             }}></img>
             </section>
