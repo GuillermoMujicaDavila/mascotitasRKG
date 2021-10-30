@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const URL = `${process.env.REACT_APP_API}/gestion/perfil_cliente`
+const URL = "http://127.0.0.1:8000/gestion/perfil_cliente"
 
 const perfil_cliente = async (value) => {   
-
+       
     try {
         const headers ={
             "Content-Type": "application/json",
@@ -11,9 +11,9 @@ const perfil_cliente = async (value) => {
         }
 
         let {data} = await axios.get(URL, {headers})
-        console.log(data)
+        // console.log(data)
         return data
-
+        
     }catch (error){
         throw error
     }
@@ -21,4 +21,4 @@ const perfil_cliente = async (value) => {
 
 export{
     perfil_cliente
-};
+}

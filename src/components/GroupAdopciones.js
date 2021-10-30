@@ -75,6 +75,7 @@ export default function GroupAdopciones({adopciones}) {
                                         <p className="card-text text-white" style={{marginBottom:'10px'}}>
                                             {adop.adopcionCaracteristicas}
                                         </p>
+                                        
                                         <p className="card-text  text-white" >
                                             {adop.adopcionTamanio}
                                         </p>
