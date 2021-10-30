@@ -1,6 +1,9 @@
 import { useState, createContext, useEffect } from "react";
+import { pedido } from "../services/comprarService";
 
 export const CarritoContext = createContext()
+
+
 
 const CarritoContextProvider = (props) => {
 
@@ -35,8 +38,29 @@ const CarritoContextProvider = (props) => {
         localStorage.setItem('carrito', JSON.stringify(carrito))
     },[carrito])
 
+    const hacerPedido = async () =>{
+        let articulos = []
+        for (let i = 0; i<carrito.length;i++){
+            let articulo = {
+                "cantidad": carrito[i].cantidad,
+                "producto_id":carrito[i].content.productoId
+            }
+            articulos.push(articulo)
+        }
+        const cliente = JSON.parse(localStorage.getItem('usuario'))
+        console.log(cliente)
+        const body = {
+            "cliente_id": parseInt(  cliente.content.user_id),
+            "vendedor_id": 1,
+            "detalle": articulos
+        }       
+        console.log(body)
+        const rpta = await pedido(body)
+        console.log(rpta)
+    }
+
     return (
-        <CarritoContext.Provider value={{carrito, anadirACarrito}}>
+        <CarritoContext.Provider value={{carrito, anadirACarrito, hacerPedido}}>
             {props.children}
         </CarritoContext.Provider>
     )

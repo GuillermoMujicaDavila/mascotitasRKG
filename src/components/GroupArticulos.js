@@ -1,8 +1,9 @@
 import {Link} from "react-router-dom"
-
+import { useContext } from "react"
+import {CarritoContext} from "../context/carritoContext"
 
 export default function GroupArticulos({articulos}) {
-    console.log(articulos)
+  
     
     return (
 
@@ -28,7 +29,7 @@ export default function GroupArticulos({articulos}) {
                                         <p className="card-text text-white">
                                             S/ {arti.productoPrecio}
                                         </p>
-                                        <Link href="#" className="btn btn btn btn-warning" style={{color:'white'}}to={`/producto/${arti.productoId}`}>
+                                        <Link href="#" className="btn btn btn btn-warning" style={{color:'white'}}to={`/producto/${arti.productoId}`} >
                                         Comprar
                                         </Link>
                                     </div>
