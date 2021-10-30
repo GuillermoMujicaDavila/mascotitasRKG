@@ -84,7 +84,7 @@ function MembresíaKev  ()  {
             <section className="decorative">
             <ul className="link" 
             > 
-              <button to="/checkout" style={{
+              <button to="/checkmemb" style={{
                 backgroundColor: 'rgb(9, 93, 174)',
                 color: 'white',
                 textDecoration: 'none',
@@ -176,7 +176,7 @@ function MembresíaKev  ()  {
             <section className="decorative">
             <ul className="link" 
             > 
-              <button to="/checkout" style={{
+              <button to="/checkmemb" style={{
                 backgroundColor: 'rgb(9, 93, 174)',
                 color: 'white',
                 textDecoration: 'none',
@@ -268,7 +268,7 @@ function MembresíaKev  ()  {
             <section className="decorative">
             <ul className="link" 
             > 
-              <button to="/checkout" style={{
+              <button to="/checkmemb" style={{
                 backgroundColor: 'rgb(9, 93, 174)',
                 color: 'white',
                 textDecoration: 'none',
@@ -362,7 +362,7 @@ function MembresíaKev  ()  {
             <section className="decorative">
             <ul className="link" 
             > 
-              <button to="/checkout" style={{
+              <button to="/checkmemb" style={{
                 backgroundColor: 'rgb(9, 93, 174)',
                 color: 'white',
                 textDecoration: 'none',

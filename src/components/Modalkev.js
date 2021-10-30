@@ -78,8 +78,10 @@ const body=(
 
                 <br></br>
                 <div align="right">
-                <Button color="primary" onClick={()=>mostrarAlerta()}>Enviar</Button>
-                <Button  onClick={()=>abrirCerrarModal()}><Link to='/Donar' style={{
+                <Button color="primary" onClick={()=>mostrarAlerta()}><Link to='/Checkmemb' style={{
+                    textDecoration:'none'
+                }}>acepto</Link></Button>
+                <Button  onClick={()=>abrirCerrarModal()}><Link to='/Checkmemb' style={{
                     textDecoration:'none'
                 }}>Cancelar</Link></Button>
                 
