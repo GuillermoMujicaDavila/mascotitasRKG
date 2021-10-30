@@ -42,7 +42,7 @@ export default function PaymentForm() {
     if(!error) {
         try {
             const {id} = paymentMethod
-            const response = await axios.post("http://localhost:4000/payment", {
+            const response = await axios.post("https://rkg-back-pasarela.herokuapp.com/payment", {
                 amount: 1000,
                 id
             })

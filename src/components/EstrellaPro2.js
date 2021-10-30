@@ -13,7 +13,7 @@ class EstrellaProducto2 extends Component{
     }
 
 async peticion(){
-    var peticion=await fetch('http://127.0.0.1:8000/gestion/producto-estrella');
+    var peticion=await fetch('https://rkg-backend.herokuapp.com/gestion/producto-estrella');
     var respuesta=await peticion.json();
     this.setState({respuesta:respuesta});
     var nombre=[],cantidad=[]
