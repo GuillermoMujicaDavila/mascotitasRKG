@@ -1,5 +1,5 @@
 import { useScrollTrigger } from '@material-ui/core'
-import React from 'react'
+import React, { Component } from 'react';
 import { Row,Col, Button,Form, FormGroup, Label, Input,ButtonGroup,Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import imgLogin from "../assets/login_2.jpg"
@@ -7,9 +7,14 @@ import Logo from "../assets/Logo.jpeg"
 import VideoBackground from '../components/VideoBackground';
 import { useState } from 'react'
 import {Registro} from '../services/Registro'
-
+import swal from 'sweetalert'
+import {makeStyles} from '@material-ui/core/styles';
+import Modalkev from "../components/Modalkev"
+import Swal from "sweetalert2"
+import { useHistory } from 'react-router'
 
 export default function RegistroView() {
+    const history = useHistory()
     const [value, setValue] = useState(
         {
             clienteNombre: "",
@@ -21,17 +26,59 @@ export default function RegistroView() {
             clienteCelular: 0
         }
     ) 
-
-    // const [kevin, setKevin] = useState(
-    //     {
-    //         clienteId : -1,
-    //         vendedorid: -1,
+  
+     class Test extends React.Component {
+        onClick(event) {
+            modalRegistro();
+            Registarse();
+        }
+        render() {
+           return (
+              <a href="/" onClick={this.onClick}>Test Link</a>
+           );
+        }
+     }
+    // const modalRegistro = async() => {
+        
+    //     const resultado = await Swal.fire({
+    //         icon:'success',
+    //         title:"¡Registrado con éxito!",
+    //         showConfirmButton:true,
+    //         denyConfirmButton:true,
+    //         denyButtonText:'Volverás al inicio',
+    //         })
+    //     if(resultado.isDenied){
+    //         history.push('/')
     //     }
-    // )
-
-
-
-
+    //     else if(resultado.isConfirmed){
+    //         history.push('/')
+    //     }
+    // }
+    const modalRegistro = async() => {
+        // anadirACarrito(articulo)
+        const resultado = await Swal.fire({
+            icon:'success',
+            title: 'Queda un último paso!',
+            width: 600,
+            padding: '3em',
+            showConfirmButton:true,
+            showDenyButton:true,
+            denyButtonText:'Cancelar',
+            confirmButtonText:'Sigamos!',
+            background: '#ffff',
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("https://sweetalert2.github.io/images/nyan-cat.gif")
+              left center
+              no-repeat
+            `,
+          })
+        if(resultado.isConfirmed){
+            history.push('/')
+        }else if(resultado.isDenied){
+            history.push('/')
+        }
+    }
 
     const [re, setRe] = useState(null)
     
@@ -110,10 +157,12 @@ export default function RegistroView() {
                     <br/>
                     <input type="dni" style={{width:'25vw',margin:'0 auto'}}className="form-control" placeholder="748*****" name="clienteDocumento" onChange ={e => crearUsuario(e)}/>
                 </FormGroup>   
-                <FormGroup className="text-center">
+                <FormGroup className="text-center" style={{textDecoration:'none'}}>
                     <br/>
-                    <Button className="btn-lg btn-block " style={{margin:'0 aut',width:'25vw',backgroundColor:'#198754'}}  onClick={Registarse} >Registrarse</Button>       
+                    <button href="/" className="btn-lg btn-block " style={{margin:'0 aut',width:'25vw',backgroundColor:'#198754',border:'none',textDecoration:'none',color:'white'}} onClick={Registarse}><Link to="/IniciarSecion"style={{textDecoration:'none',color:'white'}}>Registrarse</Link></button>       
+                    
                 </FormGroup> 
+                
                 <p style={{fontFamily:'cursive', margin:'0 auto', textAlign:'center', paddingTop:'20px'}}>¿Ya tienes una cuenta?  <a href="/IniciarSecion" style={{textDecoration:'none',color:'blue'}}>Iniciar Sesión</a></p> 
             </Form>
             </div>

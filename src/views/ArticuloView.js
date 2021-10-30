@@ -42,7 +42,7 @@ export default function ArticuloView() {
             history.push('/carrito')
         }
     }
-
+    
     useEffect(() => {
         getArticulo()
     }, )
