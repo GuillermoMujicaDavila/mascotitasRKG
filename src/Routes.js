@@ -13,7 +13,7 @@ import Checkout from './views/Checkout'
 import CarritoView from './views/CarritoView'
 import ContactUs from './views/EmailPrueba'
 import CheckoutMembresía from './views/MembresíaViewCheckout'
-
+import Signup from "./views/Keviniciar"
 export default function Routes ()
 {return(
     <div>
@@ -29,6 +29,7 @@ export default function Routes ()
          <Route path="/producto/:id" exact component = {ArticuloView}/>
          <Route path="/Registro" exact component = {RegistroView}/>
          <Route path="/checkmemb" exact component = {CheckoutMembresía}/>
+         <Route path="/signup" exact component = {Signup}/>
     
     </div>
     )
