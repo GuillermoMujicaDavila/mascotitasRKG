@@ -68,7 +68,7 @@ export default function IniciarSecionView() {
                 //  onSubmit={(e)=>{obtenerDatosPerfil(e)}}
                  >
                     <h1  className="text-center">
-                        <span className="font-weight-bold">Bienvenido 🤗</span>
+                        <span className="font-weight-bold">Bienvenido/a 🤗</span>
                     </h1>
                     <FormGroup className="text-center">
                         <label>Email</label>
