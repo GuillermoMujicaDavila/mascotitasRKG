@@ -54,34 +54,45 @@ const body=(
     <div className={styles.modal} style={{
         border:'none',
         borderRadius:'30px',
-        padding:'85px',
-        fontFamily:'cursive'
+        padding:'55px',
+        fontFamily:'cursive',
+        height:'50vh'
     }}>
             <div align="center"
             >
                 <h2 style={{
                     color:'rgb(25, 135, 84)',
                     fontFamily:'cursive'
-                }}>Rellene sus datos</h2>
+                }}>¿Está seguro de continuar?</h2>
                 <h5 style={{
                     color:'black',
                     fontFamily:'cursive'
-                }}>Para coordinar la forma de pago </h5>
+                }}>! Tenemos el plan perfecto para ti ! </h5>
                 </div>
-                <TextField label="Nombre" className={styles.textfield}/>
+                {/* <TextField label="Nombre" className={styles.textfield}/>
                 <br/>
                 <TextField label="Apellido" className={styles.textfield}/>
                 <br/>
                 <TextField label="DNI" className={styles.textfield}/>
                 <br/>
-                <TextField label="Número de teléfono" className={styles.textfield}/>
+                <TextField label="Número de teléfono" className={styles.textfield}/> */}
 
                 <br></br>
-                <div align="right">
-                <Button color="primary" onClick={()=>mostrarAlerta()}><Link to='/Checkmemb' style={{
-                    textDecoration:'none'
-                }}>acepto</Link></Button>
-                <Button  onClick={()=>abrirCerrarModal()}><Link to='/Checkmemb' style={{
+                <div align="center">
+                <Button color="primary" ><Link to='/Checkmemb' style={{
+                    textDecoration:'none',
+                    
+                    backgroundColor: '#7795F8',
+    color: 'white',
+    borderRadius: '37px',
+    width: '132px',
+    height: '35px',
+    border:'none',
+    margin:'0 auto',
+    display:'flex',
+    justifyContent:'center',
+    paddingTop:'5px'}}>acepto</Link></Button>
+                <Button  onClick={()=>abrirCerrarModal()}><Link to='/Donar' style={{
                     textDecoration:'none'
                 }}>Cancelar</Link></Button>
                 
