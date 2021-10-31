@@ -2,7 +2,7 @@ import {Link} from "react-router-dom"
 
 
 export default function GroupArticulos({articulos}) {
-    console.log(articulos)
+ 
     
     return (
 
@@ -28,9 +28,7 @@ export default function GroupArticulos({articulos}) {
                                         <p className="card-text text-white">
                                             S/ {arti.productoPrecio}
                                         </p>
-                                        <Link href="#" className="btn btn btn btn-warning" style={{color:'white'}}to={`/producto/${arti.productoId}`}>
-                                        Comprar
-                                        </Link>
+                                        <Link href="#" className="btn btn btn btn-warning" style={{color:'white'}}to={`/producto/${arti.productoId}`} >Comprar</Link>
                                     </div>
                             </div> 
                         </div>    

@@ -40,16 +40,20 @@ const CarritoContextProvider = (props) => {
         for (let i = 0; i<carrito.length;i++){
             let articulo = {
                 "cantidad": carrito[i].cantidad,
-                "producto_id":carrito[i].productoId
+                "producto_id":carrito[i].content.productoId
             }
             articulos.push(articulo)
         }
         const cliente = JSON.parse(localStorage.getItem('usuario'))
-        const cliente_id = cliente.user_id
-        
-        const rpta = await pedido(cliente_id ,articulos)
+        console.log(cliente)
+        const body = {
+            "cliente_id": parseInt(  cliente.content.user_id),
+            "vendedor_id": 1,
+            "detalle": articulos
+        }       
+        console.log(body)
+        const rpta = await pedido(body)
         console.log(rpta)
-    
     }
     return (
         <CarritoContext.Provider value={{carrito, anadirACarrito,hacerPedido}}>

@@ -12,7 +12,7 @@ import Narbar from '../components/narvarcarrito'
 export default function CarritoView() {
 
     const { carrito } = useContext(CarritoContext)
-
+    const {hacerPedido} = useContext(CarritoContext)
     console.log(carrito)
     const history = useHistory()
     const anadirACarritoContext = async() => {
@@ -39,6 +39,7 @@ export default function CarritoView() {
         }else if(resultado.isDenied){
             history.push('/carrito')
         }
+        hacerPedido()
     }
     return (
         <div className="container" style={{

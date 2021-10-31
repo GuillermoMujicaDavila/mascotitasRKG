@@ -1,15 +1,17 @@
 import axios from "axios";
 
-const URL = `http://127.0.0.1:8000/gestion/pedido`
+const URL = `https://rkg-backend.herokuapp.com/gestion/pedido`
 
-const pedido = async (cliente_id,detalle) =>{
+const pedido = async (pedido) =>{
+    // console.log(detalle)
+    // console.log(cliente_id)
     try {
-        const body = {
-            "cliente_id": `${cliente_id}`,
-            "vendedor_id": 1,
-            "detalle": `${detalle}`
-        }
-        let {data} = await axios.post(URL,body)
+
+        // console.log( body)
+        // localStorage.setItem('body',JSON.stringify(pedido))
+
+        let {data} = await axios.post(URL,pedido)
+        console.log(data)
         return data
     }catch (error){
         throw error

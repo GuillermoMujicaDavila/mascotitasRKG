@@ -13,7 +13,7 @@ class AdoP extends Component{
     }
 
 async peticion(){
-    var peticion=await fetch('http://127.0.0.1:8000/gestion/buscar-adoptado?estado=false');
+    var peticion=await fetch('https://rkg-backend.herokuapp.com/gestion/buscar-adoptado?estado=false');
     var respuesta=await peticion.json();
     this.setState({respuesta:respuesta});
     var adopcionTamanio=[],adopcionEdad=[]

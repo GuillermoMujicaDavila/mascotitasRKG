@@ -13,7 +13,7 @@ class AdopNoAdop extends Component{
     }
 
 async peticion(){
-    var peticion=await fetch('http://127.0.0.1:8000/gestion/cliente_especial');
+    var peticion=await fetch('https://rkg-backend.herokuapp.com/gestion/cliente_especial');
     var respuesta=await peticion.json();
     this.setState({respuesta:respuesta});
     var nombre=[],cuenta=[]

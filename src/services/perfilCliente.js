@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://127.0.0.1:8000/gestion/perfil_cliente"
+const URL = "https://rkg-backend.herokuapp.com/perfil_cliente"
 
 const perfil_cliente = async (value) => {   
        
